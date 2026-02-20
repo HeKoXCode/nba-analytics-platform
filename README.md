@@ -75,7 +75,7 @@ Download raw data (see DOC/raw\_data\_sources.txt)
 Place files inside CODE/data\_raw
 
 Execute:
-CODE/ingesta\_data\_auto.bat
+CODE/DATA_AUTO.bat
 
 Connect Power BI to the generated SQL database
 
