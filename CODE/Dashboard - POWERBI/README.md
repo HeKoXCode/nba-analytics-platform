@@ -16,7 +16,7 @@ This was intentionally implemented to:
 * Ensure controlled access
 * Maintain performance optimization through DirectQuery
 * Simulate a real-world production BI environment
-* 
+  
 
 However, the complete data ingestion and processing pipeline is fully reproducible.
 

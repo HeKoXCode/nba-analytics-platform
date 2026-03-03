@@ -1,6 +1,5 @@
+
 🏀 NBA Analytics Platform
-
-
 
 End-to-End Automated Data Warehouse \& BI Solution (22GB Historical Dataset)
 
@@ -8,12 +7,9 @@ This project consists of a fully automated analytics platform designed to proces
 
 The objective was not only to build dashboards, but to simulate a real-world BI production architecture: automated ingestion, relational modeling, validation, and performance optimization.
 
-
-
-
+-----------------------------------------------------
 
 🎯 Business Objective
-
 
 
 To analyze how team performance and efficiency metrics impact game results over time using a clean star schema ready for enterprise BI environments.
@@ -30,13 +26,9 @@ What is the impact of home advantage?
 
 Which teams demonstrate long-term performance stability?
 
-
-
-
+-----------------------------------------------------
 
 🏗 Architecture Overview
-
-
 
 Raw Data → Python ETL → SQL Server (Star Schema) → Optimized SQL Views → Power BI (DirectQuery)
 
@@ -54,9 +46,7 @@ DirectQuery configured for low-latency reporting
 
 Fully reproducible pipeline
 
-
-
-
+-----------------------------------------------------
 
 🖼 Dashboard Preview
 
@@ -78,8 +68,6 @@ Fully reproducible pipeline
 
 📁 Repository Structure
 
-
-
 CODE/ → Execution layer (ETL, SQL, Power BI)
 DOCS/  → Documentation layer (data sources, model details, validations)
 IMAGES/ → Dashboard previews and visual assets
@@ -87,13 +75,9 @@ IMAGES/ → Dashboard previews and visual assets
 For full technical details, see:
 DOCS/technical\_documentation.md
 
-
-
-
+-----------------------------------------------------
 
 ⚙️ Technology Stack
-
-
 
 Python → ETL, validation, automation
 
@@ -101,9 +85,7 @@ SQL Server → Data Warehouse (Star Schema)
 
 Power BI → Interactive dashboards (DirectQuery optimized)
 
-
-
-
+-----------------------------------------------------
 
 ▶️ Reproducibility
 
@@ -112,12 +94,13 @@ Download raw data (see DOCS/raw\_data\_sources.txt)
 Place files inside CODE/data\_raw
 
 Execute:
-
-CODE/ingesta\_data\_auto.bat
+CODE/DATA_AUTO.bat
 
 Connect Power BI to the generated SQL database
 
 The dashboard requires connection to the local SQL environment, as designed to simulate a production setup.
+
+-----------------------------------------------------
 
 🚀 What This Project Demonstrates
 
@@ -131,11 +114,7 @@ Performance optimization strategies
 
 Large-scale analytical storytelling
 
-
-
------------------------------------------------
-
-
+-----------------------------------------------------
 
 Percy Ignacio Marzoratti Hill
 Data Analyst | BI \& Analytics Engineering Focus
