@@ -41,13 +41,13 @@ The platform answers strategic questions such as:
 
 ![Historical Overview](IMAGES/01_Historical_Performance_Overview.jpg)
 
-![Efficiency and Consistency](IMAGES/02_Efficiency_and_Consistency.jpg)
-
-![Current Talent Analysis](IMAGES/03_Current_Talent_Analysis.jpg)
+*Executive overview of historical franchise performance, league evolution, and macro-level efficiency indicators.*
 
 ![Key Findings – Success Model](IMAGES/04_Key_Findings_Success_Model.jpg)
 
-![Franchise Deep Dive – Spurs](IMAGES/05_Franchise_Deep_Dive_Spurs.jpg)
+*Strategic synthesis highlighting the structural drivers of long-term success: historical consistency, offensive efficiency, and sustainable performance.*
+
+> Additional dashboard pages are available in the `IMAGES/` directory.
 
 ---
 
