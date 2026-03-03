@@ -39,15 +39,15 @@ The platform answers strategic questions such as:
 
 ## 🖼 Dashboard Preview
 
-![Historical Overview](IMAGES/01_Historical_Performance_Overview.png)
+![Historical Overview](IMAGES/01_Historical_Performance_Overview.jpg)
 
-![Efficiency and Consistency](IMAGES/02_Efficiency_and_Consistency.png)
+![Efficiency and Consistency](IMAGES/02_Efficiency_and_Consistency.jpg)
 
-![Current Talent Analysis](IMAGES/03_Current_Talent_Analysis.png)
+![Current Talent Analysis](IMAGES/03_Current_Talent_Analysis.jpg)
 
-![Key Findings – Success Model](IMAGES/04_Key_Findings_Success_Model.png)
+![Key Findings – Success Model](IMAGES/04_Key_Findings_Success_Model.jpg)
 
-![Franchise Deep Dive – Spurs](IMAGES/05_Franchise_Deep_Dive_Spurs.png)
+![Franchise Deep Dive – Spurs](IMAGES/05_Franchise_Deep_Dive_Spurs.jpg)
 
 ---
 
