@@ -58,12 +58,31 @@ Fully reproducible pipeline
 
 
 
+🖼 Dashboard Preview
+
+
+
+![Historical Overview](IMAGES/01_Historical_Performance_Overview.png)
+
+![Efficiency and Consistency](IMAGES/02_Efficiency_and_Consistency.png)
+
+![Current Talent Analysis](IMAGES/03_Current_Talent_Analysis.png)
+
+![Key Findings – Success Model](IMAGES/04_Key_Findings_Success_Model.png)
+
+![Franchise Deep Dive – Spurs](IMAGES/05_Franchise_Deep_Dive_Spurs.png)
+
+
+
+
+
 📁 Repository Structure
 
 
 
 CODE/ → Execution layer (ETL, SQL, Power BI)
 DOCS/  → Documentation layer (data sources, model details, validations)
+IMAGES/ → Dashboard previews and visual assets
 
 For full technical details, see:
 DOCS/technical\_documentation.md
@@ -88,7 +107,7 @@ Power BI → Interactive dashboards (DirectQuery optimized)
 
 ▶️ Reproducibility
 
-Download raw data (see DOC/raw\_data\_sources.txt)
+Download raw data (see DOCS/raw\_data\_sources.txt)
 
 Place files inside CODE/data\_raw
 
@@ -120,4 +139,3 @@ Large-scale analytical storytelling
 
 Percy Ignacio Marzoratti Hill
 Data Analyst | BI \& Analytics Engineering Focus
-
