@@ -1,0 +1,275 @@
+{
+  "objects": {
+    "categoryLabels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "categoryAxis": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'altura promedio en pies'"
+              }
+            }
+          },
+          "gridlineThickness": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'peso promedio en libras'"
+              }
+            }
+          },
+          "gridlineThickness": {
+            "expr": {
+              "Literal": {
+                "Value": "3D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "legend": [
+      {
+        "properties": {
+          "showGradientLegend": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Series": [
+      3
+    ],
+    "Y": [
+      0
+    ],
+    "X": [
+      1
+    ],
+    "Size": [
+      2
+    ],
+    "Tooltips": [
+      1,
+      0,
+      2
+    ]
+  },
+  "projectionActiveItems": {
+    "X": [
+      {
+        "queryRef": "Sum(analytics vw_q9_physical_profile.avg_height)",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Suma de avg_weight",
+        "Name": "Sum(analytics vw_q9_physical_profile.avg_weight)",
+        "Type": 1
+      },
+      {
+        "Restatement": "Suma de avg_height",
+        "Name": "Sum(analytics vw_q9_physical_profile.avg_height)",
+        "Type": 1
+      },
+      {
+        "Restatement": "Suma de n_players",
+        "Name": "Sum(analytics vw_q9_physical_profile.n_players)",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "team_name",
+        "Name": "analytics vw_teams.team_name",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Series",
+          "Projection": 3,
+          "isActive": false
+        },
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "X",
+          "Projection": 1,
+          "isActive": true
+        },
+        {
+          "Name": "Size",
+          "Projection": 2,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
+          "Projection": 2,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Suma de avg_weight",
+      "queryName": "Sum(analytics vw_q9_physical_profile.avg_weight)",
+      "roles": {
+        "Y": true,
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q9_physical_profile"
+                }
+              },
+              "Property": "avg_weight"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Suma de avg_height",
+      "queryName": "Sum(analytics vw_q9_physical_profile.avg_height)",
+      "roles": {
+        "X": true,
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q9_physical_profile"
+                }
+              },
+              "Property": "avg_height"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Suma de n_players",
+      "format": "0",
+      "queryName": "Sum(analytics vw_q9_physical_profile.n_players)",
+      "roles": {
+        "Size": true,
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q9_physical_profile"
+                }
+              },
+              "Property": "n_players"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "team_name",
+      "queryName": "analytics vw_teams.team_name",
+      "roles": {
+        "Series": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics vw_teams"
+            }
+          },
+          "Property": "team_name"
+        }
+      }
+    }
+  ]
+}

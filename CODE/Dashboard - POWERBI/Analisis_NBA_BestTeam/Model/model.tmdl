@@ -1,0 +1,30 @@
+﻿model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-AR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["analytics vw_teams","analytics vw_team_season_metrics","analytics vw_team_season_basic","analytics vw_q9_physical_profile","analytics vw_q8_longest_win_streak","analytics vw_q7_balance_of_def","analytics vw_q6_home_away_impact","analytics vw_q5_consistency","analytics vw_q4_ppg_by_decade","analytics vw_q3_player_context_offense","analytics vw_q10_recent_top","analytics vw_q1_hist_perf","analytics vw_q2_age_vs_current","analytics dim_season","analytics vw_bridge_team_season"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+ref table 'analytics vw_teams'
+ref table 'analytics vw_team_season_metrics'
+ref table 'analytics vw_team_season_basic'
+ref table 'analytics vw_q9_physical_profile'
+ref table 'analytics vw_q8_longest_win_streak'
+ref table 'analytics vw_q7_balance_of_def'
+ref table 'analytics vw_q6_home_away_impact'
+ref table 'analytics vw_q5_consistency'
+ref table 'analytics vw_q4_ppg_by_decade'
+ref table 'analytics vw_q3_player_context_offense'
+ref table 'analytics vw_q10_recent_top'
+ref table 'analytics vw_q1_hist_perf'
+ref table 'analytics vw_q2_age_vs_current'
+ref table 'analytics dim_season'
+ref table 'analytics vw_bridge_team_season'
+
+ref cultureInfo es-ES
+

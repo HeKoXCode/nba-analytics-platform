@@ -1,0 +1,90 @@
+﻿table 'analytics vw_q6_home_away_impact'
+
+	measure PPG_Diferencia_Home_Away = ```
+			
+			AVERAGE('analytics vw_q6_home_away_impact'[Puntos como Local]) 
+			    - AVERAGE('analytics vw_q6_home_away_impact'[Puntos como visitante])
+			```
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PPG_NEG_Diferencia_Home_Away = ```
+			
+			AVERAGE('analytics vw_q6_home_away_impact'[Puntos como visitante])
+			    - AVERAGE('analytics vw_q6_home_away_impact'[Puntos como Local]) 
+			```
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column team_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column season_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: season_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column winrate_home
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		summarizeBy: sum
+		sourceColumn: winrate_home
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column winrate_away
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		summarizeBy: sum
+		sourceColumn: winrate_away
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Puntos como Local'
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: Puntos como Local
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Puntos como visitante'
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: Puntos como visitante
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'analytics vw_q6_home_away_impact' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q6_home_away_impact = NBA_Project{[Schema="analytics",Item="vw_q6_home_away_impact"]}[Data],
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(analytics_vw_q6_home_away_impact,{{"ppg_home", "Puntos como Local"}, {"ppg_away", "Puntos como visitante"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Exception
+

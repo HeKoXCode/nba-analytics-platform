@@ -1,0 +1,57 @@
+﻿table 'analytics vw_q3_player_context_offense'
+
+	column player_id
+		dataType: int64
+		isNullable: false
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: player_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Puntos por partido'
+		dataType: double
+		formatString: 0.0
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: Puntos por partido
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Porcentaje de acierto'
+		dataType: double
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: Porcentaje de acierto
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics vw_q3_player_context_offense' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q3_player_context_offense = NBA_Project{[Schema="analytics",Item="vw_q3_player_context_offense"]}[Data],
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(analytics_vw_q3_player_context_offense,{{"avg_ppg", "Puntos por partido"}, {"avg_fg_pct", "Porcentaje de acierto"}})
+				in
+				    #"Columnas con nombre cambiado"
+

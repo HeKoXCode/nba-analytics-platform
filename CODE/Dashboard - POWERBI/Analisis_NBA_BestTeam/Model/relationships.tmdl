@@ -1,0 +1,88 @@
+﻿relationship 5f66d9fb-b9f4-18bf-2cb2-c12cf6393c27
+	fromColumn: 'analytics dim_season'.decade
+	toColumn: 'analytics vw_q4_ppg_by_decade'.decade
+
+relationship b0426d34-7bfe-4b3c-02aa-e2f288b5893a
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'analytics vw_q2_age_vs_current'.team_name
+	toColumn: 'analytics vw_q1_hist_perf'.team_name
+
+relationship 4b008a12-c759-f4de-7c60-4fe8487c7f6c
+	fromColumn: 'analytics vw_q3_player_context_offense'.team_name
+	toColumn: 'analytics vw_q1_hist_perf'.team_name
+
+relationship 3e018481-b653-5a70-e72c-85ec1521706c
+	fromColumn: 'analytics vw_q6_home_away_impact'.team_name
+	toColumn: 'analytics vw_q1_hist_perf'.team_name
+
+relationship ce99328f-730b-1a82-ba7b-a3116104b3b3
+	fromColumn: 'analytics vw_q7_balance_of_def'.season_id
+	toColumn: 'analytics dim_season'.season_id
+
+relationship 9484f463-a32f-35bb-2a87-249fb1142237
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'analytics vw_q8_longest_win_streak'.team_id
+	toColumn: 'analytics vw_q10_recent_top'.team_id
+
+relationship 0f32ba4b-2c17-a8fc-6d17-1e5835afd555
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'analytics vw_q8_longest_win_streak'.team_id
+	toColumn: 'analytics vw_q1_hist_perf'.team_id
+
+relationship 813bca77-2e7a-6da4-e03f-8ac6393abe27
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'analytics vw_q9_physical_profile'.team_name
+	toColumn: 'analytics vw_q1_hist_perf'.team_name
+
+relationship 42276669-e126-76d5-493a-7af37488c75e
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'analytics vw_team_season_basic'.team_id
+	toColumn: 'analytics vw_q10_recent_top'.team_id
+
+relationship 550dd3e8-c371-65db-3e5d-e51f0931e46c
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'analytics vw_team_season_basic'.team_id
+	toColumn: 'analytics vw_q1_hist_perf'.team_id
+
+relationship 750caf85-2973-e419-19a2-4fa1b541afb4
+	fromColumn: 'analytics vw_team_season_metrics'.team_id
+	toColumn: 'analytics vw_q1_hist_perf'.team_id
+
+relationship 27aa5622-f77b-9cde-e272-b6eaaebe9f32
+	isActive: false
+	fromColumn: 'analytics vw_team_season_metrics'.team_id
+	toColumn: 'analytics vw_q10_recent_top'.team_id
+
+relationship a9623329-b7b8-7756-6e05-737678a8f02a
+	fromColumn: 'analytics vw_q1_hist_perf'.team_id
+	toColumn: 'analytics vw_teams'.team_id
+
+relationship 4301d543-457d-8990-d307-f1772cbb6b1d
+	fromColumn: 'analytics vw_q5_consistency'.team_name
+	toColumn: 'analytics vw_teams'.team_name
+
+relationship bfc190dd-b44d-d31e-7f21-cdafe104d09c
+	fromColumn: 'analytics vw_q7_balance_of_def'.team_name
+	toColumn: 'analytics vw_teams'.team_name
+
+relationship 36d72377-c854-e356-910a-85cda2b8ce52
+	fromColumn: 'analytics vw_q10_recent_top'.team_id
+	toColumn: 'analytics vw_teams'.team_id
+
+relationship 887e6b85-4669-5cda-a419-30ae4179bcb6
+	isActive: false
+	fromColumn: 'analytics vw_q6_home_away_impact'.team_name
+	toColumn: 'analytics vw_teams'.team_name
+
+relationship ba699625-b0d6-0c7f-0073-d71aa1e19c7e
+	fromColumn: 'analytics vw_q6_home_away_impact'.season_id
+	toColumn: 'analytics dim_season'.season_id
+

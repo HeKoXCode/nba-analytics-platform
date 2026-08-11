@@ -1,0 +1,38 @@
+{
+  "name": "40f57f31071d0ad93e69",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 518.5714285714286,
+        "y": 375.7142857142857,
+        "z": 9000,
+        "width": 254.2857142857143,
+        "height": 171.42857142857144,
+        "tabOrder": 9000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "image",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "imageUrl": {
+              "expr": {
+                "ResourcePackageItem": {
+                  "PackageName": "RegisteredResources",
+                  "PackageType": 1,
+                  "ItemName": "ChatGPT_Image_17_oct_2025__12_5110701879617503.png"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "howCreated": "InsertVisualButton"
+}

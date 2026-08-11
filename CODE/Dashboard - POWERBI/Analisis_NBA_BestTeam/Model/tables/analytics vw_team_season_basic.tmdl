@@ -1,0 +1,39 @@
+﻿table 'analytics vw_team_season_basic'
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_season
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: first_season
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_season
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: last_season
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics vw_team_season_basic' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_team_season_basic = NBA_Project{[Schema="analytics",Item="vw_team_season_basic"]}[Data]
+				in
+				    analytics_vw_team_season_basic
+

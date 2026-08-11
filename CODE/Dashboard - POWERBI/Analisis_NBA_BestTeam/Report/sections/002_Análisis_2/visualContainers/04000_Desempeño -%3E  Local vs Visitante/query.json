@@ -1,0 +1,114 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "analytics vw_q6_home_away_impact",
+              "Type": 0
+            },
+            {
+              "Name": "a1",
+              "Entity": "analytics vw_teams",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a"
+                      }
+                    },
+                    "Property": "Puntos como Local"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Avg(analytics vw_q6_home_away_impact.ppg_home)",
+              "NativeReferenceName": "Promedio de Puntos como Local"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a"
+                      }
+                    },
+                    "Property": "Puntos como visitante"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Avg(analytics vw_q6_home_away_impact.ppg_away)",
+              "NativeReferenceName": "Promedio de Puntos como visitante"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a1"
+                  }
+                },
+                "Property": "team_name"
+              },
+              "Name": "analytics vw_teams.team_name",
+              "NativeReferenceName": "team_name"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "a"
+                        }
+                      },
+                      "Property": "Puntos como Local"
+                    }
+                  },
+                  "Function": 1
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Window": {
+                "Count": 1000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

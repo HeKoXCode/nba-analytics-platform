@@ -1,0 +1,57 @@
+﻿table 'analytics vw_q10_recent_top'
+
+	column team_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Porcentaje de victorias ultimos 10 años'
+		dataType: double
+		formatString: 0\ %;-0\ %;0\ %
+		sourceProviderType: decimal(38, 12)
+		summarizeBy: sum
+		sourceColumn: Porcentaje de victorias ultimos 10 años
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Puntos por partido ultimos 10 años'
+		dataType: double
+		formatString: 0.0
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: Puntos por partido ultimos 10 años
+
+		annotation SummarizationSetBy = Automatic
+
+	column rk_recent
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		summarizeBy: sum
+		sourceColumn: rk_recent
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics vw_q10_recent_top' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q10_recent_top = NBA_Project{[Schema="analytics",Item="vw_q10_recent_top"]}[Data],
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(analytics_vw_q10_recent_top,{{"ppg_10y", "Puntos por partido ultimos 10 años"}, {"winrate_10y", "Porcentaje de victorias ultimos 10 años"}})
+				in
+				    #"Columnas con nombre cambiado"
+

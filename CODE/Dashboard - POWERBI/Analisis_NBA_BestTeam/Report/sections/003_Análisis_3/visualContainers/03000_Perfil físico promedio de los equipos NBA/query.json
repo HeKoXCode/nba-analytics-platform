@@ -1,0 +1,117 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a1",
+              "Entity": "analytics vw_q9_physical_profile",
+              "Type": 0
+            },
+            {
+              "Name": "a",
+              "Entity": "analytics vw_teams",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a1"
+                      }
+                    },
+                    "Property": "avg_weight"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(analytics vw_q9_physical_profile.avg_weight)",
+              "NativeReferenceName": "Suma de avg_weight"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a1"
+                      }
+                    },
+                    "Property": "avg_height"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(analytics vw_q9_physical_profile.avg_height)",
+              "NativeReferenceName": "Suma de avg_height"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a1"
+                      }
+                    },
+                    "Property": "n_players"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(analytics vw_q9_physical_profile.n_players)",
+              "NativeReferenceName": "Suma de n_players"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "team_name"
+              },
+              "Name": "analytics vw_teams.team_name",
+              "NativeReferenceName": "team_name"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "OverlappingPointsSample": {
+                "X": {
+                  "Index": 1
+                },
+                "Y": {
+                  "Index": 0
+                }
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

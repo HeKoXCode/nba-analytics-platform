@@ -1,0 +1,20 @@
+{
+  "name": "78f13d07157cf3a8a870",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 864.6666666666666,
+        "y": 0,
+        "z": 3000,
+        "width": 58.666666666666664,
+        "height": 63.333333333333336,
+        "tabOrder": 1000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Botón Conclusión",
+    "groupMode": 0
+  }
+}

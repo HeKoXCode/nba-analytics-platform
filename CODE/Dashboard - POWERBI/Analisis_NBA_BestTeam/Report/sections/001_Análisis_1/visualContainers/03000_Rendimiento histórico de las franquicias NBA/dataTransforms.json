@@ -1,0 +1,577 @@
+{
+  "objects": {
+    "zoom": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showOnValueAxis": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "showLabels": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "showTooltip": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "logAxisScale": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "invertAxis": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "labelDisplayUnits": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "labelPrecision": {
+            "expr": {
+              "Literal": {
+                "Value": "1L"
+              }
+            }
+          },
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Porcentaje de Victorias'"
+              }
+            }
+          },
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "gridlineShow": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "categoryAxis": [
+      {
+        "properties": {
+          "labelColor": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 1,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "switchAxisPosition": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "concatenateLabels": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Franquicia'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "labels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "enableTitleDataLabel": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "enableValueDataLabel": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "labelOverflow": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "optimizeLabelDisplay": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "labelDisplayUnits": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "labelContentLayout": {
+            "expr": {
+              "Literal": {
+                "Value": "'SingleLine'"
+              }
+            }
+          },
+          "labelPrecision": {
+            "expr": {
+              "Literal": {
+                "Value": "1L"
+              }
+            }
+          }
+        }
+      },
+      {
+        "properties": {
+          "dynamicLabelValue": {
+            "expr": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "analytics vw_q1_hist_perf"
+                      }
+                    },
+                    "Property": "winrate_hist"
+                  }
+                },
+                "Function": 0
+              }
+            }
+          },
+          "valueFormatString": {
+            "expr": {
+              "Literal": {
+                "Value": "'0.0\\ %;-0.0\\ %;0.0\\ %'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "dataViewWildcard": {
+                "matchingOption": 1
+              }
+            }
+          ],
+          "highlightMatching": 1
+        }
+      }
+    ],
+    "ribbonBands": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fillMatchColor": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "FillRule": {
+                    "Input": {
+                      "Aggregation": {
+                        "Expression": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "analytics vw_q1_hist_perf"
+                              }
+                            },
+                            "Property": "winrate_hist"
+                          }
+                        },
+                        "Function": 0
+                      }
+                    },
+                    "FillRule": {
+                      "linearGradient3": {
+                        "min": {
+                          "color": {
+                            "Literal": {
+                              "Value": "'#8299C7'"
+                            }
+                          }
+                        },
+                        "mid": {
+                          "color": {
+                            "Literal": {
+                              "Value": "'#194296'"
+                            }
+                          }
+                        },
+                        "max": {
+                          "color": {
+                            "Literal": {
+                              "Value": "'#AF1111'"
+                            }
+                          }
+                        },
+                        "nullColoringStrategy": {
+                          "strategy": {
+                            "Literal": {
+                              "Value": "'asZero'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "data": [
+            {
+              "dataViewWildcard": {
+                "matchingOption": 1
+              }
+            }
+          ]
+        }
+      },
+      {
+        "properties": {
+          "fillTransparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "legend": [
+      {
+        "properties": {
+          "showGradientLegend": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Y": [
+      0
+    ],
+    "Category": [
+      1
+    ],
+    "Tooltips": [
+      3,
+      2
+    ]
+  },
+  "projectionActiveItems": {
+    "Category": [
+      {
+        "queryRef": "analytics vw_teams.team_name",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Suma de winrate_hist",
+        "Name": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
+        "Type": 1,
+        "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
+      },
+      {
+        "Restatement": "team_name",
+        "Name": "analytics vw_teams.team_name",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Suma de total_wins",
+        "Name": "Sum(analytics vw_q1_hist_perf.total_wins)",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "Suma de rank_overall",
+        "Name": "Sum(analytics vw_q1_hist_perf.rank_overall)",
+        "Type": 3,
+        "Format": "0"
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Category",
+          "Projection": 1,
+          "isActive": true
+        },
+        {
+          "Name": "Tooltips",
+          "Projection": 3,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
+          "Projection": 2,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Suma de winrate_hist",
+      "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
+      "queryName": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
+      "roles": {
+        "Y": true
+      },
+      "sort": 2,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q1_hist_perf"
+                }
+              },
+              "Property": "winrate_hist"
+            }
+          },
+          "Function": 0
+        }
+      },
+      "relatedObjects": {
+        "labels": {
+          "dynamicLabelValue": [
+            {
+              "data": [
+                {
+                  "dataViewWildcard": {
+                    "matchingOption": 1
+                  }
+                }
+              ],
+              "highlightMatching": 1
+            }
+          ]
+        },
+        "dataPoint": {
+          "fill": [
+            {
+              "data": [
+                {
+                  "dataViewWildcard": {
+                    "matchingOption": 1
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "displayName": "team_name",
+      "queryName": "analytics vw_teams.team_name",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics vw_teams"
+            }
+          },
+          "Property": "team_name"
+        }
+      }
+    },
+    {
+      "displayName": "Suma de total_wins",
+      "format": "0",
+      "queryName": "Sum(analytics vw_q1_hist_perf.total_wins)",
+      "roles": {
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q1_hist_perf"
+                }
+              },
+              "Property": "total_wins"
+            }
+          },
+          "Function": 0
+        }
+      }
+    },
+    {
+      "displayName": "Suma de rank_overall",
+      "format": "0",
+      "queryName": "Sum(analytics vw_q1_hist_perf.rank_overall)",
+      "roles": {
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q1_hist_perf"
+                }
+              },
+              "Property": "rank_overall"
+            }
+          },
+          "Function": 0
+        }
+      }
+    }
+  ]
+}

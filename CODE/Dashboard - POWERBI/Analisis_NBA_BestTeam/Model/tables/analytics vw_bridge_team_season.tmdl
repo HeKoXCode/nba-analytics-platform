@@ -1,0 +1,30 @@
+﻿table 'analytics vw_bridge_team_season'
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column decade
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: decade
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics vw_bridge_team_season' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_bridge_team_season = NBA_Project{[Schema="analytics",Item="vw_bridge_team_season"]}[Data]
+				in
+				    analytics_vw_bridge_team_season
+

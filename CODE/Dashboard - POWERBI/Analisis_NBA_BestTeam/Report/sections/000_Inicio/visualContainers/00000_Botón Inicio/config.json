@@ -1,0 +1,35 @@
+{
+  "name": "3f324e011a7efd6b9090",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 451.6819306494787,
+        "y": 1.5703231679563041,
+        "z": 7000,
+        "width": 60.76923076923077,
+        "height": 60.76923076923077,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Botón Inicio",
+    "groupMode": 0,
+    "objects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

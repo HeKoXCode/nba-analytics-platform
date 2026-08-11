@@ -37,7 +37,7 @@
 → draft_round: object → object | ΔNulos=-0.04 | OK
 → draft_number: object → object | ΔNulos=-0.05 | OK
 → greatest_75_flag: object → object | ΔNulos=+0.00 | OK
-✅ common_player_info procesado correctamente (4171 filas). Guardado en c:\Users\juanl\Downloads\final\csv\Daft17_Group01_PF\data_final\common_player_info_final.csv
+✅ common_player_info procesado correctamente (4171 filas). Guardado en CODE\data_final\common_player_info_final.csv
 
 [2025-10-20 13:15:45] 🔧 Procesando tabla: game
    🧹 Filas eliminadas por IDs vacíos o duplicados: 56
@@ -98,7 +98,7 @@
 → plus_minus_away: int64 → int64 | ΔNulos=+0.00 | OK
 → video_available_away: int64 → int64 | ΔNulos=+0.00 | OK
 → season_type: object → object | ΔNulos=+1.00 | OK
-✅ game procesado correctamente (65642 filas). Guardado en c:\Users\juanl\Downloads\final\csv\Daft17_Group01_PF\data_final\game_final.csv
+✅ game procesado correctamente (65642 filas). Guardado en CODE\data_final\game_final.csv
 
 [2025-10-20 13:15:55] 🔧 Procesando tabla: game_summary
    🧹 Filas eliminadas por IDs vacíos o duplicados: 49
@@ -118,7 +118,7 @@
 → natl_tv_broadcaster_abbreviation: object → object | ΔNulos=-0.89 | OK
 → live_period_time_bcast: object → object | ΔNulos=+0.00 | OK
 → wh_status: int64 → int64 | ΔNulos=+0.00 | OK
-✅ game_summary procesado correctamente (58021 filas). Guardado en c:\Users\juanl\Downloads\final\csv\Daft17_Group01_PF\data_final\game_summary_final.csv
+✅ game_summary procesado correctamente (58021 filas). Guardado en CODE\data_final\game_summary_final.csv
 
 [2025-10-20 13:15:58] 🔧 Procesando tabla: other_stats
    🧹 Filas eliminadas por IDs vacíos o duplicados: 0
@@ -150,7 +150,7 @@
 → total_turnovers_away: float64 → float64 | ΔNulos=-0.00 | OK
 → team_rebounds_away: float64 → float64 | ΔNulos=-0.00 | OK
 → pts_off_to_away: float64 → float64 | ΔNulos=-0.00 | OK
-✅ other_stats procesado correctamente (28261 filas). Guardado en c:\Users\juanl\Downloads\final\csv\Daft17_Group01_PF\data_final\other_stats_final.csv
+✅ other_stats procesado correctamente (28261 filas). Guardado en CODE\data_final\other_stats_final.csv
 
 [2025-10-20 13:16:00] 🔧 Procesando tabla: player
 
@@ -160,7 +160,7 @@
 → first_name: object → object | ΔNulos=-0.00 | OK
 → last_name: object → object | ΔNulos=+0.00 | OK
 → is_active: int64 → int64 | ΔNulos=+0.00 | OK
-✅ player procesado correctamente (4831 filas). Guardado en c:\Users\juanl\Downloads\final\csv\Daft17_Group01_PF\data_final\player_final.csv
+✅ player procesado correctamente (4831 filas). Guardado en CODE\data_final\player_final.csv
 
 [2025-10-20 13:16:00] 🔧 Procesando tabla: team
 
@@ -172,6 +172,6 @@
 → city: object → object | ΔNulos=+0.00 | OK
 → state: object → object | ΔNulos=+0.00 | OK
 → year_founded: float64 → datetime64[ns] | ΔNulos=+1.00 | OK
-✅ team procesado correctamente (30 filas). Guardado en c:\Users\juanl\Downloads\final\csv\Daft17_Group01_PF\data_final\team_final.csv
+✅ team procesado correctamente (30 filas). Guardado en CODE\data_final\team_final.csv
 
 🟢 Pipeline v2.4 completado correctamente.

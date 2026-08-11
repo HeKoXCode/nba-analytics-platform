@@ -1,0 +1,217 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 193.0786411717279,
+            "y": 73.689327564405573
+          },
+          "nodeIndex": "analytics vw_q1_hist_perf",
+          "nodeLineageTag": "6626674f-f7e7-4f2e-ab1f-947ab2d5f929",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 1619.0442635077854,
+            "y": 1041.1513001934227
+          },
+          "nodeIndex": "analytics vw_q10_recent_top",
+          "nodeLineageTag": "1eeff62d-42a7-4112-8724-4e95a720dfcc",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 54
+          },
+          "nodeIndex": "analytics vw_q2_age_vs_current",
+          "nodeLineageTag": "208b330c-dfe3-4091-8e7f-b5140af9cb6d",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 54
+          },
+          "nodeIndex": "analytics vw_q3_player_context_offense",
+          "nodeLineageTag": "6362c134-fc77-4bfb-850a-17ebfe7db638",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 336.81432044728712,
+            "y": 633.50454234112817
+          },
+          "nodeIndex": "analytics vw_q4_ppg_by_decade",
+          "nodeLineageTag": "e569beeb-dc30-4acd-9d41-7ddd10b9f530",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 627.7882718517078,
+            "y": 443.56410911034624
+          },
+          "nodeIndex": "analytics vw_q5_consistency",
+          "nodeLineageTag": "d0aa3d2f-24d2-442b-a44e-261408d8ef50",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 11
+        },
+        {
+          "location": {
+            "x": 975.20596740351516,
+            "y": 459.03945992229319
+          },
+          "nodeIndex": "analytics vw_q6_home_away_impact",
+          "nodeLineageTag": "229d5a60-08b6-4614-9c18-32a048484fec",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 13
+        },
+        {
+          "location": {
+            "x": 1140.2736259893186,
+            "y": 196.77517496045391
+          },
+          "nodeIndex": "analytics vw_q7_balance_of_def",
+          "nodeLineageTag": "fff400ae-90ab-48b4-9ea1-ce60bb91c602",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1355.7696249261105,
+            "y": 479.91978616902122
+          },
+          "nodeIndex": "analytics vw_q8_longest_win_streak",
+          "nodeLineageTag": "eacdc548-7e58-4dbd-9fe9-ce9fbc9549fe",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 1299.922570170794,
+            "y": 788.57217751676569
+          },
+          "nodeIndex": "analytics vw_q9_physical_profile",
+          "nodeLineageTag": "e7c518a4-fb79-45dd-a001-1983ed37de34",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1672.3071807378747,
+            "y": 94.005401533680583
+          },
+          "nodeIndex": "analytics vw_team_season_basic",
+          "nodeLineageTag": "e86c72d5-9149-422f-b046-568de1b4101f",
+          "size": {
+            "height": 294.04334396888055,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 1940.960158026646,
+            "y": 124.37073046810688
+          },
+          "nodeIndex": "analytics vw_team_season_metrics",
+          "nodeLineageTag": "57e4c044-3a96-45d7-b9dc-4105f1ee914c",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 769.2141295756918,
+            "y": 874.66702969530854
+          },
+          "nodeIndex": "analytics vw_teams",
+          "nodeLineageTag": "ac9ac960-fe0e-42e4-998a-8f5620d901ef",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 12
+        },
+        {
+          "location": {
+            "x": 1912.5544546982351,
+            "y": 545.70123910503139
+          },
+          "nodeIndex": "analytics dim_season",
+          "nodeLineageTag": "a910dd93-3b2e-495c-b9e5-8b422a1a9d5a",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 14
+        },
+        {
+          "location": {
+            "x": 1091.8057317603964,
+            "y": 983.10001844766271
+          },
+          "nodeIndex": "analytics vw_bridge_team_season",
+          "nodeLineageTag": "40162bc5-78fd-4966-991b-77b8623cfc8e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 15
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 44.905697313104163,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

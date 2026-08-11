@@ -1,0 +1,74 @@
+﻿table 'analytics vw_q1_hist_perf'
+
+	column team_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column team_id
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: team_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_wins
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: total_wins
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_games
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: total_games
+
+		annotation SummarizationSetBy = Automatic
+
+	column winrate_hist
+		dataType: double
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		sourceProviderType: decimal(24, 12)
+		summarizeBy: sum
+		sourceColumn: winrate_hist
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_ppg_hist
+		dataType: double
+		formatString: 0.00
+		sourceProviderType: float
+		summarizeBy: distinctCount
+		sourceColumn: avg_ppg_hist
+
+		annotation SummarizationSetBy = User
+
+	column rank_overall
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		summarizeBy: sum
+		sourceColumn: rank_overall
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics vw_q1_hist_perf' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q1_hist_perf = NBA_Project{[Schema="analytics",Item="vw_q1_hist_perf"]}[Data]
+				in
+				    analytics_vw_q1_hist_perf
+

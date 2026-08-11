@@ -1,0 +1,111 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "analytics vw_q2_age_vs_current",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "franchise_age"
+              },
+              "Name": "Sum(analytics vw_q2_age_vs_current.franchise_age)",
+              "NativeReferenceName": "franchise_age"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a"
+                  }
+                },
+                "Property": "team_name"
+              },
+              "Name": "analytics vw_q2_age_vs_current.team_name",
+              "NativeReferenceName": "team_name"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a"
+                      }
+                    },
+                    "Property": "winrate_hist"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Sum(analytics vw_q2_age_vs_current.winrate_hist)",
+              "NativeReferenceName": "Promedio de winrate_hist"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a"
+                      }
+                    },
+                    "Property": "ppg_hist"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
+              "NativeReferenceName": "Suma de ppg_hist"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  1
+                ]
+              },
+              {
+                "Projections": [
+                  0,
+                  2,
+                  3
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "OverlappingPointsSample": {
+                "X": {
+                  "Index": 0
+                },
+                "Y": {
+                  "Index": 2
+                }
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-TABLE: fact_game
+TABLE: game_final
 Total columns: 55 | Rows: 65642
 Columns:
   - season_id (int64)
@@ -57,7 +57,7 @@ Columns:
   - video_available_away (int64)
   - season_type (object)
 ------------------------------------------------------------
-TABLE: fact_team_game
+TABLE: fact_team_game (documented target; not produced by current pipeline)
 Total columns: 16 | Rows: 56522
 Columns:
   - game_id (int64)
@@ -77,7 +77,7 @@ Columns:
   - pts_off_to (float64)
   - venue (object)
 ------------------------------------------------------------
-TABLE: other_stats
+TABLE: other_stats_final
 Total columns: 26 | Rows: 28261
 Columns:
   - game_id (int64)
@@ -107,7 +107,7 @@ Columns:
   - team_rebounds_away (float64)
   - pts_off_to_away (float64)
 ------------------------------------------------------------
-TABLE: dim_team
+TABLE: team_final
 Total columns: 7 | Rows: 30
 Columns:
   - id (int64)
@@ -118,7 +118,7 @@ Columns:
   - state (object)
   - year_founded (float64)
 ------------------------------------------------------------
-TABLE: dim_player
+TABLE: player_final
 Total columns: 5 | Rows: 4831
 Columns:
   - id (int64)
@@ -127,7 +127,7 @@ Columns:
   - last_name (object)
   - is_active (int64)
 ------------------------------------------------------------
-TABLE: game_summary
+TABLE: game_summary_final
 Total columns: 12 | Rows: 58110
 Columns:
   - game_date_est (object)

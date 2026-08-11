@@ -1,0 +1,21 @@
+{
+  "name": "b48120f74a48cd05a243",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1136.75,
+        "y": 6,
+        "z": 3000,
+        "width": 58.96551724137931,
+        "height": 63.44827586206897,
+        "tabOrder": 14000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Botón Info",
+    "groupMode": 0,
+    "isHidden": false
+  }
+}

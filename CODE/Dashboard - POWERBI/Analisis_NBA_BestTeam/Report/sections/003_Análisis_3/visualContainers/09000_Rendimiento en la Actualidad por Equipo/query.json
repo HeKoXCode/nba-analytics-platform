@@ -1,0 +1,114 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a",
+              "Entity": "analytics vw_q10_recent_top",
+              "Type": 0
+            },
+            {
+              "Name": "a1",
+              "Entity": "analytics vw_teams",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a"
+                      }
+                    },
+                    "Property": "Puntos por partido ultimos 10 años"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Sum(analytics vw_q10_recent_top.ppg_10y)",
+              "NativeReferenceName": "Promedio de Puntos por partido ultimos 10 años"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a"
+                      }
+                    },
+                    "Property": "Porcentaje de victorias ultimos 10 años"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Sum(analytics vw_q10_recent_top.winrate_10y)",
+              "NativeReferenceName": "Promedio de Porcentaje de victorias ultimos 10 años"
+            },
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a1"
+                  }
+                },
+                "Property": "team_name"
+              },
+              "Name": "analytics vw_teams.team_name",
+              "NativeReferenceName": "team_name"
+            }
+          ],
+          "OrderBy": [
+            {
+              "Direction": 2,
+              "Expression": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "a"
+                        }
+                      },
+                      "Property": "Porcentaje de victorias ultimos 10 años"
+                    }
+                  },
+                  "Function": 1
+                }
+              }
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "Window": {
+                "Count": 1000
+              }
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

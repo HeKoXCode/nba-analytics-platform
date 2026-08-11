@@ -22,24 +22,41 @@ os.makedirs(RAW_DIR, exist_ok=True)
 os.makedirs(FINAL_DIR, exist_ok=True)
 
 # === CONFIGURACIÓN SQL SERVER ===
-SQL_CONFIG = {
-    "DRIVER": "ODBC Driver 17 for SQL Server",
-    "SERVER": "PCLUCAS\\SQLEXPRESS",
-    "DATABASE": "NBA_Project",
-    "USER": "sa",
-    "PASSWORD": "1234"
-}
+def required_env(name):
+    """Return a required environment value without exposing its contents."""
+    value = os.getenv(name)
+    if not value:
+        raise RuntimeError(f"Falta la variable de entorno requerida: {name}")
+    return value
+
+
+def build_connection_string():
+    """Build the SQL connection string from environment variables only."""
+    driver = os.getenv("NBA_SQL_DRIVER", "ODBC Driver 17 for SQL Server")
+    server = required_env("NBA_SQL_SERVER")
+    database = required_env("NBA_SQL_DATABASE")
+    trusted = os.getenv("NBA_SQL_TRUSTED_CONNECTION", "yes").strip().lower()
+
+    parts = [
+        f"DRIVER={{{driver}}}",
+        f"SERVER={server}",
+        f"DATABASE={database}",
+    ]
+    if trusted in {"1", "true", "yes", "y", "sí", "si"}:
+        parts.append("Trusted_Connection=yes")
+    else:
+        parts.extend(
+            [
+                f"UID={required_env('NBA_SQL_USER')}",
+                f"PWD={required_env('NBA_SQL_PASSWORD')}",
+            ]
+        )
+    return ";".join(parts) + ";"
+
 
 # === CONEXIÓN SQL ===
 def connect_sql():
-    conn_str = (
-        f"DRIVER={{{SQL_CONFIG['DRIVER']}}};"
-        f"SERVER={SQL_CONFIG['SERVER']};"
-        f"DATABASE={SQL_CONFIG['DATABASE']};"
-        f"UID={SQL_CONFIG['USER']};"
-        f"PWD={SQL_CONFIG['PASSWORD']}"
-    )
-    return pyodbc.connect(conn_str, timeout=5)
+    return pyodbc.connect(build_connection_string(), timeout=5)
 
 def test_sql_connection():
     try:

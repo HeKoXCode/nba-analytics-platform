@@ -1,0 +1,310 @@
+{
+  "objects": {
+    "categoryAxis": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Franquicias'"
+              }
+            }
+          },
+          "bold": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          },
+          "titleFontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "titleBold": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Promedio de puntos por partido (PPG)'"
+              }
+            }
+          },
+          "secTitleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Porcentaje de acierto'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "legend": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "lineStyles": [
+      {
+        "properties": {
+          "strokeWidth": {
+            "expr": {
+              "Literal": {
+                "Value": "6D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "labels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 9,
+                    "Percent": -0.25
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(analytics vw_q3_player_context_offense.avg_fg_pct)"
+        }
+      },
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#1888EF'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Category": [
+      2
+    ],
+    "Y": [
+      0
+    ],
+    "Y2": [
+      1
+    ]
+  },
+  "projectionActiveItems": {
+    "Category": [
+      {
+        "queryRef": "analytics vw_teams.team_name",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "splits": [
+    {
+      "selects": {
+        "0": true,
+        "2": true
+      }
+    },
+    {
+      "selects": {
+        "1": true,
+        "2": true
+      }
+    }
+  ],
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Promedio de Puntos por partido",
+        "Name": "Sum(analytics vw_q3_player_context_offense.avg_ppg)",
+        "Type": 1,
+        "Format": "0.0"
+      },
+      {
+        "Restatement": "Promedio de Porcentaje de acierto",
+        "Name": "Sum(analytics vw_q3_player_context_offense.avg_fg_pct)",
+        "Type": 1,
+        "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
+      },
+      {
+        "Restatement": "team_name",
+        "Name": "analytics vw_teams.team_name",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Category",
+          "Projection": 2,
+          "isActive": true
+        },
+        {
+          "Name": "Y",
+          "Projection": 0,
+          "isActive": false
+        }
+      ]
+    },
+    {
+      "DataRoles": [
+        {
+          "Name": "Category",
+          "Projection": 2,
+          "isActive": true
+        },
+        {
+          "Name": "Y2",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Promedio de Puntos por partido",
+      "format": "0.0",
+      "queryName": "Sum(analytics vw_q3_player_context_offense.avg_ppg)",
+      "roles": {
+        "Y": true
+      },
+      "sort": 2,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q3_player_context_offense"
+                }
+              },
+              "Property": "Puntos por partido"
+            }
+          },
+          "Function": 1
+        }
+      }
+    },
+    {
+      "displayName": "Promedio de Porcentaje de acierto",
+      "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
+      "queryName": "Sum(analytics vw_q3_player_context_offense.avg_fg_pct)",
+      "roles": {
+        "Y2": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q3_player_context_offense"
+                }
+              },
+              "Property": "Porcentaje de acierto"
+            }
+          },
+          "Function": 1
+        }
+      }
+    },
+    {
+      "displayName": "team_name",
+      "queryName": "analytics vw_teams.team_name",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics vw_teams"
+            }
+          },
+          "Property": "team_name"
+        }
+      }
+    }
+  ]
+}

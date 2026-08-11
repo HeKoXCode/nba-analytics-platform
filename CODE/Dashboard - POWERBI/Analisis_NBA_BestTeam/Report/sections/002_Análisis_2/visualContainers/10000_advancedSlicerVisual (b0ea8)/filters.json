@@ -1,0 +1,19 @@
+[
+  {
+    "name": "a0fb1c34375730174e1f",
+    "expression": {
+      "Column": {
+        "Expression": {
+          "SourceRef": {
+            "Entity": "analytics dim_season"
+          }
+        },
+        "Property": "decade"
+      }
+    },
+    "type": "Advanced",
+    "howCreated": 0,
+    "isHiddenInViewMode": true,
+    "isLockedInViewMode": true
+  }
+]

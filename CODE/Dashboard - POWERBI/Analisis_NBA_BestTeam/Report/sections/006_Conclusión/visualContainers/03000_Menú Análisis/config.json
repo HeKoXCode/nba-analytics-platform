@@ -1,0 +1,21 @@
+{
+  "name": "7999e611ec50309b7269",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 618.5185185185185,
+        "y": 42.59259259259259,
+        "z": 13000,
+        "width": 168.33333333333334,
+        "height": 144.16666666666669,
+        "tabOrder": 3000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Menú Análisis",
+    "groupMode": 0,
+    "isHidden": true
+  }
+}

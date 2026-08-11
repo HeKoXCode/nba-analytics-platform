@@ -1,0 +1,39 @@
+﻿table 'analytics vw_q5_consistency'
+
+	column team_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column var_winrate_pct
+		dataType: double
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		sourceProviderType: decimal(38, 8)
+		summarizeBy: none
+		sourceColumn: var_winrate_pct
+
+		annotation SummarizationSetBy = User
+
+	column var_ppg_pct
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: var_ppg_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'analytics vw_q5_consistency' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q5_consistency = NBA_Project{[Schema="analytics",Item="vw_q5_consistency"]}[Data]
+				in
+				    analytics_vw_q5_consistency
+

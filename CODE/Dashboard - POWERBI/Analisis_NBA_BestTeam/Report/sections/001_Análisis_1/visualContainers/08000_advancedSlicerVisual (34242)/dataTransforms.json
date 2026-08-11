@@ -1,0 +1,136 @@
+{
+  "objects": {
+    "general": [
+      {
+        "properties": {}
+      }
+    ],
+    "value": [
+      {
+        "properties": {
+          "showBlankAs": {
+            "expr": {
+              "Literal": {
+                "Value": "'-> Equipo'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "default"
+        }
+      },
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "data": [
+      {
+        "properties": {
+          "mode": {
+            "expr": {
+              "Literal": {
+                "Value": "'Dropdown'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Tooltips": [
+      0
+    ],
+    "Values": [
+      1
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Primera fecha: team_name",
+        "Name": "Min(analytics vw_q10_recent_top.team_name)",
+        "Type": 2048
+      },
+      {
+        "Restatement": "team_name",
+        "Name": "analytics vw_teams.team_name",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Tooltips",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Values",
+          "Projection": 1,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Primera fecha: team_name",
+      "queryName": "Min(analytics vw_q10_recent_top.team_name)",
+      "roles": {
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q10_recent_top"
+                }
+              },
+              "Property": "team_name"
+            }
+          },
+          "Function": 3
+        }
+      }
+    },
+    {
+      "displayName": "team_name",
+      "queryName": "analytics vw_teams.team_name",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics vw_teams"
+            }
+          },
+          "Property": "team_name"
+        }
+      }
+    }
+  ]
+}

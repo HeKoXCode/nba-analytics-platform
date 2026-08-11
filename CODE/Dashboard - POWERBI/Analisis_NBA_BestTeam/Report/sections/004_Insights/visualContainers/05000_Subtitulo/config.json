@@ -1,0 +1,160 @@
+{
+  "name": "206e69d7460065e65856",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 116.66666666666666,
+        "y": 175.55555555555554,
+        "z": 1000,
+        "width": 1046.6666666666667,
+        "height": 311.1111111111111,
+        "tabOrder": 5000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "18pt",
+                      "color": "#e6e6e6"
+                    }
+                  },
+                  {
+                    "value": "Antigüedad registrada  |",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#e6e6e6"
+                    }
+                  },
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "18pt",
+                      "color": "#e6e6e6"
+                    }
+                  },
+                  {
+                    "value": "Consistencia histórica  | ",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#e6e6e6"
+                    }
+                  },
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "18pt",
+                      "color": "#e6e6e6"
+                    }
+                  },
+                  {
+                    "value": "Eficiencia ofensiva",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "16pt",
+                      "color": "#e6e6e6"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "18pt",
+                      "color": "#e6e6e6"
+                    }
+                  },
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontFamily": "Calibri, sans-serif",
+                      "fontSize": "24pt",
+                      "color": "#e1c233"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Subtitulo'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

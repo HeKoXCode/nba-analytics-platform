@@ -1,0 +1,58 @@
+{
+  "name": "fe1a0184675b5386ad22",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "height": 73.75,
+        "width": 1148.1136820925553,
+        "x": 0,
+        "y": 0.234375,
+        "z": 0,
+        "tabOrder": 1000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Rendimiento Histórico",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt",
+                      "color": "#192229"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "parentGroupName": "d18a9bd6a30b1615d984"
+}
