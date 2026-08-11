@@ -1,2 +1,5 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
 # pbi-tools emits TMDL with source-significant indentation and trailing blanks.
 *.tmdl -whitespace
