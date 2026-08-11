@@ -1,0 +1,20 @@
+{
+  "name": "8ff23baede9f6716c818",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 532.0689655172414,
+        "y": 7.241379310344827,
+        "z": 5000,
+        "width": 114.20590206511301,
+        "height": 55.27777777777778,
+        "tabOrder": 9000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Botón Análisis",
+    "groupMode": 0
+  }
+}

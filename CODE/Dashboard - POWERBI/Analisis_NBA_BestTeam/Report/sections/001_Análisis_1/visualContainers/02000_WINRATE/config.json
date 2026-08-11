@@ -1,0 +1,21 @@
+{
+  "name": "aeed6ed3c4f19e559920",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "height": 110.2040816326531,
+        "width": 251.42857142857142,
+        "x": 0,
+        "y": 115.56851311953352,
+        "z": 0,
+        "tabOrder": 2000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "WINRATE",
+    "groupMode": 0
+  },
+  "parentGroupName": "cf12ae93bf6fa95627bf"
+}

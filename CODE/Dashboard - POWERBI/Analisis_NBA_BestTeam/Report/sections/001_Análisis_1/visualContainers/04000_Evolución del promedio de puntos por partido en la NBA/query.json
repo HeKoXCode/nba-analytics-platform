@@ -1,0 +1,69 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a1",
+              "Entity": "analytics vw_q4_ppg_by_decade",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Source": "a1"
+                  }
+                },
+                "Property": "decade"
+              },
+              "Name": "analytics vw_q4_ppg_by_decade.decade",
+              "NativeReferenceName": "decade1"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a1"
+                      }
+                    },
+                    "Property": "league_ppg"
+                  }
+                },
+                "Function": 0
+              },
+              "Name": "Sum(analytics vw_q4_ppg_by_decade.league_ppg)",
+              "NativeReferenceName": "Suma de league_ppg1"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "DataReduction": {
+            "DataVolume": 4,
+            "Primary": {
+              "BinnedLineSample": {}
+            }
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}

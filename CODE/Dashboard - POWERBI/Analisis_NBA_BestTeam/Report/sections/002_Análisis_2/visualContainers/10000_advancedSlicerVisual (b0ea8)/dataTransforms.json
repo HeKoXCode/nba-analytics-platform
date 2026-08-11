@@ -1,0 +1,103 @@
+{
+  "objects": {
+    "general": [
+      {
+        "properties": {}
+      }
+    ],
+    "value": [
+      {
+        "properties": {
+          "showBlankAs": {
+            "expr": {
+              "Literal": {
+                "Value": "'> Decada'"
+              }
+            }
+          }
+        },
+        "selector": {
+          "id": "default"
+        }
+      }
+    ],
+    "data": [
+      {
+        "properties": {
+          "mode": {
+            "expr": {
+              "Literal": {
+                "Value": "'Dropdown'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Values": [
+      0
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "decade",
+        "Name": "analytics dim_season.decade",
+        "Type": 3,
+        "Format": "0"
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "analytics dim_season"
+              }
+            },
+            "Property": "decade"
+          }
+        }
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Values",
+          "Projection": 0,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "decade",
+      "format": "0",
+      "queryName": "analytics dim_season.decade",
+      "roles": {
+        "Values": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics dim_season"
+            }
+          },
+          "Property": "decade"
+        }
+      }
+    }
+  ]
+}

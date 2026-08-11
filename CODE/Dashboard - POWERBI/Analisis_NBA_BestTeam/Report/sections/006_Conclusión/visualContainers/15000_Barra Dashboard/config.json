@@ -1,0 +1,21 @@
+{
+  "name": "0d3f1c6fddecc8d85f6e",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 1000,
+        "width": 1320,
+        "height": 84.28571428571429,
+        "tabOrder": 15000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Barra Dashboard",
+    "groupMode": 0,
+    "isHidden": false
+  }
+}

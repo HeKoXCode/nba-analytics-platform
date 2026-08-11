@@ -1,0 +1,339 @@
+{
+  "objects": {
+    "legend": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "categoryAxis": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "concatenateLabels": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "showAxisTitle": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "maxMarginFactor": {
+            "expr": {
+              "Literal": {
+                "Value": "20L"
+              }
+            }
+          },
+          "bold": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Franquicias'"
+              }
+            }
+          },
+          "titleFontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "10D"
+              }
+            }
+          },
+          "titleBold": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Porcentaje de Victorias'"
+              }
+            }
+          },
+          "secTitleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Puntos promedio por partido'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "lineStyles": [
+      {
+        "properties": {
+          "areaShow": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "strokeWidth": {
+            "expr": {
+              "Literal": {
+                "Value": "4D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "dataPoint": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "88D"
+              }
+            }
+          },
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 3,
+                    "Percent": 0.2
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "properties": {
+          "fill": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 9,
+                    "Percent": -0.25
+                  }
+                }
+              }
+            }
+          }
+        },
+        "selector": {
+          "metadata": "Sum(analytics vw_q10_recent_top.ppg_10y)"
+        }
+      }
+    ],
+    "labels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "Y2": [
+      0
+    ],
+    "Y": [
+      1
+    ],
+    "Category": [
+      2
+    ]
+  },
+  "projectionActiveItems": {
+    "Category": [
+      {
+        "queryRef": "analytics vw_teams.team_name",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "splits": [
+    {
+      "selects": {
+        "1": true,
+        "2": true
+      }
+    },
+    {
+      "selects": {
+        "0": true,
+        "2": true
+      }
+    }
+  ],
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "Promedio de Puntos por partido ultimos 10 años",
+        "Name": "Sum(analytics vw_q10_recent_top.ppg_10y)",
+        "Type": 1,
+        "Format": "0.0"
+      },
+      {
+        "Restatement": "Promedio de Porcentaje de victorias ultimos 10 años",
+        "Name": "Sum(analytics vw_q10_recent_top.winrate_10y)",
+        "Type": 1,
+        "Format": "0\\ %;-0\\ %;0\\ %"
+      },
+      {
+        "Restatement": "team_name",
+        "Name": "analytics vw_teams.team_name",
+        "Type": 2048
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "Y",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Category",
+          "Projection": 2,
+          "isActive": true
+        }
+      ]
+    },
+    {
+      "DataRoles": [
+        {
+          "Name": "Y2",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Category",
+          "Projection": 2,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "Promedio de Puntos por partido ultimos 10 años",
+      "format": "0.0",
+      "queryName": "Sum(analytics vw_q10_recent_top.ppg_10y)",
+      "roles": {
+        "Y2": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q10_recent_top"
+                }
+              },
+              "Property": "Puntos por partido ultimos 10 años"
+            }
+          },
+          "Function": 1
+        }
+      }
+    },
+    {
+      "displayName": "Promedio de Porcentaje de victorias ultimos 10 años",
+      "format": "0\\ %;-0\\ %;0\\ %",
+      "queryName": "Sum(analytics vw_q10_recent_top.winrate_10y)",
+      "roles": {
+        "Y": true
+      },
+      "sort": 2,
+      "sortOrder": 0,
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q10_recent_top"
+                }
+              },
+              "Property": "Porcentaje de victorias ultimos 10 años"
+            }
+          },
+          "Function": 1
+        }
+      }
+    },
+    {
+      "displayName": "team_name",
+      "queryName": "analytics vw_teams.team_name",
+      "roles": {
+        "Category": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics vw_teams"
+            }
+          },
+          "Property": "team_name"
+        }
+      }
+    }
+  ]
+}

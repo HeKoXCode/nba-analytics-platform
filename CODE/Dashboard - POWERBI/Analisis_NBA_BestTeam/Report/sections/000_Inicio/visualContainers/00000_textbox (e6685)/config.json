@@ -1,0 +1,75 @@
+{
+  "name": "e668534bff41ba238bc2",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 8.979591836734695,
+        "y": 3.0612244897959124,
+        "z": 2000,
+        "width": 1242.857142857143,
+        "height": 72.85714285714286,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "24pt",
+                      "color": "#0d6abf"
+                    }
+                  },
+                  {
+                    "value": "Descifrando el Rendimiento y Evolución de las franquicias NBA",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "28pt",
+                      "color": "#0d6abf"
+                    }
+                  },
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "28pt",
+                      "color": "#e1c233"
+                    }
+                  }
+                ],
+                "horizontalTextAlignment": "center"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "parentGroupName": "a1b38ab8453ccc59355f"
+}

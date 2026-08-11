@@ -1,0 +1,93 @@
+{
+  "id": 0,
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "127f8fdec9d1ce997d14",
+      "config": "{}",
+      "name": "0a05fd6f92599eaf6964",
+      "referenceScope": 1
+    },
+    {
+      "boundSection": "5080f8c0f82e46569dea",
+      "config": "{\"acceptsFilterContext\":1}",
+      "name": "d648db869bf7c9d6f04e"
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "a21654874500597636.png",
+            "path": "a21654874500597636.png",
+            "type": 100
+          },
+          {
+            "name": "pngwing.com_(1)9885942919357197.png",
+            "path": "pngwing.com_(1)9885942919357197.png",
+            "type": 100
+          },
+          {
+            "name": "5715465511366441141847217.jpeg",
+            "path": "5715465511366441141847217.jpeg",
+            "type": 100
+          },
+          {
+            "name": "pngwing.com_(1)9175794646755994.png",
+            "path": "pngwing.com_(1)9175794646755994.png",
+            "type": 100
+          },
+          {
+            "name": "Custom0009385818418090608.json",
+            "path": "Custom0009385818418090608.json",
+            "type": 201
+          },
+          {
+            "name": "Logotipo_dorado_de_la_NBA9898694328286819.png",
+            "path": "Logotipo_dorado_de_la_NBA9898694328286819.png",
+            "type": 100
+          },
+          {
+            "name": "Logotipo_dorado_de_la_NBA6275968801805688.png",
+            "path": "Logotipo_dorado_de_la_NBA6275968801805688.png",
+            "type": 100
+          },
+          {
+            "name": "ChatGPT_Image_16_oct_2025,_19_09236332722275031.png",
+            "path": "ChatGPT_Image_16_oct_2025,_19_09236332722275031.png",
+            "type": 100
+          },
+          {
+            "name": "ChatGPT_Image_17_oct_2025__12_5110701879617503.png",
+            "path": "ChatGPT_Image_17_oct_2025__12_5110701879617503.png",
+            "type": 100
+          },
+          {
+            "name": "pngwing.com_(7)42280505573224847.png",
+            "path": "pngwing.com_(7)42280505573224847.png",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "theme": "Custom0009385818418090608.json"
+}

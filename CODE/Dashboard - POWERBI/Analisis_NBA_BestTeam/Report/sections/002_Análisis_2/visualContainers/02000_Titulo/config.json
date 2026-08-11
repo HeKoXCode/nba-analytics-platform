@@ -1,0 +1,21 @@
+{
+  "name": "c1c7409a4659ab0fdac3",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 15,
+        "y": 97.5,
+        "z": 10000,
+        "width": 1193.75,
+        "height": 73.75,
+        "tabOrder": 2000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Titulo",
+    "groupMode": 0,
+    "isHidden": false
+  }
+}

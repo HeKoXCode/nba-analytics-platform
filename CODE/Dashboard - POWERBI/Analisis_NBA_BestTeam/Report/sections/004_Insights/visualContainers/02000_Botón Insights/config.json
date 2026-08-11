@@ -1,0 +1,20 @@
+{
+  "name": "f171d098963d4ad6b550",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 784.6666666666666,
+        "y": 8,
+        "z": 4000,
+        "width": 58.666666666666664,
+        "height": 64,
+        "tabOrder": 2000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Botón Insights",
+    "groupMode": 0
+  }
+}

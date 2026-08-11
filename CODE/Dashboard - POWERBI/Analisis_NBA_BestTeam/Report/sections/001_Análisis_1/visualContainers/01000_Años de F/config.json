@@ -1,0 +1,21 @@
+{
+  "name": "4abf1b3fc8527cc69999",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 0.02915451895046317,
+        "y": 0,
+        "z": 1500,
+        "width": 254.28571428571428,
+        "height": 101.42857142857143,
+        "tabOrder": 1000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Años de F",
+    "groupMode": 0
+  },
+  "parentGroupName": "cf12ae93bf6fa95627bf"
+}

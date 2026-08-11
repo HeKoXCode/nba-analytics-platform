@@ -1,0 +1,58 @@
+{
+  "name": "6b1355e7054d3fe21179",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "height": 73.75,
+        "width": 1148.1136820925553,
+        "x": 1.775147928994082,
+        "y": 2.1033653846153846,
+        "z": 1000,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Talento en la Actualidad",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "18pt",
+                      "color": "#192229"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "parentGroupName": "2aab427068cee2de0404"
+}

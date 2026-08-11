@@ -1,0 +1,21 @@
+{
+  "name": "486c06532a742df8a3c9",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 1.2244897959182826,
+        "y": 238.6297376093295,
+        "z": 1000,
+        "width": 250.20408163265336,
+        "height": 110,
+        "tabOrder": 0
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "PPG",
+    "groupMode": 0
+  },
+  "parentGroupName": "cf12ae93bf6fa95627bf"
+}

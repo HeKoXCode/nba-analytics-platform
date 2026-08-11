@@ -1,0 +1,327 @@
+{
+  "objects": {
+    "categoryAxis": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Años desde fundación'"
+              }
+            }
+          },
+          "labelDisplayUnits": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "labelPrecision": {
+            "expr": {
+              "Literal": {
+                "Value": "0L"
+              }
+            }
+          },
+          "axisType": {
+            "expr": {
+              "Literal": {
+                "Value": "'Scalar'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "valueAxis": [
+      {
+        "properties": {
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Porcentaje de Victorias (Histórico)'"
+              }
+            }
+          },
+          "switchAxisPosition": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "treatNullsAsZero": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "labelPrecision": {
+            "expr": {
+              "Literal": {
+                "Value": "0L"
+              }
+            }
+          },
+          "labelDisplayUnits": {
+            "expr": {
+              "Literal": {
+                "Value": "1D"
+              }
+            }
+          },
+          "gridlineThickness": {
+            "expr": {
+              "Literal": {
+                "Value": "2D"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "legend": [
+      {
+        "properties": {
+          "showGradientLegend": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          },
+          "titleText": {
+            "expr": {
+              "Literal": {
+                "Value": "'Equipos ->'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "zoom": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "categoryLabels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "fontSize": {
+            "expr": {
+              "Literal": {
+                "Value": "9D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "projectionOrdering": {
+    "X": [
+      0
+    ],
+    "Series": [
+      1
+    ],
+    "Y": [
+      2
+    ],
+    "Size": [
+      3
+    ]
+  },
+  "projectionActiveItems": {
+    "X": [
+      {
+        "queryRef": "Sum(analytics vw_q2_age_vs_current.franchise_age)",
+        "suppressConcat": false
+      }
+    ]
+  },
+  "queryMetadata": {
+    "Select": [
+      {
+        "Restatement": "franchise_age",
+        "Name": "Sum(analytics vw_q2_age_vs_current.franchise_age)",
+        "Type": 3,
+        "Format": "0"
+      },
+      {
+        "Restatement": "team_name",
+        "Name": "analytics vw_q2_age_vs_current.team_name",
+        "Type": 2048
+      },
+      {
+        "Restatement": "Promedio de winrate_hist",
+        "Name": "Sum(analytics vw_q2_age_vs_current.winrate_hist)",
+        "Type": 1,
+        "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
+      },
+      {
+        "Restatement": "Suma de ppg_hist",
+        "Name": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
+        "Type": 1,
+        "Format": "0.0"
+      }
+    ]
+  },
+  "visualElements": [
+    {
+      "DataRoles": [
+        {
+          "Name": "X",
+          "Projection": 0,
+          "isActive": true
+        },
+        {
+          "Name": "Series",
+          "Projection": 1,
+          "isActive": false
+        },
+        {
+          "Name": "Y",
+          "Projection": 2,
+          "isActive": false
+        },
+        {
+          "Name": "Size",
+          "Projection": 3,
+          "isActive": false
+        }
+      ]
+    }
+  ],
+  "selects": [
+    {
+      "displayName": "franchise_age",
+      "format": "0",
+      "queryName": "Sum(analytics vw_q2_age_vs_current.franchise_age)",
+      "roles": {
+        "X": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 260
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics vw_q2_age_vs_current"
+            }
+          },
+          "Property": "franchise_age"
+        }
+      }
+    },
+    {
+      "displayName": "team_name",
+      "queryName": "analytics vw_q2_age_vs_current.team_name",
+      "roles": {
+        "Series": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 1
+      },
+      "expr": {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "analytics vw_q2_age_vs_current"
+            }
+          },
+          "Property": "team_name"
+        }
+      }
+    },
+    {
+      "displayName": "Promedio de winrate_hist",
+      "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
+      "queryName": "Sum(analytics vw_q2_age_vs_current.winrate_hist)",
+      "roles": {
+        "Y": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q2_age_vs_current"
+                }
+              },
+              "Property": "winrate_hist"
+            }
+          },
+          "Function": 1
+        }
+      }
+    },
+    {
+      "displayName": "Suma de ppg_hist",
+      "format": "0.0",
+      "queryName": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
+      "roles": {
+        "Size": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q2_age_vs_current"
+                }
+              },
+              "Property": "ppg_hist"
+            }
+          },
+          "Function": 0
+        }
+      }
+    }
+  ]
+}

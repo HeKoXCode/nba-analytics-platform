@@ -1,0 +1,57 @@
+﻿table 'analytics vw_q2_age_vs_current'
+
+	column team_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_founded
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: year_founded
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column franchise_age
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: franchise_age
+
+		annotation SummarizationSetBy = Automatic
+
+	column winrate_hist
+		dataType: double
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		sourceProviderType: decimal(38, 12)
+		summarizeBy: sum
+		sourceColumn: winrate_hist
+
+		annotation SummarizationSetBy = Automatic
+
+	column ppg_hist
+		dataType: double
+		formatString: 0.0
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: ppg_hist
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'analytics vw_q2_age_vs_current' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q2_age_vs_current = NBA_Project{[Schema="analytics",Item="vw_q2_age_vs_current"]}[Data]
+				in
+				    analytics_vw_q2_age_vs_current
+

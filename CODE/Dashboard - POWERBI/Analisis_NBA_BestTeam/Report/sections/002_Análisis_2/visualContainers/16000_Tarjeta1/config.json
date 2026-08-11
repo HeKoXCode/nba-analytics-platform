@@ -1,0 +1,20 @@
+{
+  "name": "457697d608825177539e",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 798.5714285714287,
+        "y": 88.57142857142858,
+        "z": 14000,
+        "width": 187.14285714285717,
+        "height": 94.28571428571429,
+        "tabOrder": 16000
+      }
+    }
+  ],
+  "singleVisualGroup": {
+    "displayName": "Tarjeta1",
+    "groupMode": 0
+  }
+}

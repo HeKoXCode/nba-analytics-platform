@@ -1,0 +1,49 @@
+﻿table 'analytics vw_q9_physical_profile'
+
+	column team_name
+		dataType: string
+		sourceProviderType: nvarchar(255)
+		summarizeBy: none
+		sourceColumn: team_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column n_players
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: sum
+		sourceColumn: n_players
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_height
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: avg_height
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_weight
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: sum
+		sourceColumn: avg_weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'analytics vw_q9_physical_profile' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q9_physical_profile = NBA_Project{[Schema="analytics",Item="vw_q9_physical_profile"]}[Data]
+				in
+				    analytics_vw_q9_physical_profile
+

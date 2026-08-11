@@ -1,0 +1,23 @@
+# Local configuration and secrets
+.env
+**/.env
+!.env.example
+!**/.env.example
+
+# Runtime output
+*.log
+CODE/data_final/
+
+# Python/editor caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.vscode/
+.idea/
+
+# Power BI temporary files
+*.pbix.tmp
+*.pbit.tmp

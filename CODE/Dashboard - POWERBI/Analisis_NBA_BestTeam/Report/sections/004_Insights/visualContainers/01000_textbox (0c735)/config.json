@@ -1,0 +1,58 @@
+{
+  "name": "0c735f77671dd87e83ea",
+  "layouts": [
+    {
+      "id": 0,
+      "position": {
+        "x": 94.14631924198251,
+        "y": 0.6335552950136165,
+        "z": 1000,
+        "width": 369.99999999999994,
+        "height": 74.54545454545453,
+        "tabOrder": 1000
+      }
+    }
+  ],
+  "singleVisual": {
+    "visualType": "textbox",
+    "drillFilterOtherVisuals": true,
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Hallazgos descriptivos",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "20pt",
+                      "color": "#e1c233"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "vcObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "parentGroupName": "29ca38e6a6708ecd397b"
+}

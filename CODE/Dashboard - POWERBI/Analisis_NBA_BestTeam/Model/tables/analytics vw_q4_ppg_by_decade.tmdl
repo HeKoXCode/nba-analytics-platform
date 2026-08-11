@@ -1,0 +1,31 @@
+﻿table 'analytics vw_q4_ppg_by_decade'
+
+	column decade
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		summarizeBy: none
+		sourceColumn: decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column league_ppg
+		dataType: double
+		sourceProviderType: float
+		summarizeBy: none
+		sourceColumn: league_ppg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'analytics vw_q4_ppg_by_decade' = m
+		mode: directQuery
+		source =
+				let
+				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
+				    analytics_vw_q4_ppg_by_decade = NBA_Project{[Schema="analytics",Item="vw_q4_ppg_by_decade"]}[Data]
+				in
+				    analytics_vw_q4_ppg_by_decade
+

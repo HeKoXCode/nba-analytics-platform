@@ -1,0 +1,50 @@
+{
+  "Commands": [
+    {
+      "SemanticQueryDataShapeCommand": {
+        "Query": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "a1",
+              "Entity": "analytics vw_q7_balance_of_def",
+              "Type": 0
+            }
+          ],
+          "Select": [
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a1"
+                      }
+                    },
+                    "Property": "Balones perdidos"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Sum(analytics vw_q7_balance_of_def.tov_avg)",
+              "NativeReferenceName": "Promedio de Balones perdidos"
+            }
+          ]
+        },
+        "Binding": {
+          "Primary": {
+            "Groupings": [
+              {
+                "Projections": [
+                  0
+                ]
+              }
+            ]
+          },
+          "Version": 1
+        },
+        "ExecutionMetricsKind": 1
+      }
+    }
+  ]
+}
