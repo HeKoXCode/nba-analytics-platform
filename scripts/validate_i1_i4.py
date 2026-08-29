@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "evidence" / "NBA-I1-I4" / "real-run-lf"
+SQL_EVIDENCE = ROOT / "evidence" / "NBA-I1-I4" / "ci-sql" / "sql_reconciliation.json"
 PBIT = ROOT / "CODE" / "Dashboard - POWERBI" / "Analisis_NBA_BestTeam.pbit"
 PROJECT = ROOT / "CODE" / "Dashboard - POWERBI" / "Analisis_NBA_BestTeam"
 EXPECTED_TOTALS = {
@@ -84,6 +85,21 @@ def validate_model_files() -> None:
         text = path.read_text(encoding="utf-8")
         require('Sql.Databases("localhost,1433")' in text, f"Non-portable source: {path.name}")
         require("100.74.116.125" not in text, f"Former personal host remains: {path.name}")
+
+    sql_evidence = read_json(SQL_EVIDENCE)
+    require(sql_evidence["status"] == "passed", "CI SQL load is not passed")
+    require(sum(sql_evidence["inserted_rows"].values()) == 161_009, "SQL loaded rows changed")
+    require(
+        sql_evidence["powerbi_contract"] == {"columns": 65, "objects": 15},
+        "SQL/Power BI contract changed",
+    )
+    require(
+        set(sql_evidence["reconciliation"]["integrity"].values()) == {0}, "SQL integrity failed"
+    )
+    require(
+        sql_evidence["reconciliation"]["kpis"]["team_game_rows"] == 131_284,
+        "Team-game grain changed",
+    )
 
 
 def validate_report() -> None:

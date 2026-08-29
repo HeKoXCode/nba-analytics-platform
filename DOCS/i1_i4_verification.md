@@ -24,6 +24,15 @@ Evidence: [`../evidence/NBA-I1-I4/real-run-lf/manifest.json`](../evidence/NBA-I1
 - The committed contract and generated DDL/data dictionary pass a byte-for-byte stale-artifact check.
 - The real CI run repeats the ETL, loads SQL Server 2022, reconciles counts and validates the 15 Power BI objects.
 
+SQL integration evidence from [GitHub Actions run 33223853500](https://github.com/HeKoXCode/nba-analytics-platform/actions/runs/33223853500):
+
+- status: `passed`;
+- 161,009 rows loaded across six canonical tables;
+- 65,642 fact games and exactly 131,284 team-game rows;
+- 15 Power BI objects and 65 referenced columns selected successfully;
+- 1946–2022 coverage, 53 explicit historical-team records and zero null, duplicate or missing team keys;
+- committed result: [`sql_reconciliation.json`](../evidence/NBA-I1-I4/ci-sql/sql_reconciliation.json).
+
 ## Power BI artifact
 
 - File: `CODE/Dashboard - POWERBI/Analisis_NBA_BestTeam.pbit`.

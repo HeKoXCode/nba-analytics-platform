@@ -111,6 +111,7 @@ Every analytical title states its period or sample and unit. The final page reco
 - [Model and ERD](DOCS/data_model.md)
 - [Versioned contract](contracts/schema_v1.0.0.json)
 - [Real-run evidence](evidence/NBA-I1-I4/real-run-lf/manifest.json)
+- [CI SQL reconciliation](evidence/NBA-I1-I4/ci-sql/sql_reconciliation.json)
 - [Security review](DOCS/security_review.md)
 
 ## ⚠️ Boundaries
