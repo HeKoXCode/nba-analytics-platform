@@ -87,7 +87,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Resumen de hallazgos'"
+                  "Value": "'Rachas y actualidad'"
                 }
               }
             },

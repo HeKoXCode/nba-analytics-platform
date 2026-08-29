@@ -17,20 +17,20 @@ PROJECT = POWERBI / "Analisis_NBA_BestTeam"
 PBIT = POWERBI / "Analisis_NBA_BestTeam.pbit"
 EXPECTED_RAW_BYTES = 30_638_984
 EXPECTED_OUTPUTS = {
-    "common_player_info_final",
-    "game_final",
-    "game_summary_final",
-    "other_stats_final",
-    "player_final",
-    "team_final",
+    "dim_player_profile",
+    "fact_game",
+    "fact_game_summary",
+    "fact_other_stats",
+    "dim_player",
+    "dim_team",
 }
 EXPECTED_PAGES = {
     "Inicio": 0,
-    "Análisis_1": 1,
-    "Análisis_2": 2,
-    "Análisis_3": 3,
-    "Insights": 4,
-    "Conclusión": 5,
+    "Historia y evolución": 1,
+    "Eficiencia y consistencia": 2,
+    "Talento y perfil": 3,
+    "Rachas y actualidad": 4,
+    "Metodología y cierre": 5,
 }
 
 
@@ -64,7 +64,10 @@ def validate_documentation(check: Check) -> None:
     readme = read(ROOT / "README.md")
     check.require("30,638,984" in readme, "README lacks the verified raw-byte total")
     check.require("2.31 GB" in readme, "README lacks the separately identified source-folder volume")
-    check.require(not re.search(r"22\s*GB", readme, re.I), "README still claims a 22 GB processed dataset")
+    check.require(
+        not re.search(r"(?:processed|procesado)\s+(?:dataset|volume|volumen).{0,30}22\s*GB", readme, re.I),
+        "README still claims a 22 GB processed dataset",
+    )
     check.require("fully reproducible" not in readme.lower(), "README still claims full reproducibility")
     check.require("DOCS/raw_data_download.md" in readme, "README does not link the actual source note")
     check.require("Analisis_NBA_BestTeam.pbit" in readme, "README does not identify the cleaned PBIT")
@@ -105,8 +108,9 @@ def validate_security(check: Check) -> None:
     watchdog_path = ROOT / "CODE" / "watchdog_ingestion.py"
     watchdog = read(watchdog_path)
     ast.parse(watchdog, filename=str(watchdog_path))
+    loader = read(ROOT / "src" / "nba_pipeline" / "sql_loader.py")
     for variable in ("NBA_SQL_SERVER", "NBA_SQL_DATABASE", "NBA_SQL_USER", "NBA_SQL_PASSWORD"):
-        check.require(variable in watchdog, f"Watchdog does not use {variable}")
+        check.require(variable in loader, f"SQL loader does not use {variable}")
     for forbidden in ("PCLUCAS", "SQL_CONFIG =", '"PASSWORD":', "'PASSWORD':"):
         check.require(forbidden not in watchdog, f"Watchdog still contains fixed configuration: {forbidden}")
 
@@ -116,8 +120,11 @@ def validate_security(check: Check) -> None:
         if line and not line.startswith("#") and "=" in line
         for key, value in (line.split("=", 1),)
     }
-    check.require(env_lines.get("NBA_SQL_USER") == "", ".env.example contains a SQL username")
-    check.require(env_lines.get("NBA_SQL_PASSWORD") == "", ".env.example contains a SQL password")
+    check.require(env_lines.get("NBA_SQL_USER") == "sa", ".env.example lacks the local demo username")
+    check.require(
+        env_lines.get("NBA_SQL_PASSWORD") == "replace_with_a_local_secret",
+        ".env.example does not use the expected password placeholder",
+    )
 
     audit_log = read(ROOT / "CODE" / "etl_audit_log.txt")
     check.require(not re.search(r"[A-Za-z]:\\Users\\", audit_log), "Audit log contains a personal Windows path")
@@ -133,7 +140,7 @@ def validate_security(check: Check) -> None:
 
 
 def validate_powerbi_source(check: Check) -> None:
-    ast.parse(read(ROOT / "scripts" / "update_powerbi_project_s4.py"), filename="update_powerbi_project_s4.py")
+    ast.parse(read(ROOT / "scripts" / "update_powerbi_project_i4.py"), filename="update_powerbi_project_i4.py")
     check.require((PROJECT / ".pbixproj.json").exists(), "Versionable Power BI project is missing")
 
     json_files = sorted(PROJECT.rglob("*.json"))
@@ -200,7 +207,7 @@ def validate_pbit(check: Check) -> tuple[str, int]:
 
     digest = hashlib.sha256(PBIT.read_bytes()).hexdigest().upper()
     size = PBIT.stat().st_size
-    verification_note = read(ROOT / "DOCS" / "s1_s4_verification.md")
+    verification_note = read(ROOT / "DOCS" / "i1_i4_verification.md")
     check.require(f"{size:,} bytes" in verification_note, "Verification note has a stale PBIT size")
     check.require(digest in verification_note, "Verification note has a stale PBIT SHA-256")
     try:

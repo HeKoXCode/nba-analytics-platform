@@ -156,7 +156,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Rango de rachas : '"
+                "Value": "'Racha observada (victorias): '"
               }
             }
           },

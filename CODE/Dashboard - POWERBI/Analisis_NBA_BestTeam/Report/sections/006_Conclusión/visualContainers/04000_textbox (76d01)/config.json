@@ -24,84 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Perfil histórico destacado en la muestra disponible.",
+                    "value": "Fuente: seis CSV públicos versionados; 30.638.984 bytes y 161.111 filas de entrada.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "12pt",
@@ -113,14 +36,7 @@
               {
                 "textRuns": [
                   {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Tasa histórica de victorias observada: 59,5 %.",
+                    "value": "Cobertura: 65.642 partidos únicos entre 1946 y 2022; análisis descriptivo.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "12pt",
@@ -132,14 +48,7 @@
               {
                 "textRuns": [
                   {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Promedio observado: 104,5 puntos por partido.",
+                    "value": "Calidad: 155 duplicados en cuarentena y 53 equipos históricos sin nombre actual representados explícitamente.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "12pt",
@@ -151,14 +60,7 @@
               {
                 "textRuns": [
                   {
-                    "value": ""
-                  }
-                ]
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "El análisis no estima retorno financiero ni desempeño futuro.",
+                    "value": "Reproducibilidad: contrato v1.0.0, manifiestos SHA-256, reconciliación SQL y pruebas automatizadas.",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "12pt",
@@ -170,16 +72,22 @@
               {
                 "textRuns": [
                   {
-                    "value": "                         "
+                    "value": "Límite: la muestra no es 22 GB, no contiene datos sintéticos y no predice resultados ni retornos financieros.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt",
+                      "color": "#e6e6e6"
+                    }
                   }
                 ]
               },
               {
                 "textRuns": [
                   {
-                    "value": "~Comparación descriptiva; no es una recomendación de inversión.~",
+                    "value": "Última validación integral: 28/08/2026.",
                     "textStyle": {
                       "fontWeight": "bold",
+                      "fontSize": "12pt",
                       "color": "#e6e6e6"
                     }
                   }

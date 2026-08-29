@@ -1,4 +1,4 @@
-﻿table 'analytics vw_teams'
+table 'analytics vw_teams'
 
 	column team_id
 		dataType: int64
@@ -30,7 +30,7 @@
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    Origen = Sql.Databases("localhost,1433"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
 				    analytics_vw_teams = NBA_Project{[Schema="analytics",Item="vw_teams"]}[Data]
 				in

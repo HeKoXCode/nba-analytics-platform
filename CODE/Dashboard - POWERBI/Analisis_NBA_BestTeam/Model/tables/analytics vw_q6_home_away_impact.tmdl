@@ -1,4 +1,4 @@
-﻿table 'analytics vw_q6_home_away_impact'
+table 'analytics vw_q6_home_away_impact'
 
 	measure PPG_Diferencia_Home_Away = ```
 			
@@ -77,7 +77,7 @@
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    Origen = Sql.Databases("localhost,1433"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
 				    analytics_vw_q6_home_away_impact = NBA_Project{[Schema="analytics",Item="vw_q6_home_away_impact"]}[Data],
 				    #"Columnas con nombre cambiado" = Table.RenameColumns(analytics_vw_q6_home_away_impact,{{"ppg_home", "Puntos como Local"}, {"ppg_away", "Puntos como visitante"}})

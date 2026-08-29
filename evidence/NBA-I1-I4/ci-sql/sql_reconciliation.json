@@ -1,0 +1,41 @@
+{
+  "database": "NBA_CI",
+  "inserted_rows": {
+    "dim_player": 4831,
+    "dim_player_profile": 4171,
+    "dim_team": 83,
+    "fact_game": 65642,
+    "fact_game_summary": 58021,
+    "fact_other_stats": 28261
+  },
+  "loaded_at_utc": "2026-08-29T00:34:12.319590Z",
+  "powerbi_contract": {
+    "columns": 65,
+    "objects": 15
+  },
+  "reconciliation": {
+    "integrity": {
+      "duplicate_game_keys": 0,
+      "missing_away_team_keys": 0,
+      "missing_home_team_keys": 0,
+      "null_game_keys": 0
+    },
+    "kpis": {
+      "dim_player_profile_rows": 4171,
+      "dim_player_rows": 4831,
+      "dim_team_rows": 83,
+      "fact_game_rows": 65642,
+      "fact_game_summary_rows": 58021,
+      "fact_other_stats_rows": 28261,
+      "first_season": 1946,
+      "games_without_result": 2,
+      "last_season": 2022,
+      "q1_total_team_games": 131284,
+      "season_rows": 77,
+      "team_game_rows": 131284,
+      "unresolved_team_rows": 53
+    }
+  },
+  "run_id": "nba-20260829T003355Z-0af8b4ab23",
+  "status": "passed"
+}

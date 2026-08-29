@@ -19,7 +19,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'altura promedio en pies'"
+                "Value": "'altura promedio en cm'"
               }
             }
           },

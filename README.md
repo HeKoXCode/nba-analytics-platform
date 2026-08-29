@@ -1,106 +1,140 @@
 # 🏀 NBA Analytics Platform
 
-> **Current status:** BI portfolio prototype under technical remediation. The repository demonstrates an ETL → SQL Server → Power BI workflow, but it is not yet a production system or a one-command reproducible project.
+> I built this portfolio project to turn six historical NBA datasets into an auditable ETL, a canonical SQL Server model and a six-page Power BI report. The current release completes the NBA-I1 through NBA-I4 remediation plan.
 
-## 🎯 Analytical objective
+## 🎯 What you can analyze
 
-Explore historical NBA team performance and answer descriptive questions such as:
+The report lets you compare descriptive patterns in the available sample:
 
-- Which franchises have the strongest observed historical win rates?
-- How have scoring levels changed over time?
-- What home/away differences appear in the available games?
-- Which teams show lower historical variability?
+- historical win rates and scoring evolution;
+- franchise age and observed performance;
+- home/away scoring differences;
+- shooting efficiency, turnovers and season-to-season variability;
+- player physical profiles, offensive context, win streaks and recent performance.
 
-The dashboard describes the available sample. It does **not** estimate revenue, return on investment, future playoff probability or causal drivers of success.
+I do not use these results to predict future games, revenue, playoff qualification or investment returns.
 
-## 📦 Verified data scope
+## ✅ Verified result
 
-| Layer | Verified volume | Role |
-|---|---:|---|
-| External source folder | approximately 2.31 GB at the time of the portfolio audit | Broader downloadable material; not entirely processed by this repository |
-| Versioned ETL subset | 6 CSV files, 30,638,984 bytes (30.64 MB decimal / 29.22 MiB) | Actual input used by `CODE/pipeline.py` |
+| Check | Result |
+|---|---:|
+| Versioned inputs | 6 CSV · 30,638,984 LF-normalized bytes |
+| Input rows | 161,111 |
+| Accepted source rows | 160,956 |
+| Quarantined duplicates | 155 |
+| Generated historical team references | 53 |
+| Canonical output rows | 161,009 |
+| Unique games retained | 65,642 |
+| Cross-table orphan checks | 0 |
+| Core ETL test coverage | 89.92% |
 
-The previous repository description overstated the processed volume. Dataset availability and processed scope are now reported separately. See [source and download notes](DOCS/raw_data_download.md).
+The wider source folder was approximately **2.31 GB** when it was audited. It is not the volume processed here, and this repository does not claim a 22 GB run. Read [the source and scope note](DOCS/raw_data_download.md) for the distinction.
 
-## 🏗️ Current architecture
+## 🏗️ Architecture
 
 ```text
-CODE/data_raw/*_raw.csv
-          ↓
-CODE/pipeline.py
-          ↓
-CODE/data_final/*_final.csv
-          ↓
-CODE/watchdog_ingestion.py
-          ↓
-SQL Server tables + analytics views
-          ↓
-Power BI (DirectQuery)
+six versioned CSV inputs
+        ↓  contract v1.0.0 + typed validation
+Python ETL ──→ rejects/ + manifest + SHA-256 + reconciliation
+        ↓
+canonical CSV model
+        ↓  transactional load
+SQL Server: core + audit + analytics
+        ↓  DirectQuery
+Power BI template + versionable pbi-tools source
 ```
 
-The Python pipeline currently produces these canonical files/tables:
+The pipeline does not delete valid fact rows to force foreign keys. It preserves every accepted game and adds explicit historical-team records when the current 30-team dimension has no matching identifier.
 
-| Output | Description |
-|---|---|
-| `common_player_info_final` | Player biography and roster attributes |
-| `game_final` | One wide row per game with home and away statistics |
-| `game_summary_final` | Game status and scheduling attributes |
-| `other_stats_final` | Additional home/away game metrics |
-| `player_final` | Player identity and activity flag |
-| `team_final` | Current team attributes |
+## ▶️ Run it
 
-`CODE/SQL/script.sql` creates tables with those names and a separate `analytics` schema for reporting views. A fully conformed historical star schema remains future work.
+You need Python **3.12**. SQL Server and Power BI Desktop are only required for the BI layer.
 
-## 📊 Power BI evidence
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.lock
+python -m pip install -e .
+python -m nba_pipeline transform `
+  --input-dir CODE\data_raw `
+  --run-dir .artifacts\my-first-run
+```
 
-The repository includes:
+Each `--run-dir` is immutable. Choose a new directory for every execution. A successful run contains canonical data, rejects, structured logs, the exact contract snapshot and checksummed manifests.
 
-- `CODE/Dashboard - POWERBI/Analisis_NBA_BestTeam.pbit`: a cleaned Power BI template;
-- `CODE/Dashboard - POWERBI/Analisis_NBA_BestTeam/`: the versionable pbi-tools source used to build it;
-- six report pages after removing the duplicated conclusion;
-- compact dropdown slicers and conclusions limited to observed metrics.
+To run the automated suite:
 
-The obsolete screenshots were removed because they still displayed unsupported claims and visual defects. New screenshots must be captured only after the SQL model is reproducible; see `IMAGES/README.md`.
+```powershell
+python -m pip install -r requirements-dev.lock
+python -m pip install -e .
+python -m ruff check src tests scripts/generate_model_artifacts.py scripts/update_powerbi_project_i4.py
+python -m pytest --cov=nba_pipeline --cov-report=term-missing
+```
 
-## ▶️ Execution status
+## 🗄️ Load SQL Server
 
-1. Review [source and license notes](DOCS/raw_data_download.md).
-2. Copy the required six `*_raw.csv` inputs to `CODE/data_raw/`.
-3. Configure SQL access using environment variables; start from `CODE/.env.example`.
-4. Run `python CODE/pipeline.py` to create CSV outputs.
-5. Run `python CODE/watchdog_ingestion.py` only when SQL Server and its ODBC driver are available.
-6. Execute `CODE/SQL/script.sql`, open the PBIT and connect it to the local SQL Server model.
+Copy the variable names from [`CODE/.env.example`](CODE/.env.example) into your own environment and provide a local secret. I do not commit credentials.
 
-These are the intended steps, not a reproducibility guarantee. The current Python ETL still needs the fixes listed under “Known limitations” before a clean run on current pandas can be promised.
+```powershell
+$env:NBA_SQL_DRIVER = "ODBC Driver 18 for SQL Server"
+$env:NBA_SQL_SERVER = "localhost,1433"
+$env:NBA_SQL_DATABASE = "NBA_Project"
+$env:NBA_SQL_TRUSTED_CONNECTION = "no"
+$env:NBA_SQL_USER = "sa"
+$env:NBA_SQL_PASSWORD = "<your-local-secret>"
 
-## 🔐 Configuration and security
+python -m nba_pipeline load-sql `
+  --run-dir .artifacts\my-first-run `
+  --evidence-dir evidence\my-first-sql-load
+```
 
-- SQL host, database and authentication are read from environment variables.
-- `CODE/.env.example` contains placeholders only.
-- Runtime `.env` files and logs are ignored by Git.
-- The Git history previously contained a local SQL credential and personal paths. If that credential was ever active, it must be rotated. See [security review](DOCS/security_review.md).
+The loader applies the idempotent schema, loads all canonical tables in one transaction, creates the analytical views and verifies every object and column required by Power BI. CI repeats this against an ephemeral SQL Server 2022 container.
+
+## 📊 Power BI
+
+Open [`Analisis_NBA_BestTeam.pbit`](CODE/Dashboard%20-%20POWERBI/Analisis_NBA_BestTeam.pbit) after loading the local database. I organized the report into:
+
+1. Historia y evolución;
+2. Eficiencia y consistencia;
+3. Talento y perfil;
+4. Rachas y actualidad;
+5. Metodología y cierre;
+6. plus the cover page.
+
+Every analytical title states its period or sample and unit. The final page records scope, quality decisions, limitations and the last integral validation date. The adjacent `Analisis_NBA_BestTeam/` directory is the reviewable pbi-tools project used to compile the PBIT.
+
+## 🔎 Evidence and documentation
+
+- [NBA-I1–I4 verification](DOCS/i1_i4_verification.md)
+- [Technical implementation](DOCS/technical_documentation.md)
+- [Canonical data dictionary](DOCS/canonical_data_dictionary.md)
+- [Model and ERD](DOCS/data_model.md)
+- [Versioned contract](contracts/schema_v1.0.0.json)
+- [Real-run evidence](evidence/NBA-I1-I4/real-run-lf/manifest.json)
+- [CI SQL reconciliation](evidence/NBA-I1-I4/ci-sql/sql_reconciliation.json)
+- [Security review](DOCS/security_review.md)
+
+## ⚠️ Boundaries
+
+- The committed dataset is a historical analytical sample, not an official complete NBA warehouse.
+- The 53 generated team records make historical identifiers explicit; they do not invent franchise metadata.
+- Duplicate rows remain inspectable in `rejects/`; they are not silently discarded.
+- Power BI uses DirectQuery to `localhost,1433`, so you must load SQL Server before refreshing it.
+- Source access, redistribution terms and NBA-related rights must be checked before reuse.
 
 ## 👥 Authorship
 
-This repository is a collaborative artifact hosted and maintained by **HeKoXCode**. Existing Git history and embedded notebook attribution identify work by **Percy Ignacio Marzoratti Hill** and **Lucas Roca**. Exact, evidence-based responsibilities are recorded in [CONTRIBUTORS.md](CONTRIBUTORS.md); no unverified authorship is implied.
-
-## ⚠️ Known limitations
-
-- Dependencies are not yet locked and no clean CI sample exists.
-- `pipeline.py` needs compatibility and data-quality fixes before it can be called reliable.
-- The watchdog waits for a file event and does not perform an initial load automatically.
-- The SQL script deletes unmatched historical rows before adding foreign keys.
-- Historical franchise changes are not modeled; the current 30-team table cannot cover every historical ID.
-- The PBIX expects `analytics.dim_season`, which the current SQL script does not create.
-- DirectQuery requires a local SQL Server environment. The PBIT was recognized by Power BI Desktop during S4 verification, but its pages could not be refreshed without that database.
-
-The next technical stage is NBA-I1–I4: repair and test the pipeline, turn audit messages into real validation, align SQL/Power BI objects and redesign the report around fewer questions per page.
+I maintain and publish the current project as **HeKoXCode**. Existing Git history and notebook evidence also identify work by **Percy Ignacio Marzoratti Hill** and **Lucas Roca**. I preserve only responsibilities supported by that evidence in [CONTRIBUTORS.md](CONTRIBUTORS.md).
 
 ## 📁 Repository map
 
 ```text
-CODE/       ETL, SQL, notebooks, PBIT and versionable Power BI source
-DOCS/       data, security and technical documentation
-IMAGES/     screenshot publication policy
-scripts/    repository validation utilities
+src/nba_pipeline/   production ETL, validation, watcher and SQL loader
+tests/              deterministic fixture and automated checks
+contracts/          generated schema contract
+CODE/data_raw/      six versioned source CSV files
+CODE/SQL/           database, canonical model, views and reconciliation
+CODE/Dashboard.../  PBIT and extracted Power BI project
+DOCS/               implementation, model, scope, security and evidence notes
+evidence/           lightweight reproducibility evidence; canonical data stays ignored
 ```

@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nba-analytics-pipeline"
+version = "1.0.0"
+description = "Reproducible ETL and SQL validation for the NBA Analytics portfolio project."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "pandas==3.0.5",
+  "psutil>=7.0,<8",
+  "pyodbc>=5.2,<6",
+  "watchdog>=6.0,<7",
+]
+
+[project.scripts]
+nba-etl = "nba_pipeline.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["nba_pipeline"]
+omit = [
+  "*/nba_pipeline/__main__.py",
+  "*/nba_pipeline/cli.py",
+  "*/nba_pipeline/model_validation.py",
+  "*/nba_pipeline/sql_loader.py",
+  "*/nba_pipeline/watch.py",
+]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/generate_model_artifacts.py" = ["E501", "RUF001"]
+"scripts/update_powerbi_project_i4.py" = ["E501", "RUF001"]
+"scripts/validate_i1_i4.py" = ["RUF001"]

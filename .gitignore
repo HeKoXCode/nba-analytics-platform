@@ -7,12 +7,19 @@
 # Runtime output
 *.log
 CODE/data_final/
+.artifacts/
+evidence/**/data/
+evidence/NBA-I1-I4/real-run/
+tools/
 
 # Python/editor caches
 __pycache__/
+*.egg-info/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+.coverage
+htmlcov/
 .venv/
 venv/
 .vscode/

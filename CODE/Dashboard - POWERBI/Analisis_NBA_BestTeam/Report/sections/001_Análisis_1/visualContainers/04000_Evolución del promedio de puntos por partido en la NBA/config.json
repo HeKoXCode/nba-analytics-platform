@@ -409,7 +409,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Evolución del promedio de puntos por partido en la NBA'"
+                  "Value": "'Evolución del PPG de liga · 1940s–2020s · puntos'"
                 }
               }
             },

@@ -505,7 +505,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rendimiento histórico de las franquicias NBA'"
+                  "Value": "'Victorias históricas por franquicia · 1946–2022 · porcentaje'"
                 }
               }
             },

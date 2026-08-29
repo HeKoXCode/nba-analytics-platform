@@ -111,7 +111,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Perfil histórico'"
+                  "Value": "'Metodología y cierre'"
                 }
               }
             },
