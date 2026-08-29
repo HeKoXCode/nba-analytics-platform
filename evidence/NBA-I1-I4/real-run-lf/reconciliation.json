@@ -1,0 +1,778 @@
+{
+  "cross_table_checks": {
+    "game_summary_without_game": 0,
+    "observed_team_without_dimension": 0,
+    "other_stats_without_game": 0,
+    "player_profile_without_player": 0
+  },
+  "run_id": "nba-20260829T002154Z-0af8b4ab23",
+  "schema_version": "1.0.0",
+  "tables": {
+    "common_player_info": {
+      "accepted_source_rows": 4171,
+      "columns": {
+        "birthdate": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "country": {
+          "input_nonnull": 4170,
+          "introduced_nulls": 0,
+          "output_nonnull": 4170
+        },
+        "display_fi_last": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "display_first_last": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "display_last_comma_first": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "dleague_flag": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "draft_number": {
+          "input_nonnull": 3948,
+          "introduced_nulls": 0,
+          "output_nonnull": 3948
+        },
+        "draft_round": {
+          "input_nonnull": 4007,
+          "introduced_nulls": 0,
+          "output_nonnull": 4007
+        },
+        "draft_year": {
+          "input_nonnull": 3090,
+          "introduced_nulls": 0,
+          "output_nonnull": 3090
+        },
+        "first_name": {
+          "input_nonnull": 4168,
+          "introduced_nulls": 0,
+          "output_nonnull": 4168
+        },
+        "from_year": {
+          "input_nonnull": 4156,
+          "introduced_nulls": 0,
+          "output_nonnull": 4156
+        },
+        "games_played_current_season_flag": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "games_played_flag": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "greatest_75_flag": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "height": {
+          "input_nonnull": 4075,
+          "introduced_nulls": 0,
+          "output_nonnull": 4075
+        },
+        "jersey": {
+          "input_nonnull": 3191,
+          "introduced_nulls": 0,
+          "output_nonnull": 3191
+        },
+        "last_affiliation": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "last_name": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "nba_flag": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "person_id": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "player_slug": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "playercode": {
+          "input_nonnull": 4170,
+          "introduced_nulls": 0,
+          "output_nonnull": 4170
+        },
+        "position": {
+          "input_nonnull": 4108,
+          "introduced_nulls": 0,
+          "output_nonnull": 4108
+        },
+        "rosterstatus": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "school": {
+          "input_nonnull": 4147,
+          "introduced_nulls": 0,
+          "output_nonnull": 4147
+        },
+        "season_exp": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "team_abbreviation": {
+          "input_nonnull": 3469,
+          "introduced_nulls": 0,
+          "output_nonnull": 3469
+        },
+        "team_city": {
+          "input_nonnull": 3469,
+          "introduced_nulls": 0,
+          "output_nonnull": 3469
+        },
+        "team_code": {
+          "input_nonnull": 3469,
+          "introduced_nulls": 0,
+          "output_nonnull": 3469
+        },
+        "team_id": {
+          "input_nonnull": 4171,
+          "introduced_nulls": 0,
+          "output_nonnull": 4171
+        },
+        "team_name": {
+          "input_nonnull": 3469,
+          "introduced_nulls": 0,
+          "output_nonnull": 3469
+        },
+        "to_year": {
+          "input_nonnull": 4156,
+          "introduced_nulls": 0,
+          "output_nonnull": 4156
+        },
+        "weight": {
+          "input_nonnull": 4071,
+          "introduced_nulls": 0,
+          "output_nonnull": 4071
+        }
+      },
+      "generated_rows": 0,
+      "input_rows": 4171,
+      "output_rows": 4171,
+      "reason_counts": {},
+      "rejected_rows": 0
+    },
+    "game": {
+      "accepted_source_rows": 65642,
+      "columns": {
+        "ast_away": {
+          "input_nonnull": 49897,
+          "introduced_nulls": 0,
+          "output_nonnull": 49897
+        },
+        "ast_home": {
+          "input_nonnull": 49893,
+          "introduced_nulls": 0,
+          "output_nonnull": 49893
+        },
+        "blk_away": {
+          "input_nonnull": 47073,
+          "introduced_nulls": 0,
+          "output_nonnull": 47073
+        },
+        "blk_home": {
+          "input_nonnull": 47072,
+          "introduced_nulls": 0,
+          "output_nonnull": 47072
+        },
+        "dreb_away": {
+          "input_nonnull": 46700,
+          "introduced_nulls": 0,
+          "output_nonnull": 46700
+        },
+        "dreb_home": {
+          "input_nonnull": 46699,
+          "introduced_nulls": 0,
+          "output_nonnull": 46699
+        },
+        "fg3_pct_away": {
+          "input_nonnull": 46736,
+          "introduced_nulls": 0,
+          "output_nonnull": 46736
+        },
+        "fg3_pct_home": {
+          "input_nonnull": 46624,
+          "introduced_nulls": 0,
+          "output_nonnull": 46624
+        },
+        "fg3a_away": {
+          "input_nonnull": 47015,
+          "introduced_nulls": 0,
+          "output_nonnull": 47015
+        },
+        "fg3a_home": {
+          "input_nonnull": 47015,
+          "introduced_nulls": 0,
+          "output_nonnull": 47015
+        },
+        "fg3m_away": {
+          "input_nonnull": 52480,
+          "introduced_nulls": 0,
+          "output_nonnull": 52480
+        },
+        "fg3m_home": {
+          "input_nonnull": 52480,
+          "introduced_nulls": 0,
+          "output_nonnull": 52480
+        },
+        "fg_pct_away": {
+          "input_nonnull": 50209,
+          "introduced_nulls": 0,
+          "output_nonnull": 50209
+        },
+        "fg_pct_home": {
+          "input_nonnull": 50208,
+          "introduced_nulls": 0,
+          "output_nonnull": 50208
+        },
+        "fga_away": {
+          "input_nonnull": 50251,
+          "introduced_nulls": 0,
+          "output_nonnull": 50251
+        },
+        "fga_home": {
+          "input_nonnull": 50251,
+          "introduced_nulls": 0,
+          "output_nonnull": 50251
+        },
+        "fgm_away": {
+          "input_nonnull": 65685,
+          "introduced_nulls": 0,
+          "output_nonnull": 65685
+        },
+        "fgm_home": {
+          "input_nonnull": 65685,
+          "introduced_nulls": 0,
+          "output_nonnull": 65685
+        },
+        "ft_pct_away": {
+          "input_nonnull": 62692,
+          "introduced_nulls": 0,
+          "output_nonnull": 62692
+        },
+        "ft_pct_home": {
+          "input_nonnull": 62689,
+          "introduced_nulls": 0,
+          "output_nonnull": 62689
+        },
+        "fta_away": {
+          "input_nonnull": 62694,
+          "introduced_nulls": 0,
+          "output_nonnull": 62694
+        },
+        "fta_home": {
+          "input_nonnull": 62694,
+          "introduced_nulls": 0,
+          "output_nonnull": 62694
+        },
+        "ftm_away": {
+          "input_nonnull": 65685,
+          "introduced_nulls": 0,
+          "output_nonnull": 65685
+        },
+        "ftm_home": {
+          "input_nonnull": 65682,
+          "introduced_nulls": 0,
+          "output_nonnull": 65682
+        },
+        "game_date": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "game_id": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "matchup_away": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "matchup_home": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "min": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "oreb_away": {
+          "input_nonnull": 46762,
+          "introduced_nulls": 0,
+          "output_nonnull": 46762
+        },
+        "oreb_home": {
+          "input_nonnull": 46762,
+          "introduced_nulls": 0,
+          "output_nonnull": 46762
+        },
+        "pf_away": {
+          "input_nonnull": 62847,
+          "introduced_nulls": 0,
+          "output_nonnull": 62847
+        },
+        "pf_home": {
+          "input_nonnull": 62842,
+          "introduced_nulls": 0,
+          "output_nonnull": 62842
+        },
+        "plus_minus_away": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "plus_minus_home": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "pts_away": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "pts_home": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "reb_away": {
+          "input_nonnull": 49973,
+          "introduced_nulls": 0,
+          "output_nonnull": 49973
+        },
+        "reb_home": {
+          "input_nonnull": 49969,
+          "introduced_nulls": 0,
+          "output_nonnull": 49969
+        },
+        "season_id": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "season_type": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "stl_away": {
+          "input_nonnull": 46849,
+          "introduced_nulls": 0,
+          "output_nonnull": 46849
+        },
+        "stl_home": {
+          "input_nonnull": 46849,
+          "introduced_nulls": 0,
+          "output_nonnull": 46849
+        },
+        "team_abbreviation_away": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "team_abbreviation_home": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "team_id_away": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "team_id_home": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "team_name_away": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "team_name_home": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "tov_away": {
+          "input_nonnull": 47013,
+          "introduced_nulls": 0,
+          "output_nonnull": 47013
+        },
+        "tov_home": {
+          "input_nonnull": 47014,
+          "introduced_nulls": 0,
+          "output_nonnull": 47014
+        },
+        "video_available_away": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "video_available_home": {
+          "input_nonnull": 65698,
+          "introduced_nulls": 0,
+          "output_nonnull": 65698
+        },
+        "wl_away": {
+          "input_nonnull": 65696,
+          "introduced_nulls": 0,
+          "output_nonnull": 65696
+        },
+        "wl_home": {
+          "input_nonnull": 65696,
+          "introduced_nulls": 0,
+          "output_nonnull": 65696
+        }
+      },
+      "generated_rows": 0,
+      "input_rows": 65698,
+      "output_rows": 65642,
+      "reason_counts": {
+        "duplicate_primary_key": 56
+      },
+      "rejected_rows": 56
+    },
+    "game_summary": {
+      "accepted_source_rows": 58021,
+      "columns": {
+        "game_date_est": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "game_id": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "game_sequence": {
+          "input_nonnull": 32578,
+          "introduced_nulls": 0,
+          "output_nonnull": 32578
+        },
+        "game_status_id": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "game_status_text": {
+          "input_nonnull": 32124,
+          "introduced_nulls": 0,
+          "output_nonnull": 32124
+        },
+        "gamecode": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "home_team_id": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "live_pc_time": {
+          "input_nonnull": 2,
+          "introduced_nulls": 0,
+          "output_nonnull": 2
+        },
+        "live_period": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "live_period_time_bcast": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "natl_tv_broadcaster_abbreviation": {
+          "input_nonnull": 6203,
+          "introduced_nulls": 0,
+          "output_nonnull": 6203
+        },
+        "season": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "visitor_team_id": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        },
+        "wh_status": {
+          "input_nonnull": 58110,
+          "introduced_nulls": 0,
+          "output_nonnull": 58110
+        }
+      },
+      "generated_rows": 0,
+      "input_rows": 58110,
+      "output_rows": 58021,
+      "reason_counts": {
+        "duplicate_primary_key": 89
+      },
+      "rejected_rows": 89
+    },
+    "other_stats": {
+      "accepted_source_rows": 28261,
+      "columns": {
+        "game_id": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "largest_lead_away": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "largest_lead_home": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "lead_changes": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "league_id": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "pts_2nd_chance_away": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "pts_2nd_chance_home": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "pts_fb_away": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "pts_fb_home": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "pts_off_to_away": {
+          "input_nonnull": 26148,
+          "introduced_nulls": 0,
+          "output_nonnull": 26148
+        },
+        "pts_off_to_home": {
+          "input_nonnull": 26148,
+          "introduced_nulls": 0,
+          "output_nonnull": 26148
+        },
+        "pts_paint_away": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "pts_paint_home": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "team_abbreviation_away": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "team_abbreviation_home": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "team_city_away": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "team_city_home": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "team_id_away": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "team_id_home": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "team_rebounds_away": {
+          "input_nonnull": 26273,
+          "introduced_nulls": 0,
+          "output_nonnull": 26273
+        },
+        "team_rebounds_home": {
+          "input_nonnull": 26273,
+          "introduced_nulls": 0,
+          "output_nonnull": 26273
+        },
+        "team_turnovers_away": {
+          "input_nonnull": 28269,
+          "introduced_nulls": 0,
+          "output_nonnull": 28269
+        },
+        "team_turnovers_home": {
+          "input_nonnull": 28269,
+          "introduced_nulls": 0,
+          "output_nonnull": 28269
+        },
+        "times_tied": {
+          "input_nonnull": 28271,
+          "introduced_nulls": 0,
+          "output_nonnull": 28271
+        },
+        "total_turnovers_away": {
+          "input_nonnull": 27955,
+          "introduced_nulls": 0,
+          "output_nonnull": 27955
+        },
+        "total_turnovers_home": {
+          "input_nonnull": 27955,
+          "introduced_nulls": 0,
+          "output_nonnull": 27955
+        }
+      },
+      "generated_rows": 0,
+      "input_rows": 28271,
+      "output_rows": 28261,
+      "reason_counts": {
+        "duplicate_primary_key": 10
+      },
+      "rejected_rows": 10
+    },
+    "player": {
+      "accepted_source_rows": 4831,
+      "columns": {
+        "first_name": {
+          "input_nonnull": 4822,
+          "introduced_nulls": 0,
+          "output_nonnull": 4822
+        },
+        "full_name": {
+          "input_nonnull": 4831,
+          "introduced_nulls": 0,
+          "output_nonnull": 4831
+        },
+        "id": {
+          "input_nonnull": 4831,
+          "introduced_nulls": 0,
+          "output_nonnull": 4831
+        },
+        "is_active": {
+          "input_nonnull": 4831,
+          "introduced_nulls": 0,
+          "output_nonnull": 4831
+        },
+        "last_name": {
+          "input_nonnull": 4831,
+          "introduced_nulls": 0,
+          "output_nonnull": 4831
+        }
+      },
+      "generated_rows": 0,
+      "input_rows": 4831,
+      "output_rows": 4831,
+      "reason_counts": {},
+      "rejected_rows": 0
+    },
+    "team": {
+      "accepted_source_rows": 30,
+      "columns": {
+        "abbreviation": {
+          "input_nonnull": 30,
+          "introduced_nulls": 0,
+          "output_nonnull": 30
+        },
+        "city": {
+          "input_nonnull": 30,
+          "introduced_nulls": 0,
+          "output_nonnull": 30
+        },
+        "full_name": {
+          "input_nonnull": 30,
+          "introduced_nulls": 0,
+          "output_nonnull": 30
+        },
+        "id": {
+          "input_nonnull": 30,
+          "introduced_nulls": 0,
+          "output_nonnull": 30
+        },
+        "nickname": {
+          "input_nonnull": 30,
+          "introduced_nulls": 0,
+          "output_nonnull": 30
+        },
+        "state": {
+          "input_nonnull": 30,
+          "introduced_nulls": 0,
+          "output_nonnull": 30
+        },
+        "year_founded": {
+          "input_nonnull": 30,
+          "introduced_nulls": 0,
+          "output_nonnull": 30
+        }
+      },
+      "generated_rows": 53,
+      "input_rows": 30,
+      "output_rows": 83,
+      "reason_counts": {},
+      "rejected_rows": 0
+    }
+  }
+}

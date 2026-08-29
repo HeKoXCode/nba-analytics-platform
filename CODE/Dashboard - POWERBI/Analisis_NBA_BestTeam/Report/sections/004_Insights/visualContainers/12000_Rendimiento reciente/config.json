@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 758.5714285714287,
-        "y": 175.71428571428572,
+        "x": 675,
+        "y": 180,
         "z": 18000,
-        "width": 561.4285714285714,
-        "height": 305.7142857142857,
+        "width": 620,
+        "height": 500,
         "tabOrder": 9000
       }
     }
@@ -299,7 +299,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rendimiento en la Actualidad por Equipo'"
+                  "Value": "'Rendimiento reciente por equipo · 2013–2022 · PPG y victorias (%)'"
                 }
               }
             },

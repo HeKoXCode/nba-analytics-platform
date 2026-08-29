@@ -1,4 +1,4 @@
-﻿table 'analytics vw_q4_ppg_by_decade'
+table 'analytics vw_q4_ppg_by_decade'
 
 	column decade
 		dataType: int64
@@ -23,7 +23,7 @@
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    Origen = Sql.Databases("localhost,1433"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
 				    analytics_vw_q4_ppg_by_decade = NBA_Project{[Schema="analytics",Item="vw_q4_ppg_by_decade"]}[Data]
 				in

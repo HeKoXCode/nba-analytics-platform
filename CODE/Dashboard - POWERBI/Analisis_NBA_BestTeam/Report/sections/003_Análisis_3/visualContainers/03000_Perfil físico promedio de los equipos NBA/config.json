@@ -150,7 +150,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'altura promedio en pies'"
+                  "Value": "'altura promedio en cm'"
                 }
               }
             },
@@ -212,7 +212,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Perfil físico promedio de los equipos NBA'"
+                  "Value": "'Perfil físico por equipo · muestra disponible · cm y libras'"
                 }
               }
             },

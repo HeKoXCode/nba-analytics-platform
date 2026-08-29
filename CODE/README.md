@@ -1,22 +1,37 @@
 # Execution layer
 
-This folder contains the current ETL, SQL loading helper, exploratory notebooks and Power BI report.
+I keep the executable assets in this folder while the installable Python package lives in `../src/nba_pipeline`.
 
-## Actual flow
+## Implemented flow
 
-1. `pipeline.py` reads the six `data_raw/*_raw.csv` inputs.
-2. It writes six matching `data_final/*_final.csv` outputs.
-3. `watchdog_ingestion.py` can load those CSV files into SQL Server after a file-system event.
-4. `SQL/script.sql` creates the six physical tables and the `analytics.*` reporting views.
-5. `Dashboard - POWERBI/Analisis_NBA_BestTeam.pbix` connects to the SQL model through DirectQuery.
+1. I validate exactly six files in `data_raw/` against contract v1.0.0.
+2. The ETL writes immutable run directories with canonical data, quarantined rows, JSONL logs, checksums and reconciliation.
+3. `SQL/script.sql` creates the database, canonical model, analytical views and independent reconciliation queries.
+4. The transactional loader inserts the completed run and verifies the 15 SQL objects consumed by Power BI.
+5. The PBIT connects to `NBA_Project` on `localhost,1433` through DirectQuery.
 
-The output names are `common_player_info_final`, `game_final`, `game_summary_final`, `other_stats_final`, `player_final` and `team_final`. Names such as `fact_game` or `dim_team` describe a target model, not files produced by the current pipeline.
+Canonical outputs:
+
+| CSV | SQL table | Key |
+|---|---|---|
+| `dim_player_profile.csv` | `core.dim_player_profile` | `player_id` |
+| `fact_game.csv` | `core.fact_game` | `game_id` |
+| `fact_game_summary.csv` | `core.fact_game_summary` | `game_id` |
+| `fact_other_stats.csv` | `core.fact_other_stats` | `game_id` |
+| `dim_player.csv` | `core.dim_player` | `player_id` |
+| `dim_team.csv` | `core.dim_team` | `team_id` |
+
+`pipeline.py` and `watchdog_ingestion.py` are compatibility entry points. For normal use, install the package and run `python -m nba_pipeline ...` as shown in the root README.
+
+## Order of execution
+
+```text
+create database → create canonical schema → transform → validate → transactional load
+→ constraints/indexes → analytics views → SQL reconciliation → Power BI refresh
+```
+
+The watcher performs an initial load by default and creates a distinct run directory for every accepted change. It never overwrites a completed run.
 
 ## Configuration
 
-Copy the variable names from `.env.example` into your own environment. The script does not automatically read a `.env` file and no real credentials should be committed.
-
-## Current limitation
-
-This execution layer is not yet guaranteed on a clean machine. Dependency locking, pandas compatibility, initial-load behavior, validation and automated tests belong to NBA-I1/I2.
-
+Use `.env.example` only as a list of variable names. Set real values in your shell or secret manager and never commit them.

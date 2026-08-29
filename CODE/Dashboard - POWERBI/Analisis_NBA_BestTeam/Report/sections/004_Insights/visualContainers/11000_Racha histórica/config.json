@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 555.7142857142858,
-        "y": 500.00000000000006,
+        "x": 25,
+        "y": 180,
         "z": 8000,
-        "width": 405.7142857142857,
-        "height": 248.57142857142858,
+        "width": 620,
+        "height": 500,
         "tabOrder": 4000
       }
     }
@@ -253,7 +253,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rango de rachas : '"
+                  "Value": "'Racha observada (victorias): '"
                 }
               }
             },
@@ -282,7 +282,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Racha máxima de victorias consecutivas por franquicia'"
+                  "Value": "'Mayor racha observada por franquicia · 1946–2022 · victorias'"
                 }
               }
             },

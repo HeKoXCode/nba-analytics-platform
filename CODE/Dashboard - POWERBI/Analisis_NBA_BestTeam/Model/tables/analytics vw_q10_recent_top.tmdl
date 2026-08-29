@@ -1,4 +1,4 @@
-﻿table 'analytics vw_q10_recent_top'
+table 'analytics vw_q10_recent_top'
 
 	column team_name
 		dataType: string
@@ -48,7 +48,7 @@
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    Origen = Sql.Databases("localhost,1433"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
 				    analytics_vw_q10_recent_top = NBA_Project{[Schema="analytics",Item="vw_q10_recent_top"]}[Data],
 				    #"Columnas con nombre cambiado" = Table.RenameColumns(analytics_vw_q10_recent_top,{{"ppg_10y", "Puntos por partido ultimos 10 años"}, {"winrate_10y", "Porcentaje de victorias ultimos 10 años"}})

@@ -1,5 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
+# Dataset hashes and byte counts must be identical on Windows and Linux.
+*.csv text eol=lf
+
 # pbi-tools emits TMDL with source-significant indentation and trailing blanks.
 *.tmdl -whitespace

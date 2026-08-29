@@ -1,0 +1,4753 @@
+{
+  "schema_version": "1.0.0",
+  "tables": {
+    "common_player_info": {
+      "description": "Player biography and roster attributes; one optional profile per player.",
+      "input_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "person_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "player_id"
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "first_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "last_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "display_first_last",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "display_last_comma_first",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "display_fi_last",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "player_slug",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "date",
+          "maximum": null,
+          "minimum": null,
+          "name": "birthdate",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "school",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "country",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "last_affiliation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "height",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": 500,
+          "minimum": 100,
+          "name": "weight",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 40,
+          "minimum": 0,
+          "name": "season_exp",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "jersey",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "position",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "Active",
+            "Inactive"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "rosterstatus",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "games_played_current_season_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "team_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_code",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_city",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "playercode",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "from_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "to_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "dleague_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "nba_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "games_played_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "draft_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat",
+            "undrafted"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "draft_round",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "draft_number",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "greatest_75_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "name": "common_player_info",
+      "output_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "player_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "player_id"
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "first_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "last_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "display_first_last",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "display_last_comma_first",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "display_fi_last",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "player_slug",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "date",
+          "maximum": null,
+          "minimum": null,
+          "name": "birthdate",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "school",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "country",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "last_affiliation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "height",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": 500,
+          "minimum": 100,
+          "name": "weight",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 40,
+          "minimum": 0,
+          "name": "season_exp",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "jersey",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "position",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "Active",
+            "Inactive"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "rosterstatus",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "games_played_current_season_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "team_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_code",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_city",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "playercode",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "from_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "to_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "dleague_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "nba_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "games_played_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "draft_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat",
+            "undrafted"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "draft_round",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "draft_number",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "greatest_75_flag",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "height_inches",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "height_cm",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        }
+      ],
+      "output_name": "dim_player_profile",
+      "output_primary_key": [
+        "player_id"
+      ],
+      "primary_key": [
+        "person_id"
+      ],
+      "schema_version": "1.0.0",
+      "source_file": "common_player_info_raw.csv",
+      "sql_table": "core.dim_player_profile"
+    },
+    "game": {
+      "description": "One canonical wide row per game after deterministic duplicate quarantine.",
+      "input_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 49999,
+          "minimum": 10000,
+          "name": "season_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_name_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "game_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "date",
+          "maximum": null,
+          "minimum": null,
+          "name": "game_date",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "matchup_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "W",
+            "L"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "wl_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "min",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fgm_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fga_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg_pct_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3m_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3a_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3_pct_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ftm_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fta_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ft_pct_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "oreb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "dreb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "reb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ast_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "stl_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "blk_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "tov_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pf_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "plus_minus_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "video_available_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_name_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "matchup_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "W",
+            "L"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "wl_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fgm_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fga_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg_pct_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3m_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3a_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3_pct_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ftm_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fta_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ft_pct_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "oreb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "dreb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "reb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ast_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "stl_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "blk_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "tov_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pf_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "plus_minus_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "video_available_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "Regular Season",
+            "Pre Season",
+            "Playoffs",
+            "All Star",
+            "All-Star"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "season_type",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "name": "game",
+      "output_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 49999,
+          "minimum": 10000,
+          "name": "season_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_name_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "game_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "date",
+          "maximum": null,
+          "minimum": null,
+          "name": "game_date",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "matchup_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "W",
+            "L"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "wl_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "min",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fgm_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fga_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg_pct_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3m_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3a_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3_pct_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ftm_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fta_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ft_pct_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "oreb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "dreb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "reb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ast_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "stl_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "blk_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "tov_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pf_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "plus_minus_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "video_available_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_name_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "matchup_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "W",
+            "L"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "wl_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fgm_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fga_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg_pct_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3m_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3a_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fg3_pct_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ftm_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "fta_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ft_pct_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "oreb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "dreb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "reb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "ast_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "stl_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "blk_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "tov_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pf_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "plus_minus_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "video_available_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            "Regular Season",
+            "Pre Season",
+            "Playoffs",
+            "All Star",
+            "All-Star"
+          ],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "season_type",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "season_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "season_stage",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "output_name": "fact_game",
+      "output_primary_key": [
+        "game_id"
+      ],
+      "primary_key": [
+        "game_id"
+      ],
+      "schema_version": "1.0.0",
+      "source_file": "game_raw.csv",
+      "sql_table": "core.fact_game"
+    },
+    "game_summary": {
+      "description": "Scheduling and status attributes keyed by game.",
+      "input_columns": [
+        {
+          "allowed": [],
+          "dtype": "date",
+          "maximum": null,
+          "minimum": null,
+          "name": "game_date_est",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "game_sequence",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "game_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "game_status_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "game_status_text",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "gamecode",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "home_team_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "visitor_team_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "season",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "season_year"
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "live_period",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "live_pc_time",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "natl_tv_broadcaster_abbreviation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "live_period_time_bcast",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "wh_status",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "name": "game_summary",
+      "output_columns": [
+        {
+          "allowed": [],
+          "dtype": "date",
+          "maximum": null,
+          "minimum": null,
+          "name": "game_date_est",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "game_sequence",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "game_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "game_status_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "game_status_text",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "gamecode",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "home_team_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "visitor_team_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "season_year",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "season_year"
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "live_period",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "live_pc_time",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "natl_tv_broadcaster_abbreviation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "live_period_time_bcast",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "wh_status",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "output_name": "fact_game_summary",
+      "output_primary_key": [
+        "game_id"
+      ],
+      "primary_key": [
+        "game_id"
+      ],
+      "schema_version": "1.0.0",
+      "source_file": "game_summary_raw.csv",
+      "sql_table": "core.fact_game_summary"
+    },
+    "other_stats": {
+      "description": "Supplementary team-level metrics for the subset of games that exposes them.",
+      "input_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "game_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "league_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_city_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_paint_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_2nd_chance_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_fb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "largest_lead_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "lead_changes",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "times_tied",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_turnovers_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "total_turnovers_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_rebounds_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_off_to_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_city_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_paint_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_2nd_chance_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_fb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "largest_lead_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_turnovers_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "total_turnovers_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_rebounds_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_off_to_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        }
+      ],
+      "name": "other_stats",
+      "output_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "game_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 0,
+          "name": "league_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_city_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_paint_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_2nd_chance_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_fb_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "largest_lead_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "lead_changes",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "times_tied",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_turnovers_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "total_turnovers_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_rebounds_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_off_to_home",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_abbreviation_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_city_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_paint_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_2nd_chance_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_fb_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "largest_lead_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_turnovers_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "total_turnovers_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "team_rebounds_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "float",
+          "maximum": null,
+          "minimum": null,
+          "name": "pts_off_to_away",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        }
+      ],
+      "output_name": "fact_other_stats",
+      "output_primary_key": [
+        "game_id"
+      ],
+      "primary_key": [
+        "game_id"
+      ],
+      "schema_version": "1.0.0",
+      "source_file": "other_stats_raw.csv",
+      "sql_table": "core.fact_other_stats"
+    },
+    "player": {
+      "description": "Canonical player identity dimension.",
+      "input_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "player_id"
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "full_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "first_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "last_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "is_active",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "name": "player",
+      "output_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "player_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "player_id"
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "full_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "first_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "last_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [
+            false,
+            true
+          ],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "is_active",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "output_name": "dim_player",
+      "output_primary_key": [
+        "player_id"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "schema_version": "1.0.0",
+      "source_file": "player_raw.csv",
+      "sql_table": "core.dim_player"
+    },
+    "team": {
+      "description": "Current franchises plus generated placeholders for observed historical IDs.",
+      "input_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "team_id"
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "full_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "abbreviation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "nickname",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "city",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "state",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "year_founded",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        }
+      ],
+      "name": "team",
+      "output_columns": [
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": null,
+          "minimum": 1,
+          "name": "team_id",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": "team_id"
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "full_name",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "abbreviation",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "nickname",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "city",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "string",
+          "maximum": null,
+          "minimum": null,
+          "name": "state",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "integer",
+          "maximum": 2100,
+          "minimum": 1940,
+          "name": "year_founded",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": true,
+          "output_name": null
+        },
+        {
+          "allowed": [],
+          "dtype": "boolean",
+          "maximum": null,
+          "minimum": null,
+          "name": "is_historical_unmapped",
+          "null_tokens": [
+            "",
+            "nan",
+            "none",
+            "null",
+            "nat"
+          ],
+          "nullable": false,
+          "output_name": null
+        }
+      ],
+      "output_name": "dim_team",
+      "output_primary_key": [
+        "team_id"
+      ],
+      "primary_key": [
+        "id"
+      ],
+      "schema_version": "1.0.0",
+      "source_file": "team_raw.csv",
+      "sql_table": "core.dim_team"
+    }
+  }
+}

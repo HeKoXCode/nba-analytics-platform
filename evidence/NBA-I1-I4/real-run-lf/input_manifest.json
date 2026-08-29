@@ -1,0 +1,41 @@
+{
+  "inputs": [
+    {
+      "bytes": 1030547,
+      "file": "common_player_info_raw.csv",
+      "rows": 4171,
+      "sha256": "0AF8B4AB23F53351C1ADBBABD7F664D73D711C860EB4D6DA7E781B60896F68E5"
+    },
+    {
+      "bytes": 20314762,
+      "file": "game_raw.csv",
+      "rows": 65698,
+      "sha256": "AE3B37ED89219B4C6C0AAD4A3DB7916B6D9CF64AD99A0ADCD769D860AB052A36"
+    },
+    {
+      "bytes": 5622633,
+      "file": "game_summary_raw.csv",
+      "rows": 58110,
+      "sha256": "5817DF7E838B3FAD614C757CBECD9DCD9A7E7F5CC81B2F02187F95263AC66E09"
+    },
+    {
+      "bytes": 3498831,
+      "file": "other_stats_raw.csv",
+      "rows": 28271,
+      "sha256": "3D65F73D02CE685434F88BF00F47EAD10D613789AD1F1F44CC3B63F637C5508D"
+    },
+    {
+      "bytes": 170184,
+      "file": "player_raw.csv",
+      "rows": 4831,
+      "sha256": "BEBCD3D9F112106997F5C6BF7D1AD4B240CB80EA2B141B0F075F20359983B163"
+    },
+    {
+      "bytes": 2027,
+      "file": "team_raw.csv",
+      "rows": 30,
+      "sha256": "EB26BF5D0525C8DB067FB0C2718BEAE21E57C6B66AF74EB3FCE831B6E5D3DD61"
+    }
+  ],
+  "run_id": "nba-20260829T002154Z-0af8b4ab23"
+}

@@ -1,0 +1,134 @@
+{
+  "duration_seconds": 8.677,
+  "finished_at_utc": "2026-08-29T00:22:02.765176Z",
+  "inputs": [
+    {
+      "bytes": 1030547,
+      "file": "common_player_info_raw.csv",
+      "rows": 4171,
+      "sha256": "0AF8B4AB23F53351C1ADBBABD7F664D73D711C860EB4D6DA7E781B60896F68E5"
+    },
+    {
+      "bytes": 20314762,
+      "file": "game_raw.csv",
+      "rows": 65698,
+      "sha256": "AE3B37ED89219B4C6C0AAD4A3DB7916B6D9CF64AD99A0ADCD769D860AB052A36"
+    },
+    {
+      "bytes": 5622633,
+      "file": "game_summary_raw.csv",
+      "rows": 58110,
+      "sha256": "5817DF7E838B3FAD614C757CBECD9DCD9A7E7F5CC81B2F02187F95263AC66E09"
+    },
+    {
+      "bytes": 3498831,
+      "file": "other_stats_raw.csv",
+      "rows": 28271,
+      "sha256": "3D65F73D02CE685434F88BF00F47EAD10D613789AD1F1F44CC3B63F637C5508D"
+    },
+    {
+      "bytes": 170184,
+      "file": "player_raw.csv",
+      "rows": 4831,
+      "sha256": "BEBCD3D9F112106997F5C6BF7D1AD4B240CB80EA2B141B0F075F20359983B163"
+    },
+    {
+      "bytes": 2027,
+      "file": "team_raw.csv",
+      "rows": 30,
+      "sha256": "EB26BF5D0525C8DB067FB0C2718BEAE21E57C6B66AF74EB3FCE831B6E5D3DD61"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 188927,
+      "file": "data/dim_player.csv",
+      "rows": 4831,
+      "sha256": "569DA89BB4A04D212B89E0B334406EB3AED6F05820BD505C7FECFB6740C370E0"
+    },
+    {
+      "bytes": 1088378,
+      "file": "data/dim_player_profile.csv",
+      "rows": 4171,
+      "sha256": "0FFD4842D6A0CFA5766CC14486527235F8FE692935057E8D150B5E028FBB0CC1"
+    },
+    {
+      "bytes": 4674,
+      "file": "data/dim_team.csv",
+      "rows": 83,
+      "sha256": "708C57DBF6D36A5C6D682549FECCB044EDE684E8D44890E9393CFB1B0676F644"
+    },
+    {
+      "bytes": 21619160,
+      "file": "data/fact_game.csv",
+      "rows": 65642,
+      "sha256": "A0E28E203501CF35B2AEDFDCB56CC9BEBDEEE6AD6625BAE5FED5EFDA95431F43"
+    },
+    {
+      "bytes": 4848040,
+      "file": "data/fact_game_summary.csv",
+      "rows": 58021,
+      "sha256": "396DD3AF9313449199377F3570334EBDB7B6D78352226724BF3672C9E436879D"
+    },
+    {
+      "bytes": 3977885,
+      "file": "data/fact_other_stats.csv",
+      "rows": 28261,
+      "sha256": "827968E978A2642225CA7BFAD02F520A8A1C40C7CF5C5299B2CF000398884D89"
+    }
+  ],
+  "pandas": "3.0.5",
+  "peak_rss_bytes": 156590080,
+  "pipeline_version": "1.0.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10",
+  "rejects": [
+    {
+      "bytes": 448,
+      "file": "rejects/common_player_info_rejected.csv",
+      "rows": 0,
+      "sha256": "38B8188AAB05A2CC9E17F5DDB2C646573273FF0242B454A3D67CED3B944414FD"
+    },
+    {
+      "bytes": 20245,
+      "file": "rejects/game_rejected.csv",
+      "rows": 56,
+      "sha256": "E8002BC4D83F7CEDB87E4A400F8D2B5997674DC7C3A981DD55BDD34D8AC923AE"
+    },
+    {
+      "bytes": 12121,
+      "file": "rejects/game_summary_rejected.csv",
+      "rows": 89,
+      "sha256": "72E1D92F89DC6E6409C6D7ADA78814FCD3DB7E429FEFFE55D6F26F16FA2E129C"
+    },
+    {
+      "bytes": 2127,
+      "file": "rejects/other_stats_rejected.csv",
+      "rows": 10,
+      "sha256": "BA8E4759B9B494C69F184CD545682862A2BD145B208AE98F619A633D484BC160"
+    },
+    {
+      "bytes": 82,
+      "file": "rejects/player_rejected.csv",
+      "rows": 0,
+      "sha256": "2CFC4BF6C20E484AEB376D68A6AA8561069B30F1DFB6697987AD4C6D1AB6C11D"
+    },
+    {
+      "bytes": 97,
+      "file": "rejects/team_rejected.csv",
+      "rows": 0,
+      "sha256": "C06BB0FAABC0791154A1A9D5EEF421FFD0003E9BA1438D94ECA4A9D189228E32"
+    }
+  ],
+  "run_id": "nba-20260829T002154Z-0af8b4ab23",
+  "schema_version": "1.0.0",
+  "started_at_utc": "2026-08-29T00:21:54.023980Z",
+  "status": "passed",
+  "totals": {
+    "accepted_source_rows": 160956,
+    "generated_rows": 53,
+    "input_rows": 161111,
+    "output_rows": 161009,
+    "rejected_rows": 155
+  }
+}

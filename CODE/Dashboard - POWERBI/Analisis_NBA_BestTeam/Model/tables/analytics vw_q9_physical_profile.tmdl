@@ -1,4 +1,4 @@
-﻿table 'analytics vw_q9_physical_profile'
+table 'analytics vw_q9_physical_profile'
 
 	column team_name
 		dataType: string
@@ -41,7 +41,7 @@
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("100.74.116.125,1433"),
+				    Origen = Sql.Databases("localhost,1433"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
 				    analytics_vw_q9_physical_profile = NBA_Project{[Schema="analytics",Item="vw_q9_physical_profile"]}[Data]
 				in

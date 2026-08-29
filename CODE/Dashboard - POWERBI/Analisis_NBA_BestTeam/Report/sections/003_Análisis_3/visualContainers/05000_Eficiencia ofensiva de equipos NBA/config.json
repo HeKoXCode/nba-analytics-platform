@@ -269,7 +269,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Eficiencia ofensiva de equipos NBA '"
+                  "Value": "'Contexto ofensivo por equipo · muestra disponible · PPG y FG%'"
                 }
               }
             },
