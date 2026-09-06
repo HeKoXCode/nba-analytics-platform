@@ -50,6 +50,16 @@ The pipeline does not delete valid fact rows to force foreign keys. It preserves
 
 You need Python **3.12**. SQL Server and Power BI Desktop are only required for the BI layer.
 
+The extracted Power BI source contains generated paths longer than the legacy Windows limit. If you use Git for Windows, enable long paths during the first checkout and keep the setting in this clone:
+
+```powershell
+git -c core.longpaths=true clone https://github.com/HeKoXCode/nba-analytics-platform.git
+Set-Location nba-analytics-platform
+git config core.longpaths true
+```
+
+GitHub Desktop users can run `git config core.longpaths true` from **Repository → Open in Command Prompt/PowerShell** after cloning. If the initial checkout already failed, delete only that incomplete clone and repeat the command above in a shorter parent directory.
+
 ```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1

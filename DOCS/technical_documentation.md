@@ -15,6 +15,8 @@ Stable exit codes:
 
 I configure UTF-8 explicitly for files and console output, including Windows terminals that previously failed on emoji output.
 
+The versioned pbi-tools extraction contains generated visual-directory names that can exceed the legacy Windows path limit. A Windows checkout must use `core.longpaths=true`; the root README provides a one-shot clone command and the repository-local setting. `.gitattributes` also fixes LF for CSV inputs and byte-compared generated artifacts so checksums and generator validation remain stable across Windows and Linux.
+
 ## 2. Contract-driven ETL
 
 `src/nba_pipeline/contracts.py` defines the exact header, order, type, nullability, domain, range, primary key and output name for all six inputs. `contracts/schema_v1.0.0.json` is generated from that source and committed for review.
