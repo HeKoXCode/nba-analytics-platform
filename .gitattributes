@@ -4,5 +4,10 @@
 # Dataset hashes and byte counts must be identical on Windows and Linux.
 *.csv text eol=lf
 
+# Generated artifacts are compared byte-for-byte on every supported OS.
+/contracts/*.json text eol=lf
+/CODE/SQL/10_core_schema.sql text eol=lf
+/DOCS/canonical_data_dictionary.md text eol=lf
+
 # pbi-tools emits TMDL with source-significant indentation and trailing blanks.
 *.tmdl -whitespace
