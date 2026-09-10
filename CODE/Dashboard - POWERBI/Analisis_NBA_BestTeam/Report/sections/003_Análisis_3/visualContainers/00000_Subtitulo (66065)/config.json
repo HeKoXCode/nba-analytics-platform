@@ -24,21 +24,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "Total de "
-                  },
-                  {
-                    "value": "jugadores ",
+                    "value": "Mayor muestra de ",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
-                  }
-                ],
-                "horizontalTextAlignment": "center"
-              },
-              {
-                "textRuns": [
+                  },
                   {
-                    "value": "fichados"
+                    "value": "jugadores por equipo"
                   }
                 ],
                 "horizontalTextAlignment": "center"

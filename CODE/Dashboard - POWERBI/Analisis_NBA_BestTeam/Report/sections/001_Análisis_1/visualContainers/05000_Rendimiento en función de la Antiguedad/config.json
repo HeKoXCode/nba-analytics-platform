@@ -219,7 +219,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Equipos ->'"
+                  "Value": "'Equipo'"
                 }
               }
             }

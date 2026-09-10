@@ -120,10 +120,14 @@ def validate_security(check: Check) -> None:
         if line and not line.startswith("#") and "=" in line
         for key, value in (line.split("=", 1),)
     }
-    check.require(env_lines.get("NBA_SQL_USER") == "sa", ".env.example lacks the local demo username")
     check.require(
-        env_lines.get("NBA_SQL_PASSWORD") == "replace_with_a_local_secret",
-        ".env.example does not use the expected password placeholder",
+        env_lines.get("NBA_SQL_TRUSTED_CONNECTION") == "yes",
+        ".env.example does not use local Windows authentication",
+    )
+    check.require("NBA_SQL_USER" not in env_lines, ".env.example must not define a demo username")
+    check.require(
+        "NBA_SQL_PASSWORD" not in env_lines,
+        ".env.example must not define or suggest a committed password value",
     )
 
     audit_log = read(ROOT / "CODE" / "etl_audit_log.txt")
@@ -150,7 +154,8 @@ def validate_powerbi_source(check: Check) -> None:
             payloads.append(json.loads(read(path)))
         except json.JSONDecodeError as exc:
             check.failures.append(f"Invalid JSON: {path.relative_to(ROOT)} ({exc})")
-    check.require(len(json_files) >= 850, f"Power BI extraction looks incomplete: {len(json_files)} JSON files")
+    # I4 intentionally archives obsolete visual containers outside the active project.
+    check.require(len(json_files) >= 840, f"Power BI extraction looks incomplete: {len(json_files)} JSON files")
 
     sections = PROJECT / "Report" / "sections"
     page_dirs = sorted(path for path in sections.iterdir() if path.is_dir())

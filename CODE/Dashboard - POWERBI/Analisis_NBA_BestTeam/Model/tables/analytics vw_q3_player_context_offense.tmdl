@@ -48,10 +48,9 @@ table 'analytics vw_q3_player_context_offense'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("localhost,1433"),
+				    Origen = Sql.Databases(".\SQLEXPRESS"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
-				    analytics_vw_q3_player_context_offense = NBA_Project{[Schema="analytics",Item="vw_q3_player_context_offense"]}[Data],
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(analytics_vw_q3_player_context_offense,{{"avg_ppg", "Puntos por partido"}, {"avg_fg_pct", "Porcentaje de acierto"}})
+				    analytics_vw_q3_player_context_offense = NBA_Project{[Schema="analytics",Item="vw_q3_player_context_offense"]}[Data]
 				in
-				    #"Columnas con nombre cambiado"
+				    analytics_vw_q3_player_context_offense
 

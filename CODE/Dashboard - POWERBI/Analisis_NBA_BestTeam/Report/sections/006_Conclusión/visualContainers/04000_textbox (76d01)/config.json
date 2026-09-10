@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 0,
-        "y": 350,
+        "x": 120,
+        "y": 215,
         "z": 0,
-        "width": 1320,
-        "height": 408.5714285714286,
+        "width": 1080,
+        "height": 450,
         "tabOrder": 4000
       }
     }
@@ -27,7 +27,7 @@
                     "value": "Fuente: seis CSV públicos versionados; 30.638.984 bytes y 161.111 filas de entrada.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontSize": "15pt",
                       "color": "#e6e6e6"
                     }
                   }
@@ -39,7 +39,19 @@
                     "value": "Cobertura: 65.642 partidos únicos entre 1946 y 2022; análisis descriptivo.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontSize": "15pt",
+                      "color": "#e6e6e6"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Alcance visual: 30 franquicias actuales; rivales internacionales, All-Star y equipos sin mapear permanecen auditables en el núcleo, pero no alteran los rankings comparativos.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "15pt",
                       "color": "#e6e6e6"
                     }
                   }
@@ -51,7 +63,7 @@
                     "value": "Calidad: 155 duplicados en cuarentena y 53 equipos históricos sin nombre actual representados explícitamente.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontSize": "15pt",
                       "color": "#e6e6e6"
                     }
                   }
@@ -63,7 +75,7 @@
                     "value": "Reproducibilidad: contrato v1.0.0, manifiestos SHA-256, reconciliación SQL y pruebas automatizadas.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontSize": "15pt",
                       "color": "#e6e6e6"
                     }
                   }
@@ -75,7 +87,7 @@
                     "value": "Límite: la muestra no es 22 GB, no contiene datos sintéticos y no predice resultados ni retornos financieros.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontSize": "15pt",
                       "color": "#e6e6e6"
                     }
                   }
@@ -84,10 +96,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Última validación integral: 28/08/2026.",
+                    "value": "Última validación integral: 10/09/2026.",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "12pt",
+                      "fontSize": "15pt",
                       "color": "#e6e6e6"
                     }
                   }

@@ -52,7 +52,8 @@ GO
 
 CREATE OR ALTER VIEW analytics.vw_teams AS
 SELECT t.team_id, t.full_name AS team_name, t.abbreviation
-FROM core.dim_team AS t;
+FROM core.dim_team AS t
+WHERE t.is_historical_unmapped = 0;
 GO
 
 CREATE OR ALTER VIEW analytics.vw_q1_hist_perf AS
@@ -84,7 +85,8 @@ SELECT teams.full_name AS team_name, teams.year_founded,
        recent.winrate_hist, recent.ppg_hist
 FROM recent
 JOIN core.dim_team AS teams ON teams.team_id = recent.team_id
-CROSS JOIN reference_season;
+CROSS JOIN reference_season
+WHERE teams.is_historical_unmapped = 0;
 GO
 
 CREATE OR ALTER VIEW analytics.vw_q3_player_context_offense AS
@@ -99,7 +101,7 @@ SELECT players.player_id, players.full_name AS player_name, teams.team_name,
        performance.avg_fg_pct AS [Porcentaje de acierto]
 FROM core.dim_player AS players
 JOIN core.dim_player_profile AS profile ON profile.player_id = players.player_id
-LEFT JOIN analytics.vw_teams AS teams ON teams.team_id = profile.team_id
+JOIN analytics.vw_teams AS teams ON teams.team_id = profile.team_id
 LEFT JOIN team_performance AS performance ON performance.team_id = profile.team_id
 WHERE profile.nba_flag = 1;
 GO
@@ -107,14 +109,16 @@ GO
 CREATE OR ALTER VIEW analytics.vw_q4_ppg_by_decade AS
 SELECT (tg.season_id / 10) * 10 AS decade, AVG(CAST(tg.pts AS FLOAT)) AS league_ppg
 FROM analytics.vw_team_game AS tg
+WHERE tg.team_id BETWEEN 1610610000 AND 1610612766
+  AND tg.opponent_team_id BETWEEN 1610610000 AND 1610612766
 GROUP BY (tg.season_id / 10) * 10;
 GO
 
 CREATE OR ALTER VIEW analytics.vw_q5_consistency AS
 SELECT teams.team_name,
-       CAST(100.0 * STDEV(CAST(metrics.winrate AS FLOAT)) /
+       CAST(STDEV(CAST(metrics.winrate AS FLOAT)) /
             NULLIF(AVG(CAST(metrics.winrate AS FLOAT)), 0) AS DECIMAL(24, 12)) AS var_winrate_pct,
-       CAST(100.0 * STDEV(CAST(metrics.avg_ppg AS FLOAT)) /
+       CAST(STDEV(CAST(metrics.avg_ppg AS FLOAT)) /
             NULLIF(AVG(CAST(metrics.avg_ppg AS FLOAT)), 0) AS DECIMAL(24, 12)) AS var_ppg_pct
 FROM analytics.vw_team_season_metrics AS metrics
 JOIN analytics.vw_teams AS teams ON teams.team_id = metrics.team_id
@@ -164,7 +168,7 @@ CREATE OR ALTER VIEW analytics.vw_q9_physical_profile AS
 SELECT teams.team_name, COUNT_BIG(*) AS n_players,
        AVG(profile.height_cm) AS avg_height, AVG(profile.weight) AS avg_weight
 FROM core.dim_player_profile AS profile
-LEFT JOIN analytics.vw_teams AS teams ON teams.team_id = profile.team_id
+JOIN analytics.vw_teams AS teams ON teams.team_id = profile.team_id
 WHERE profile.nba_flag = 1
 GROUP BY teams.team_name, profile.team_id;
 GO

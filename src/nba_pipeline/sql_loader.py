@@ -247,8 +247,10 @@ def load_sql_server(run_dir: Path, evidence_dir: Path | None = None) -> dict[str
         integrity = sql_reconciliation["integrity"]
         if int(kpis["team_game_rows"]) != int(kpis["fact_game_rows"]) * 2:
             raise RuntimeError("La vista equipo-partido no reconcilia 2 filas por juego.")
-        if int(kpis["q1_total_team_games"]) != int(kpis["team_game_rows"]):
-            raise RuntimeError("La pregunta histórica no reconcilia con equipo-partido.")
+        if int(kpis["analytics_team_rows"]) != 30:
+            raise RuntimeError("La capa analítica no contiene las 30 franquicias actuales.")
+        if int(kpis["q1_total_team_games"]) != int(kpis["current_team_game_rows"]):
+            raise RuntimeError("La pregunta histórica no reconcilia con las franquicias actuales.")
         if any(int(value or 0) for value in integrity.values()):
             raise RuntimeError(f"Integridad SQL incumplida: {integrity}")
 

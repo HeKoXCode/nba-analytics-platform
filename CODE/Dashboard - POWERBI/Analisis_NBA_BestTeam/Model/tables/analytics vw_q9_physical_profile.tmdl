@@ -41,7 +41,7 @@ table 'analytics vw_q9_physical_profile'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("localhost,1433"),
+				    Origen = Sql.Databases(".\SQLEXPRESS"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
 				    analytics_vw_q9_physical_profile = NBA_Project{[Schema="analytics",Item="vw_q9_physical_profile"]}[Data]
 				in

@@ -40,7 +40,7 @@ table 'analytics dim_season'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("localhost,1433"),
+				    Origen = Sql.Databases(".\SQLEXPRESS"),
 				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
 				    analytics_dim_season = NBA_Project{[Schema="analytics",Item="dim_season"]}[Data]
 				in

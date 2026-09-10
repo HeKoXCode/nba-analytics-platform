@@ -24,22 +24,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Precisión ",
+                    "value": "Eficiencia de tiro",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
-                  },
-                  {
-                    "value": "de "
-                  },
-                  {
-                    "value": "tiro ",
-                    "textStyle": {
-                      "fontWeight": "bold"
-                    }
-                  },
-                  {
-                    "value": "por partido"
                   }
                 ],
                 "horizontalTextAlignment": "center"

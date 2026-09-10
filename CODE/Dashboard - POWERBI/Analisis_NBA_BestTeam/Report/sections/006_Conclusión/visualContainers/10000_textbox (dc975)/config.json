@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 0,
-        "y": 221.42857142857144,
+        "x": 120,
+        "y": 105,
         "z": 12000,
-        "width": 985.7142857142858,
-        "height": 180,
+        "width": 1080,
+        "height": 85,
         "tabOrder": 10000
       }
     }
@@ -24,10 +24,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "San Antonio Spurs — perfil histórico",
+                    "value": "Metodología y evidencia",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "60pt",
+                      "fontSize": "32pt",
                       "color": "#ffffff"
                     }
                   }

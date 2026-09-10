@@ -71,7 +71,7 @@ The loader obtains every connection value from environment variables, validates 
 
 ## 5. Power BI
 
-The semantic model reads 15 objects from the `analytics` schema at `localhost,1433/NBA_Project`. I validate that each TMDL object exists in SQL and that every referenced column can be selected.
+The semantic model reads 15 objects from the `analytics` schema at `.\SQLEXPRESS/NBA_Project`. I use this generic local named instance so the published template matches the documented SQL Server Express setup; CI continues to override the loader connection with its isolated container endpoint. I validate that each TMDL object exists in SQL and that every referenced column can be selected.
 
 I restructured the report into six pages:
 
@@ -92,6 +92,6 @@ The versioned test factory creates a small, deterministic and clearly synthetic 
 
 CI also processes the six real committed CSV files, loads their outputs into an ephemeral SQL Server 2022 container, runs independent SQL reconciliation and uploads lightweight evidence. Synthetic fixture results are never presented as the real portfolio volume.
 
-## 7. Remaining operational boundary
+## 7. Desktop evidence boundary
 
-Power BI Desktop refresh is a Windows, stateful step. The repository supplies a compiled PBIT, the complete SQL model, a CI-proven database load and a screenshot protocol. A screenshot may be published only after Power BI refreshes against a locally loaded SQL instance; a successful compile alone is not described as a refreshed report.
+Power BI Desktop refresh is a Windows, stateful step. The repository supplies a compiled PBIT, the complete SQL model, CI reconciliation and a repeated local SQL Server 2022 Express load. I keep the screenshot protocol separate from package compilation: the PBIT hash proves the exact artifact, while a future screenshot set must also show a completed DirectQuery refresh against the loaded local instance. I do not treat compilation alone as visual refresh evidence.

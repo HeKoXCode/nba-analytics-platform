@@ -66,9 +66,14 @@ def validate_static_model() -> dict[str, Any]:
         marker = f"CREATE OR ALTER VIEW analytics.{details['object']}"
         if marker.lower() not in sql.lower():
             raise ValueError(f"El SQL no crea el objeto requerido: {details['object']}")
-        if details["servers"] != ["localhost,1433"]:
+        if details["servers"] != [r".\SQLEXPRESS"]:
             raise ValueError(
                 f"Origen Power BI no portable en {details['file']}: {details['servers']}"
+            )
+        tmdl = (ROOT / details["file"]).read_text(encoding="utf-8-sig")
+        if "Table.RenameColumns" in tmdl:
+            raise ValueError(
+                f"Power Query todavía renombra columnas que el SQL ya publica: {details['file']}"
             )
     if re.search(r"(?im)^\s*DELETE\s+FROM\s+(?:\[?core\]?|\[?analytics\]?)", sql):
         raise ValueError("El modelo analítico contiene un borrado silencioso.")
