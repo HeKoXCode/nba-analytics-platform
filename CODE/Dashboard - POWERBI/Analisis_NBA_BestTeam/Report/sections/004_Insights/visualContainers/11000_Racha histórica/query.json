@@ -9,11 +9,6 @@
               "Name": "a",
               "Entity": "analytics vw_q8_longest_win_streak",
               "Type": 0
-            },
-            {
-              "Name": "a1",
-              "Entity": "analytics vw_teams",
-              "Type": 0
             }
           ],
           "Select": [
@@ -38,12 +33,12 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Source": "a1"
+                    "Source": "a"
                   }
                 },
                 "Property": "team_name"
               },
-              "Name": "analytics vw_teams.team_name",
+              "Name": "analytics vw_q8_longest_win_streak.team_name",
               "NativeReferenceName": "team_name"
             }
           ],

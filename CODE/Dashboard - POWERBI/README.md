@@ -16,8 +16,8 @@ I use built-in dropdown slicers and descriptive conclusions only. I do not claim
 ## Refresh
 
 1. Run the ETL and SQL loader from the root README.
-2. Confirm that `NBA_Project` is available at `localhost,1433`.
-3. Open the PBIT in Power BI Desktop and provide the same local SQL authentication method.
+2. Confirm that `NBA_Project` is available at `.\SQLEXPRESS`.
+3. Open the PBIT in Power BI Desktop and select Windows authentication.
 4. Refresh every page.
 5. Compare visible KPIs with `CODE/SQL/30_reconciliation.sql` before capturing evidence.
 

@@ -77,12 +77,10 @@ table 'analytics vw_q6_home_away_impact'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases("localhost,1433"),
-				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
-				    analytics_vw_q6_home_away_impact = NBA_Project{[Schema="analytics",Item="vw_q6_home_away_impact"]}[Data],
-				    #"Columnas con nombre cambiado" = Table.RenameColumns(analytics_vw_q6_home_away_impact,{{"ppg_home", "Puntos como Local"}, {"ppg_away", "Puntos como visitante"}})
+				    Origen = Sql.Database(".\SQLEXPRESS", "NBA_Project"),
+				    analytics_vw_q6_home_away_impact = Origen{[Schema="analytics",Item="vw_q6_home_away_impact"]}[Data]
 				in
-				    #"Columnas con nombre cambiado"
+				    analytics_vw_q6_home_away_impact
 
 	annotation PBI_NavigationStepName = Navegación
 

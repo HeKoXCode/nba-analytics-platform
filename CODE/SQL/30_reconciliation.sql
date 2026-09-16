@@ -2,7 +2,10 @@
 SELECT
     (SELECT COUNT_BIG(*) FROM core.fact_game) AS fact_game_rows,
     (SELECT COUNT_BIG(*) FROM analytics.vw_team_game) AS team_game_rows,
+    (SELECT COUNT_BIG(*) FROM analytics.vw_team_game AS tg
+     JOIN analytics.vw_teams AS teams ON teams.team_id = tg.team_id) AS current_team_game_rows,
     (SELECT COUNT_BIG(*) FROM core.dim_team) AS dim_team_rows,
+    (SELECT COUNT_BIG(*) FROM analytics.vw_teams) AS analytics_team_rows,
     (SELECT COUNT_BIG(*) FROM core.dim_team WHERE is_historical_unmapped = 1) AS unresolved_team_rows,
     (SELECT COUNT_BIG(*) FROM core.dim_player) AS dim_player_rows,
     (SELECT COUNT_BIG(*) FROM core.dim_player_profile) AS dim_player_profile_rows,

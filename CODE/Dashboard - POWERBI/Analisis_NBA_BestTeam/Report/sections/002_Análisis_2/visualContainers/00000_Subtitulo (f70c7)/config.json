@@ -24,16 +24,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "Porcentaje de "
-                  },
-                  {
-                    "value": "balones perdidos ",
+                    "value": "Pérdidas por partido",
                     "textStyle": {
                       "fontWeight": "bold"
                     }
-                  },
-                  {
-                    "value": "por partido"
                   }
                 ],
                 "horizontalTextAlignment": "center"

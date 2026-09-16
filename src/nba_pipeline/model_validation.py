@@ -22,18 +22,21 @@ def powerbi_contract() -> dict[str, dict[str, Any]]:
         text = path.read_text(encoding="utf-8-sig")
         table_match = re.search(r"(?m)^table\s+(.+)$", text)
         object_match = re.search(r'\[Schema="([^"]+)",Item="([^"]+)"\]', text)
-        if not table_match or not object_match:
+        native_object_match = re.search(r"(?i)\bFROM\s+analytics\.([A-Za-z0-9_]+)", text)
+        if not table_match or (not object_match and not native_object_match):
             raise ValueError(f"TMDL incompleto: {path.relative_to(ROOT)}")
         table = table_match.group(1).strip().strip("'")
+        schema = object_match.group(1) if object_match else "analytics"
+        object_name = object_match.group(2) if object_match else native_object_match.group(1)
         columns = [
             match.group(1).strip().strip("'")
             for match in re.finditer(r"(?m)^\s*column\s+(.+)$", text)
         ]
-        servers = sorted(set(re.findall(r'Sql\.Databases\("([^"]+)"\)', text)))
+        servers = sorted(set(re.findall(r'Sql\.Database\("([^"]+)"\s*,\s*"NBA_Project"\)', text)))
         objects[table] = {
             "file": path.relative_to(ROOT).as_posix(),
-            "schema": object_match.group(1),
-            "object": object_match.group(2),
+            "schema": schema,
+            "object": object_name,
             "columns": columns,
             "servers": servers,
         }
@@ -66,9 +69,14 @@ def validate_static_model() -> dict[str, Any]:
         marker = f"CREATE OR ALTER VIEW analytics.{details['object']}"
         if marker.lower() not in sql.lower():
             raise ValueError(f"El SQL no crea el objeto requerido: {details['object']}")
-        if details["servers"] != ["localhost,1433"]:
+        if details["servers"] != [r".\SQLEXPRESS"]:
             raise ValueError(
                 f"Origen Power BI no portable en {details['file']}: {details['servers']}"
+            )
+        tmdl = (ROOT / details["file"]).read_text(encoding="utf-8-sig")
+        if "Table.RenameColumns" in tmdl:
+            raise ValueError(
+                f"Power Query todavía renombra columnas que el SQL ya publica: {details['file']}"
             )
     if re.search(r"(?im)^\s*DELETE\s+FROM\s+(?:\[?core\]?|\[?analytics\]?)", sql):
         raise ValueError("El modelo analítico contiene un borrado silencioso.")

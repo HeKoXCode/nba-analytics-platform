@@ -242,7 +242,7 @@
         "Restatement": "Promedio de Balones perdidos",
         "Name": "Sum(analytics vw_q7_balance_of_def.tov_avg)",
         "Type": 1,
-        "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
+        "Format": "0.0"
       }
     ]
   },
@@ -260,7 +260,7 @@
   "selects": [
     {
       "displayName": "Promedio de Balones perdidos",
-      "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
+      "format": "0.0",
       "queryName": "Sum(analytics vw_q7_balance_of_def.tov_avg)",
       "roles": {
         "Data": true

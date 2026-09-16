@@ -11,7 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "evidence" / "NBA-I1-I4" / "real-run-lf"
-SQL_EVIDENCE = ROOT / "evidence" / "NBA-I1-I4" / "ci-sql" / "sql_reconciliation.json"
+SQL_EVIDENCE = (
+    ROOT / "evidence" / "NBA-I1-I4" / "local-sql-express" / "sql_reconciliation.json"
+)
 PBIT = ROOT / "CODE" / "Dashboard - POWERBI" / "Analisis_NBA_BestTeam.pbit"
 PROJECT = ROOT / "CODE" / "Dashboard - POWERBI" / "Analisis_NBA_BestTeam"
 EXPECTED_TOTALS = {
@@ -30,8 +32,8 @@ EXPECTED_PAGES = {
     "Metodología y cierre": 5,
 }
 EXPECTED_PBIT = {
-    "bytes": 6_374_566,
-    "sha256": "18B49F8F2EE420D470358F08A08504C82EAB2CD34040ADD6A5D96756058478F5",
+    "bytes": 6_372_749,
+    "sha256": "16AA1CD74E54334D3D481A780AEEA153D3825231F22C70576623070B436F010F",
 }
 
 
@@ -83,11 +85,15 @@ def validate_model_files() -> None:
     require(len(tables) == 15, "Power BI does not expose 15 TMDL objects")
     for path in tables:
         text = path.read_text(encoding="utf-8")
-        require('Sql.Databases("localhost,1433")' in text, f"Non-portable source: {path.name}")
+        require(
+            'Sql.Database(".\\SQLEXPRESS", "NBA_Project")' in text,
+            f"Unexpected source: {path.name}",
+        )
         require("100.74.116.125" not in text, f"Former personal host remains: {path.name}")
+        require("Table.RenameColumns" not in text, f"Stale Power Query rename: {path.name}")
 
     sql_evidence = read_json(SQL_EVIDENCE)
-    require(sql_evidence["status"] == "passed", "CI SQL load is not passed")
+    require(sql_evidence["status"] == "passed", "Local SQL Express load is not passed")
     require(sum(sql_evidence["inserted_rows"].values()) == 161_009, "SQL loaded rows changed")
     require(
         sql_evidence["powerbi_contract"] == {"columns": 65, "objects": 15},
@@ -100,6 +106,11 @@ def validate_model_files() -> None:
         sql_evidence["reconciliation"]["kpis"]["team_game_rows"] == 131_284,
         "Team-game grain changed",
     )
+    kpis = sql_evidence["reconciliation"]["kpis"]
+    require(kpis["analytics_team_rows"] == 30, "Analytical franchise scope changed")
+    require(kpis["current_team_game_rows"] == 128_764, "Current-team grain changed")
+    require(kpis["q1_total_team_games"] == 128_764, "Q1 visual grain changed")
+    require(kpis["fact_game_rows"] == 65_642, "Unique-game total changed")
 
 
 def validate_report() -> None:
@@ -118,9 +129,20 @@ def validate_report() -> None:
         "2013–2022",
         "30.638.984 bytes",
         "155 duplicados",
-        "Última validación integral",
+        "Última validación integral: 10/09/2026.",
+        "Pérdidas por partido",
+        "Eficiencia de tiro",
     ):
         require(required in report_text, f"Report methodology/title evidence missing: {required}")
+    require(
+        not (
+            sections
+            / "000_Inicio"
+            / "visualContainers"
+            / "00000_textbox (e6685)"
+        ).exists(),
+        "Duplicate cover title layer remains active",
+    )
 
     require(PBIT.stat().st_size == EXPECTED_PBIT["bytes"], "PBIT byte size changed")
     digest = hashlib.sha256(PBIT.read_bytes()).hexdigest().upper()

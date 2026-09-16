@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 962.8571428571429,
-        "y": 84.28571428571429,
+        "x": 963,
+        "y": 85,
         "z": 15000,
-        "width": 355.7142857142857,
-        "height": 292.8571428571429,
+        "width": 346,
+        "height": 90,
         "tabOrder": 8000
       }
     }
@@ -138,15 +138,10 @@
       "background": [
         {
           "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": -0.25
-                    }
-                  }
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

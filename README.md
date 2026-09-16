@@ -86,19 +86,19 @@ python -m pytest --cov=nba_pipeline --cov-report=term-missing
 Copy the variable names from [`CODE/.env.example`](CODE/.env.example) into your own environment and provide a local secret. I do not commit credentials.
 
 ```powershell
-$env:NBA_SQL_DRIVER = "ODBC Driver 18 for SQL Server"
-$env:NBA_SQL_SERVER = "localhost,1433"
+$env:NBA_SQL_DRIVER = "ODBC Driver 17 for SQL Server"
+$env:NBA_SQL_SERVER = ".\SQLEXPRESS"
 $env:NBA_SQL_DATABASE = "NBA_Project"
-$env:NBA_SQL_TRUSTED_CONNECTION = "no"
-$env:NBA_SQL_USER = "sa"
-$env:NBA_SQL_PASSWORD = "<your-local-secret>"
+$env:NBA_SQL_TRUSTED_CONNECTION = "yes"
+$env:NBA_SQL_ENCRYPT = "no"
+$env:NBA_SQL_TRUST_SERVER_CERTIFICATE = "yes"
 
 python -m nba_pipeline load-sql `
   --run-dir .artifacts\my-first-run `
   --evidence-dir evidence\my-first-sql-load
 ```
 
-The loader applies the idempotent schema, loads all canonical tables in one transaction, creates the analytical views and verifies every object and column required by Power BI. CI repeats this against an ephemeral SQL Server 2022 container.
+The loader applies the idempotent schema, loads all canonical tables in one transaction, creates the analytical views and verifies every object and column required by Power BI. The published PBIT uses the same generic `.\SQLEXPRESS` source. CI overrides these local values and repeats the integration against an ephemeral SQL Server 2022 container.
 
 ## 📊 Power BI
 
@@ -122,6 +122,7 @@ Every analytical title states its period or sample and unit. The final page reco
 - [Versioned contract](contracts/schema_v1.0.0.json)
 - [Real-run evidence](evidence/NBA-I1-I4/real-run-lf/manifest.json)
 - [CI SQL reconciliation](evidence/NBA-I1-I4/ci-sql/sql_reconciliation.json)
+- [Local SQL Express reconciliation](evidence/NBA-I1-I4/local-sql-express/sql_reconciliation.json)
 - [Security review](DOCS/security_review.md)
 
 ## ⚠️ Boundaries
@@ -129,7 +130,7 @@ Every analytical title states its period or sample and unit. The final page reco
 - The committed dataset is a historical analytical sample, not an official complete NBA warehouse.
 - The 53 generated team records make historical identifiers explicit; they do not invent franchise metadata.
 - Duplicate rows remain inspectable in `rejects/`; they are not silently discarded.
-- Power BI uses DirectQuery to `localhost,1433`, so you must load SQL Server before refreshing it.
+- Power BI uses DirectQuery to `.\SQLEXPRESS`, so you must load SQL Server Express before refreshing it.
 - Source access, redistribution terms and NBA-related rights must be checked before reuse.
 
 ## 👥 Authorship

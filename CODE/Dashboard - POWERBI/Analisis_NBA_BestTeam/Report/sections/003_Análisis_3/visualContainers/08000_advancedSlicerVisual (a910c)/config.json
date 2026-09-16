@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 975.5555555555555,
+        "x": 930,
         "y": 500,
         "z": 14000,
-        "width": 333.3333333333333,
-        "height": 248.88888888888889,
+        "width": 365,
+        "height": 90,
         "tabOrder": 8000
       }
     }
@@ -59,7 +59,7 @@
             "showBlankAs": {
               "expr": {
                 "Literal": {
-                  "Value": "'Equipos ->'"
+                  "Value": "'Equipo'"
                 }
               }
             }
@@ -100,15 +100,10 @@
       "background": [
         {
           "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": -0.25
-                    }
-                  }
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -8,7 +8,7 @@ I keep the executable assets in this folder while the installable Python package
 2. The ETL writes immutable run directories with canonical data, quarantined rows, JSONL logs, checksums and reconciliation.
 3. `SQL/script.sql` creates the database, canonical model, analytical views and independent reconciliation queries.
 4. The transactional loader inserts the completed run and verifies the 15 SQL objects consumed by Power BI.
-5. The PBIT connects to `NBA_Project` on `localhost,1433` through DirectQuery.
+5. The PBIT connects to `NBA_Project` on `.\SQLEXPRESS` through DirectQuery and Windows authentication.
 
 Canonical outputs:
 

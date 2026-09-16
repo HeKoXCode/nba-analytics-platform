@@ -7,8 +7,8 @@
         "x": 995,
         "y": 85,
         "z": 17000,
-        "width": 313.75,
-        "height": 132.5,
+        "width": 314,
+        "height": 90,
         "tabOrder": 10000
       }
     }
@@ -100,15 +100,10 @@
       "background": [
         {
           "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": -0.25
-                    }
-                  }
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
