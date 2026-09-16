@@ -48,9 +48,8 @@ table 'analytics vw_q10_recent_top'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases(".\SQLEXPRESS"),
-				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
-				    analytics_vw_q10_recent_top = NBA_Project{[Schema="analytics",Item="vw_q10_recent_top"]}[Data]
+				    Origen = Sql.Database(".\SQLEXPRESS", "NBA_Project"),
+				    analytics_vw_q10_recent_top = Origen{[Schema="analytics",Item="vw_q10_recent_top"]}[Data]
 				in
 				    analytics_vw_q10_recent_top
 

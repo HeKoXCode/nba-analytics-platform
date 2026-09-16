@@ -289,6 +289,91 @@ def update_efficiency_card_labels() -> None:
         write_json(path, config)
 
 
+def normalize_streak_visual_source() -> None:
+    """Keep the streak chart self-contained so it does not depend on a missing model path.
+
+    The analytical view already exposes ``team_name``.  Referencing that column
+    directly avoids a second, unrelated ``vw_teams`` source in the visual query
+    (and the resulting blank visual in DirectQuery mode).
+    """
+
+    directory = SECTIONS / "004_Insights" / "visualContainers" / "11000_Racha histórica"
+
+    def normalize(value: object) -> object:
+        if isinstance(value, str):
+            return value.replace(
+                "analytics vw_teams.team_name",
+                "analytics vw_q8_longest_win_streak.team_name",
+            )
+        if isinstance(value, list):
+            return [normalize(item) for item in value]
+        if isinstance(value, dict):
+            updated = {key: normalize(item) for key, item in value.items()}
+            if updated.get("Entity") == "analytics vw_teams":
+                updated["Entity"] = "analytics vw_q8_longest_win_streak"
+            if updated.get("Source") == "a1":
+                updated["Source"] = "a"
+            return updated
+        return value
+
+    for filename in ("query.json", "config.json", "dataTransforms.json"):
+        path = directory / filename
+        payload = normalize(read_json(path))
+        for query in _streak_queries(payload):
+            sources = query.get("From")
+            if isinstance(sources, list):
+                query["From"] = [source for source in sources if source.get("Name") != "a1"]
+        write_json(path, payload)
+
+
+def _streak_queries(payload: object) -> list[dict]:
+    """Return query dictionaries nested in the three report JSON shapes."""
+
+    queries: list[dict] = []
+
+    def visit(value: object) -> None:
+        if isinstance(value, dict):
+            if isinstance(value.get("From"), list):
+                queries.append(value)
+            for item in value.values():
+                visit(item)
+        elif isinstance(value, list):
+            for item in value:
+                visit(item)
+
+    visit(payload)
+    return queries
+
+
+def use_native_query_for_q2() -> None:
+    """Avoid Power Query metadata recursion for the age/current analytical view."""
+
+    path = PROJECT / "Model" / "tables" / "analytics vw_q2_age_vs_current.tmdl"
+    text = path.read_text(encoding="utf-8-sig")
+    if "Value.NativeQuery(Origen" in text:
+        return
+    marker = "\tpartition 'analytics vw_q2_age_vs_current' = m"
+    partition_start = text.find(marker)
+    if partition_start < 0:
+        raise RuntimeError("No se encontró la partición M de q2.")
+    source_start = text.find("\t\t\t\tlet\n", partition_start)
+    if source_start < 0:
+        raise RuntimeError("No se encontró el bloque M de q2.")
+    output_marker = "\n\t\t\t\t    analytics_vw_q2_age_vs_current\n"
+    source_end = text.find(output_marker, source_start)
+    if source_end < 0:
+        raise RuntimeError("No se encontró la salida M de q2.")
+    source_end += len(output_marker)
+    native = (
+        "\t\t\t\tlet\n"
+        "\t\t\t\t    Origen = Sql.Database(\".\\SQLEXPRESS\", \"NBA_Project\"),\n"
+        "\t\t\t\t    Consulta = Value.NativeQuery(Origen, \"SELECT team_name, year_founded, franchise_age, winrate_hist, ppg_hist FROM analytics.vw_q2_age_vs_current\", null, [EnableFolding=true])\n"
+        "\t\t\t\tin\n"
+        "\t\t\t\t    Consulta\n"
+    )
+    path.write_text(text[:source_start] + native + text[source_end:], encoding="utf-8", newline="\n")
+
+
 def main() -> int:
     for folder, display_name in PAGES.items():
         path = SECTIONS / folder / "section.json"
@@ -357,8 +442,14 @@ def main() -> int:
         for previous_server in ("100.74.116.125,1433", "localhost,1433"):
             updated = updated.replace(
                 f'Sql.Databases("{previous_server}")',
-                'Sql.Databases(".\\SQLEXPRESS")',
+                'Sql.Database(".\\SQLEXPRESS", "NBA_Project")',
             )
+        updated = updated.replace(
+            'Origen = Sql.Databases(".\\SQLEXPRESS"),\n'
+            '				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],',
+            'Origen = Sql.Database(".\\SQLEXPRESS", "NBA_Project"),',
+        )
+        updated = updated.replace('= NBA_Project{[Schema=', '= Origen{[Schema=')
         updated = remove_redundant_power_query_renames(updated)
         if updated != text:
             path.write_text(updated, encoding="utf-8", newline="\n")
@@ -420,6 +511,8 @@ def main() -> int:
     update_methodology()
     update_player_sample_label()
     update_efficiency_card_labels()
+    normalize_streak_visual_source()
+    use_native_query_for_q2()
     print("I4 aplicado: seis páginas, dos visuales redistribuidos y origen SQL local.")
     return 0
 

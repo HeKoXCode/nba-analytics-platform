@@ -41,13 +41,13 @@ The same load was repeated against local SQL Server 2022 Express on 10/09/2026. 
 - Versionable source: adjacent pbi-tools project.
 - Compiler: pbi-tools Core 1.2.0 on .NET 10 with major roll-forward.
 - Power BI Desktop installed during compilation: 2.157.1354.0.
-- Size: **6,372,771 bytes**.
-- SHA-256: `FDD8498F49F70150D9CB33D20B8080B1A35DD545D91D4C915C7DF2091578F98A`.
+- Size: **6,372,749 bytes**.
+- SHA-256: `16AA1CD74E54334D3D481A780AEEA153D3825231F22C70576623070B436F010F`.
 - ZIP integrity: compiled successfully with `Report/Layout`, `DataModelSchema` and required package metadata.
 - Pages: six, ordered from `Inicio` to `Metodología y cierre`.
 - SQL source: only `.\SQLEXPRESS/NBA_Project`; no personal host or credential is embedded.
 
-Compilation proves that the extracted report and model produce a valid PBIT package. It does not, by itself, prove a successful DirectQuery refresh. The screenshot protocol therefore requires a loaded local SQL instance and an explicit refresh before publication.
+Compilation proves that the extracted report and model produce a valid PBIT package. On **15/09/2026**, the compiled report was opened in Power BI Desktop against the local `.\SQLEXPRESS` instance: the native `SELECT` used by the age-versus-current view was accepted, all six pages rendered, and the streak visual returned the expected ranked values (Lakers 33, Warriors 25, Rockets 22, Spurs 20, Hawks 19). This is local Windows evidence of a successful DirectQuery session; it does not claim a hosted Power BI refresh or a 22 GB synthetic dataset.
 
 ## Repeatable commands
 

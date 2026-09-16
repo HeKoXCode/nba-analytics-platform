@@ -49,9 +49,7 @@ table 'analytics vw_q2_age_vs_current'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases(".\SQLEXPRESS"),
-				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
-				    analytics_vw_q2_age_vs_current = NBA_Project{[Schema="analytics",Item="vw_q2_age_vs_current"]}[Data]
+				    Origen = Sql.Database(".\SQLEXPRESS", "NBA_Project"),
+				    Consulta = Value.NativeQuery(Origen, "SELECT team_name, year_founded, franchise_age, winrate_hist, ppg_hist FROM analytics.vw_q2_age_vs_current", null, [EnableFolding=true])
 				in
-				    analytics_vw_q2_age_vs_current
-
+				    Consulta

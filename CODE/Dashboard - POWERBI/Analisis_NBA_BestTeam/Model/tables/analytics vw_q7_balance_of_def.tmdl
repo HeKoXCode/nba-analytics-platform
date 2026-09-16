@@ -49,9 +49,8 @@ table 'analytics vw_q7_balance_of_def'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases(".\SQLEXPRESS"),
-				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
-				    analytics_vw_q7_balance_of_def = NBA_Project{[Schema="analytics",Item="vw_q7_balance_of_def"]}[Data]
+				    Origen = Sql.Database(".\SQLEXPRESS", "NBA_Project"),
+				    analytics_vw_q7_balance_of_def = Origen{[Schema="analytics",Item="vw_q7_balance_of_def"]}[Data]
 				in
 				    analytics_vw_q7_balance_of_def
 

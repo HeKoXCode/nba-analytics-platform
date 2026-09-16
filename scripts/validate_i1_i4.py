@@ -32,8 +32,8 @@ EXPECTED_PAGES = {
     "Metodología y cierre": 5,
 }
 EXPECTED_PBIT = {
-    "bytes": 6_372_771,
-    "sha256": "FDD8498F49F70150D9CB33D20B8080B1A35DD545D91D4C915C7DF2091578F98A",
+    "bytes": 6_372_749,
+    "sha256": "16AA1CD74E54334D3D481A780AEEA153D3825231F22C70576623070B436F010F",
 }
 
 
@@ -85,7 +85,10 @@ def validate_model_files() -> None:
     require(len(tables) == 15, "Power BI does not expose 15 TMDL objects")
     for path in tables:
         text = path.read_text(encoding="utf-8")
-        require('Sql.Databases(".\\SQLEXPRESS")' in text, f"Unexpected source: {path.name}")
+        require(
+            'Sql.Database(".\\SQLEXPRESS", "NBA_Project")' in text,
+            f"Unexpected source: {path.name}",
+        )
         require("100.74.116.125" not in text, f"Former personal host remains: {path.name}")
         require("Table.RenameColumns" not in text, f"Stale Power Query rename: {path.name}")
 

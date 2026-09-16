@@ -22,9 +22,8 @@ table 'analytics vw_bridge_team_season'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases(".\SQLEXPRESS"),
-				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
-				    analytics_vw_bridge_team_season = NBA_Project{[Schema="analytics",Item="vw_bridge_team_season"]}[Data]
+				    Origen = Sql.Database(".\SQLEXPRESS", "NBA_Project"),
+				    analytics_vw_bridge_team_season = Origen{[Schema="analytics",Item="vw_bridge_team_season"]}[Data]
 				in
 				    analytics_vw_bridge_team_season
 

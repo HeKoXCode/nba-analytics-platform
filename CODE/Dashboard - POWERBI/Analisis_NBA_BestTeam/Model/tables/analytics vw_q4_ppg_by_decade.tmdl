@@ -23,9 +23,8 @@ table 'analytics vw_q4_ppg_by_decade'
 		mode: directQuery
 		source =
 				let
-				    Origen = Sql.Databases(".\SQLEXPRESS"),
-				    NBA_Project = Origen{[Name="NBA_Project"]}[Data],
-				    analytics_vw_q4_ppg_by_decade = NBA_Project{[Schema="analytics",Item="vw_q4_ppg_by_decade"]}[Data]
+				    Origen = Sql.Database(".\SQLEXPRESS", "NBA_Project"),
+				    analytics_vw_q4_ppg_by_decade = Origen{[Schema="analytics",Item="vw_q4_ppg_by_decade"]}[Data]
 				in
 				    analytics_vw_q4_ppg_by_decade
 

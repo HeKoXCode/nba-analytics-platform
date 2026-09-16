@@ -22,18 +22,21 @@ def powerbi_contract() -> dict[str, dict[str, Any]]:
         text = path.read_text(encoding="utf-8-sig")
         table_match = re.search(r"(?m)^table\s+(.+)$", text)
         object_match = re.search(r'\[Schema="([^"]+)",Item="([^"]+)"\]', text)
-        if not table_match or not object_match:
+        native_object_match = re.search(r"(?i)\bFROM\s+analytics\.([A-Za-z0-9_]+)", text)
+        if not table_match or (not object_match and not native_object_match):
             raise ValueError(f"TMDL incompleto: {path.relative_to(ROOT)}")
         table = table_match.group(1).strip().strip("'")
+        schema = object_match.group(1) if object_match else "analytics"
+        object_name = object_match.group(2) if object_match else native_object_match.group(1)
         columns = [
             match.group(1).strip().strip("'")
             for match in re.finditer(r"(?m)^\s*column\s+(.+)$", text)
         ]
-        servers = sorted(set(re.findall(r'Sql\.Databases\("([^"]+)"\)', text)))
+        servers = sorted(set(re.findall(r'Sql\.Database\("([^"]+)"\s*,\s*"NBA_Project"\)', text)))
         objects[table] = {
             "file": path.relative_to(ROOT).as_posix(),
-            "schema": object_match.group(1),
-            "object": object_match.group(2),
+            "schema": schema,
+            "object": object_name,
             "columns": columns,
             "servers": servers,
         }
