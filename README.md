@@ -28,8 +28,6 @@ I do not use these results to predict future games, revenue, playoff qualificati
 | Cross-table orphan checks | 0 |
 | Core ETL test coverage | 89.92% |
 
-The wider source folder was approximately **2.31 GB** when it was audited. It is not the volume processed here, and this repository does not claim a 22 GB run. Read [the source and scope note](DOCS/raw_data_download.md) for the distinction.
-
 ## 🏗️ Architecture
 
 ```text
@@ -104,18 +102,30 @@ The loader applies the idempotent schema, loads all canonical tables in one tran
 
 Open [`Analisis_NBA_BestTeam.pbit`](CODE/Dashboard%20-%20POWERBI/Analisis_NBA_BestTeam.pbit) after loading the local database. I organized the report into:
 
-1. Historia y evolución;
-2. Eficiencia y consistencia;
-3. Talento y perfil;
-4. Rachas y actualidad;
-5. Metodología y cierre;
-6. plus the cover page.
+1. `Inicio`: portfolio case study, verified scope and four-step analytical route;
+2. `01 · Panorama histórico`: long-run win rate, scoring by decade and recent performance versus franchise age;
+3. `02 · Ventaja y estabilidad`: home advantage, inter-season variability and shooting efficiency versus turnovers;
+4. `03 · Perfil y ofensiva`: Top-12 offensive context and the historical physical-profile sample;
+5. `04 · Pico y actualidad`: historical winning streaks versus the 2013–2022 window;
+6. `05 · Método y evidencia`: data, model, quality, traceability and reviewer deliverables.
 
-Every analytical title states its period or sample and unit. The final page records scope, quality decisions, limitations and the last integral validation date. The adjacent `Analisis_NBA_BestTeam/` directory is the reviewable pbi-tools project used to compile the PBIT.
+Each analytical page starts with one question and ends with one headline finding. A six-item native navigation bar links every page and highlights the active step without external images or font-dependent emoji. Titles state period/sample and unit, filters use business-facing captions, and the final page provides a direct reproducibility handoff. The report uses a scatter plot for shooting efficiency versus turnovers, removes decorative plot imagery, calculates the offensive Top 12 in SQL and sources each team category from its analytical view. The adjacent `Analisis_NBA_BestTeam/` directory is the reviewable pbi-tools project used to compile the PBIT.
+
+### Dashboard preview
+
+| Inicio | Panorama histórico |
+|:---:|:---:|
+| ![NBA Analytics Platform cover](IMAGES/powerbi_storytelling/01_inicio_storytelling.png) | ![Historical NBA franchise performance](IMAGES/powerbi_storytelling/02_panorama_historico.png) |
+| Perfil y ofensiva | Método y evidencia |
+| ![Offensive context and physical profile](IMAGES/powerbi_storytelling/03_perfil_ofensiva.png) | ![Method, quality and reproducibility evidence](IMAGES/powerbi_storytelling/04_metodo_evidencia.png) |
+
+These four representative views show the published storytelling route without duplicating every report page. The full six-page experience remains available in the compiled PBIT.
 
 ## 🔎 Evidence and documentation
 
 - [NBA-I1–I4 verification](DOCS/i1_i4_verification.md)
+- [Power BI visual-storytelling redesign](DOCS/visual_storytelling_redesign.md)
+- [Visual insight snapshot](evidence/NBA-Visual-Storytelling/insight_snapshot.json)
 - [Technical implementation](DOCS/technical_documentation.md)
 - [Canonical data dictionary](DOCS/canonical_data_dictionary.md)
 - [Model and ERD](DOCS/data_model.md)

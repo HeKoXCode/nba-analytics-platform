@@ -4,10 +4,10 @@
     {
       "id": 0,
       "position": {
-        "height": 52.52621446408584,
-        "width": 182.31721132897607,
-        "x": 0,
-        "y": 0,
+        "height": 10,
+        "width": 10,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
         "tabOrder": 0
       }
@@ -24,24 +24,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "Porcentaje de "
-                  },
-                  {
-                    "value": "Victoria",
+                    "value": "Win rate reciente medio",
                     "textStyle": {
-                      "fontWeight": "bold"
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#64748B"
                     }
-                  },
-                  {
-                    "value": " "
-                  }
-                ],
-                "horizontalTextAlignment": "center"
-              },
-              {
-                "textRuns": [
-                  {
-                    "value": "Promedio"
                   }
                 ],
                 "horizontalTextAlignment": "center"

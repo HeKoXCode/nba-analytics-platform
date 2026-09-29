@@ -1,54 +1,32 @@
 {
   "objects": {
+    "categoryLabels": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ],
     "categoryAxis": [
       {
         "properties": {
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Eficiencia Ofensiva'"
+                "Value": "'Pérdidas por partido'"
               }
             }
           },
-          "showAxisTitle": {
+          "gridlineThickness": {
             "expr": {
               "Literal": {
-                "Value": "false"
-              }
-            }
-          },
-          "maxMarginFactor": {
-            "expr": {
-              "Literal": {
-                "Value": "25L"
-              }
-            }
-          },
-          "fontSize": {
-            "expr": {
-              "Literal": {
-                "Value": "8D"
-              }
-            }
-          },
-          "italic": {
-            "expr": {
-              "Literal": {
-                "Value": "false"
-              }
-            }
-          },
-          "bold": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
-              }
-            }
-          },
-          "innerPadding": {
-            "expr": {
-              "Literal": {
-                "Value": "10L"
+                "Value": "2D"
               }
             }
           }
@@ -61,74 +39,14 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Perdidas por partido'"
+                "Value": "'Eficiencia de tiro (FG%)'"
               }
             }
           },
-          "labelPrecision": {
+          "gridlineThickness": {
             "expr": {
               "Literal": {
-                "Value": "0L"
-              }
-            }
-          },
-          "labelColor": {
-            "solid": {
-              "color": {
-                "expr": {
-                  "ThemeDataColor": {
-                    "ColorId": 1,
-                    "Percent": 0
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    ],
-    "zoom": [
-      {
-        "properties": {
-          "show": {
-            "expr": {
-              "Literal": {
-                "Value": "false"
-              }
-            }
-          },
-          "showLabels": {
-            "expr": {
-              "Literal": {
-                "Value": "false"
-              }
-            }
-          },
-          "categoryMax": {
-            "expr": {
-              "Literal": {
-                "Value": "1D"
-              }
-            }
-          },
-          "categorySize": {
-            "expr": {
-              "Literal": {
-                "Value": "0.7308174734148832D"
-              }
-            }
-          },
-          "showOnValueAxis": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
-              }
-            }
-          },
-          "showTooltip": {
-            "expr": {
-              "Literal": {
-                "Value": "false"
+                "Value": "3D"
               }
             }
           }
@@ -138,92 +56,17 @@
     "legend": [
       {
         "properties": {
-          "titleText": {
-            "expr": {
-              "Literal": {
-                "Value": "'Franquicia'"
-              }
-            }
-          },
-          "show": {
-            "expr": {
-              "Literal": {
-                "Value": "true"
-              }
-            }
-          },
-          "showTitle": {
-            "expr": {
-              "Literal": {
-                "Value": "false"
-              }
-            }
-          },
           "showGradientLegend": {
             "expr": {
               "Literal": {
-                "Value": "true"
-              }
-            }
-          }
-        }
-      }
-    ],
-    "layout": [
-      {
-        "properties": {
-          "seriesOrderReversed": {
-            "expr": {
-              "Literal": {
                 "Value": "false"
               }
             }
           },
-          "seriesOrderSorted": {
-            "expr": {
-              "Literal": {
-                "Value": "false"
-              }
-            }
-          },
-          "clusteredGapSize": {
-            "expr": {
-              "Literal": {
-                "Value": "0D"
-              }
-            }
-          }
-        }
-      }
-    ],
-    "dataPoint": [
-      {
-        "properties": {
-          "fill": {
-            "solid": {
-              "color": {
-                "expr": {
-                  "ThemeDataColor": {
-                    "ColorId": 9,
-                    "Percent": -0.25
-                  }
-                }
-              }
-            }
-          }
-        },
-        "selector": {
-          "metadata": "Avg(analytics vw_q7_balance_of_def.tov_avg)"
-        }
-      }
-    ],
-    "labels": [
-      {
-        "properties": {
           "show": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -232,18 +75,28 @@
     ]
   },
   "projectionOrdering": {
+    "Series": [
+      3
+    ],
     "Y": [
-      0,
+      0
+    ],
+    "X": [
       1
     ],
-    "Category": [
+    "Size": [
+      2
+    ],
+    "Tooltips": [
+      1,
+      0,
       2
     ]
   },
   "projectionActiveItems": {
-    "Category": [
+    "X": [
       {
-        "queryRef": "analytics vw_teams.team_name",
+        "queryRef": "Avg(analytics vw_q7_balance_of_def.tov_avg)",
         "suppressConcat": false
       }
     ]
@@ -251,20 +104,24 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de Balones perdidos",
-        "Name": "Avg(analytics vw_q7_balance_of_def.tov_avg)",
-        "Type": 1,
-        "Format": "0.0"
+        "Restatement": "Promedio de fg_pct_avg",
+        "Name": "Avg(analytics vw_q7_balance_of_def.fg_pct_avg)",
+        "Type": 1
       },
       {
-        "Restatement": "Promedio de Eficiencia de tiro",
-        "Name": "Avg(analytics vw_q7_balance_of_def.fg_pct_avg)",
-        "Type": 1,
-        "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
+        "Restatement": "Promedio de tov_avg",
+        "Name": "Avg(analytics vw_q7_balance_of_def.tov_avg)",
+        "Type": 1
+      },
+      {
+        "Restatement": "Promedio de balance_score",
+        "Name": "Avg(analytics vw_q7_balance_of_def.balance_score)",
+        "Type": 3,
+        "Format": "0"
       },
       {
         "Restatement": "team_name",
-        "Name": "analytics vw_teams.team_name",
+        "Name": "analytics vw_q7_balance_of_def.team_name",
         "Type": 2048
       }
     ]
@@ -273,30 +130,77 @@
     {
       "DataRoles": [
         {
+          "Name": "Series",
+          "Projection": 3,
+          "isActive": false
+        },
+        {
           "Name": "Y",
           "Projection": 0,
           "isActive": false
         },
         {
-          "Name": "Y",
+          "Name": "X",
+          "Projection": 1,
+          "isActive": true
+        },
+        {
+          "Name": "Size",
+          "Projection": 2,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
           "Projection": 1,
           "isActive": false
         },
         {
-          "Name": "Category",
+          "Name": "Tooltips",
+          "Projection": 0,
+          "isActive": false
+        },
+        {
+          "Name": "Tooltips",
           "Projection": 2,
-          "isActive": true
+          "isActive": false
         }
       ]
     }
   ],
   "selects": [
     {
-      "displayName": "Promedio de Balones perdidos",
-      "format": "0.0",
+      "displayName": "Promedio de fg_pct_avg",
+      "queryName": "Avg(analytics vw_q7_balance_of_def.fg_pct_avg)",
+      "roles": {
+        "Y": true,
+        "Tooltips": true
+      },
+      "type": {
+        "category": null,
+        "underlyingType": 259
+      },
+      "expr": {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "analytics vw_q7_balance_of_def"
+                }
+              },
+              "Property": "Eficiencia de tiro"
+            }
+          },
+          "Function": 1
+        }
+      }
+    },
+    {
+      "displayName": "Promedio de tov_avg",
       "queryName": "Avg(analytics vw_q7_balance_of_def.tov_avg)",
       "roles": {
-        "Y": true
+        "X": true,
+        "Tooltips": true
       },
       "type": {
         "category": null,
@@ -319,17 +223,16 @@
       }
     },
     {
-      "displayName": "Promedio de Eficiencia de tiro",
-      "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
-      "queryName": "Avg(analytics vw_q7_balance_of_def.fg_pct_avg)",
+      "displayName": "Promedio de balance_score",
+      "format": "0",
+      "queryName": "Avg(analytics vw_q7_balance_of_def.balance_score)",
       "roles": {
-        "Y": true
+        "Size": true,
+        "Tooltips": true
       },
-      "sort": 2,
-      "sortOrder": 0,
       "type": {
         "category": null,
-        "underlyingType": 259
+        "underlyingType": 260
       },
       "expr": {
         "Aggregation": {
@@ -340,7 +243,7 @@
                   "Entity": "analytics vw_q7_balance_of_def"
                 }
               },
-              "Property": "Eficiencia de tiro"
+              "Property": "balance_score"
             }
           },
           "Function": 1
@@ -349,9 +252,9 @@
     },
     {
       "displayName": "team_name",
-      "queryName": "analytics vw_teams.team_name",
+      "queryName": "analytics vw_q7_balance_of_def.team_name",
       "roles": {
-        "Category": true
+        "Series": true
       },
       "type": {
         "category": null,
@@ -361,7 +264,7 @@
         "Column": {
           "Expression": {
             "SourceRef": {
-              "Entity": "analytics vw_teams"
+              "Entity": "analytics vw_q7_balance_of_def"
             }
           },
           "Property": "team_name"

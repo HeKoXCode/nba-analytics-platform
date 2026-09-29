@@ -25,15 +25,15 @@ EXPECTED_TOTALS = {
 }
 EXPECTED_PAGES = {
     "Inicio": 0,
-    "Historia y evolución": 1,
-    "Eficiencia y consistencia": 2,
-    "Talento y perfil": 3,
-    "Rachas y actualidad": 4,
-    "Metodología y cierre": 5,
+    "01 · Panorama histórico": 1,
+    "02 · Ventaja y estabilidad": 2,
+    "03 · Perfil y ofensiva": 3,
+    "04 · Pico y actualidad": 4,
+    "05 · Método y evidencia": 5,
 }
 EXPECTED_PBIT = {
-    "bytes": 6_372_749,
-    "sha256": "16AA1CD74E54334D3D481A780AEEA153D3825231F22C70576623070B436F010F",
+    "bytes": 6_377_058,
+    "sha256": "BFB581E8D43A404A6C87AE1BFB8FD59304911F38503431C9BDE928652996A368",
 }
 
 
@@ -127,9 +127,10 @@ def validate_report() -> None:
     for required in (
         "1946–2022",
         "2013–2022",
-        "30.638.984 bytes",
-        "155 duplicados",
-        "Última validación integral: 10/09/2026.",
+        "6 CSV · 161.111 filas",
+        "65.642 partidos únicos",
+        "11 pruebas · 89,92%",
+        "ENTREGABLES PARA REPRODUCIBILIDAD Y REVISIÓN TÉCNICA",
         "Pérdidas por partido",
         "Eficiencia de tiro",
     ):

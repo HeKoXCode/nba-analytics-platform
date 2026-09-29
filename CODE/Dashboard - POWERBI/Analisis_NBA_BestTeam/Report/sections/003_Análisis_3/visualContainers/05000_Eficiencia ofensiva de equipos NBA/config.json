@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 16,
-        "y": 161,
+        "x": 24,
+        "y": 200,
         "z": 9000,
-        "width": 1279,
-        "height": 324,
+        "width": 1272,
+        "height": 280,
         "tabOrder": 5000
       }
     }
@@ -18,7 +18,7 @@
     "projections": {
       "Category": [
         {
-          "queryRef": "analytics vw_teams.team_name",
+          "queryRef": "analytics vw_q3_player_context_offense.team_name",
           "active": true
         }
       ],
@@ -39,11 +39,6 @@
         {
           "Name": "a",
           "Entity": "analytics vw_q3_player_context_offense",
-          "Type": 0
-        },
-        {
-          "Name": "a1",
-          "Entity": "analytics vw_teams",
           "Type": 0
         }
       ],
@@ -86,12 +81,12 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Source": "a1"
+                "Source": "a"
               }
             },
             "Property": "team_name"
           },
-          "Name": "analytics vw_teams.team_name",
+          "Name": "analytics vw_q3_player_context_offense.team_name",
           "NativeReferenceName": "team_name"
         }
       ],
@@ -252,7 +247,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1888EF'"
+                      "Value": "'#38BDF8'"
                     }
                   }
                 }
@@ -269,7 +264,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Contexto ofensivo por equipo · muestra disponible · PPG y FG%'"
+                  "Value": "'Top 12 contexto ofensivo | muestra histórica | PPG y FG%'"
                 }
               }
             },
@@ -284,6 +279,31 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12.0D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
                 }
               }
             }
@@ -322,7 +342,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -335,7 +355,25 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE3EE'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.0D"
                 }
               }
             }
@@ -358,14 +396,28 @@
       "background": [
         {
           "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "color": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FDFBFB'"
+                      "Value": "'#FFFFFF'"
                     }
                   }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.0D"
                 }
               }
             }

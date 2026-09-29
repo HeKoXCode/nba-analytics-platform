@@ -121,7 +121,7 @@
       },
       {
         "Restatement": "team_name",
-        "Name": "analytics vw_teams.team_name",
+        "Name": "analytics vw_q9_physical_profile.team_name",
         "Type": 2048
       }
     ]
@@ -252,7 +252,7 @@
     },
     {
       "displayName": "team_name",
-      "queryName": "analytics vw_teams.team_name",
+      "queryName": "analytics vw_q9_physical_profile.team_name",
       "roles": {
         "Series": true
       },
@@ -264,7 +264,7 @@
         "Column": {
           "Expression": {
             "SourceRef": {
-              "Entity": "analytics vw_teams"
+              "Entity": "analytics vw_q9_physical_profile"
             }
           },
           "Property": "team_name"

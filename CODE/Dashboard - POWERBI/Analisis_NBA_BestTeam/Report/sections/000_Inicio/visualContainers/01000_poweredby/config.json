@@ -4,10 +4,10 @@
     {
       "id": 0,
       "position": {
-        "height": 52.5,
-        "width": 100,
-        "x": 0,
-        "y": 0,
+        "height": 10,
+        "width": 10,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
         "tabOrder": 1000
       }

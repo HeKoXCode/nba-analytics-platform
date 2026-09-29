@@ -6,13 +6,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "a",
-              "Entity": "analytics vw_q7_balance_of_def",
-              "Type": 0
-            },
-            {
               "Name": "a1",
-              "Entity": "analytics vw_teams",
+              "Entity": "analytics vw_q7_balance_of_def",
               "Type": 0
             }
           ],
@@ -23,24 +18,7 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Source": "a"
-                      }
-                    },
-                    "Property": "Balones perdidos"
-                  }
-                },
-                "Function": 1
-              },
-              "Name": "Avg(analytics vw_q7_balance_of_def.tov_avg)",
-              "NativeReferenceName": "Promedio de Balones perdidos"
-            },
-            {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "a"
+                        "Source": "a1"
                       }
                     },
                     "Property": "Eficiencia de tiro"
@@ -49,7 +27,41 @@
                 "Function": 1
               },
               "Name": "Avg(analytics vw_q7_balance_of_def.fg_pct_avg)",
-              "NativeReferenceName": "Promedio de Eficiencia de tiro"
+              "NativeReferenceName": "Promedio de fg_pct_avg"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a1"
+                      }
+                    },
+                    "Property": "Balones perdidos"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Avg(analytics vw_q7_balance_of_def.tov_avg)",
+              "NativeReferenceName": "Promedio de tov_avg"
+            },
+            {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Source": "a1"
+                      }
+                    },
+                    "Property": "balance_score"
+                  }
+                },
+                "Function": 1
+              },
+              "Name": "Avg(analytics vw_q7_balance_of_def.balance_score)",
+              "NativeReferenceName": "Promedio de balance_score"
             },
             {
               "Column": {
@@ -60,28 +72,8 @@
                 },
                 "Property": "team_name"
               },
-              "Name": "analytics vw_teams.team_name",
+              "Name": "analytics vw_q7_balance_of_def.team_name",
               "NativeReferenceName": "team_name"
-            }
-          ],
-          "OrderBy": [
-            {
-              "Direction": 2,
-              "Expression": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "a"
-                        }
-                      },
-                      "Property": "Eficiencia de tiro"
-                    }
-                  },
-                  "Function": 1
-                }
-              }
             }
           ]
         },
@@ -92,7 +84,8 @@
                 "Projections": [
                   0,
                   1,
-                  2
+                  2,
+                  3
                 ]
               }
             ]
@@ -100,8 +93,13 @@
           "DataReduction": {
             "DataVolume": 4,
             "Primary": {
-              "Window": {
-                "Count": 1000
+              "OverlappingPointsSample": {
+                "X": {
+                  "Index": 1
+                },
+                "Y": {
+                  "Index": 0
+                }
               }
             }
           },

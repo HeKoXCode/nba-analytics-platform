@@ -95,6 +95,17 @@ WITH team_performance AS (
            AVG(metrics.avg_fg_pct) AS avg_fg_pct
     FROM analytics.vw_team_season_metrics AS metrics
     GROUP BY metrics.team_id
+), eligible_teams AS (
+    SELECT DISTINCT profile.team_id
+    FROM core.dim_player_profile AS profile
+    WHERE profile.nba_flag = 1
+), ranked_teams AS (
+    SELECT performance.team_id, performance.avg_ppg, performance.avg_fg_pct,
+           ROW_NUMBER() OVER (
+               ORDER BY performance.avg_ppg DESC, performance.team_id
+           ) AS offensive_rank
+    FROM team_performance AS performance
+    JOIN eligible_teams AS eligible ON eligible.team_id = performance.team_id
 )
 SELECT players.player_id, players.full_name AS player_name, teams.team_name,
        performance.avg_ppg AS [Puntos por partido],
@@ -102,8 +113,9 @@ SELECT players.player_id, players.full_name AS player_name, teams.team_name,
 FROM core.dim_player AS players
 JOIN core.dim_player_profile AS profile ON profile.player_id = players.player_id
 JOIN analytics.vw_teams AS teams ON teams.team_id = profile.team_id
-LEFT JOIN team_performance AS performance ON performance.team_id = profile.team_id
-WHERE profile.nba_flag = 1;
+JOIN ranked_teams AS performance ON performance.team_id = profile.team_id
+WHERE profile.nba_flag = 1
+  AND performance.offensive_rank <= 12;
 GO
 
 CREATE OR ALTER VIEW analytics.vw_q4_ppg_by_decade AS

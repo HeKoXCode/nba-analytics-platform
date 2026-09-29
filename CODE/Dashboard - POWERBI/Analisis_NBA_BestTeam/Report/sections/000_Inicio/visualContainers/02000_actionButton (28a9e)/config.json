@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 6.428124287335237,
-        "y": 7.3180076628352495,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
-        "width": 107.77777777777777,
-        "height": 39.25925925925926,
+        "width": 10,
+        "height": 10,
         "tabOrder": 2000
       }
     }
@@ -93,7 +93,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis ▲'"
+                  "Value": "'ANÁLISIS'"
                 }
               }
             },
@@ -172,21 +172,28 @@
             "type": {
               "expr": {
                 "Literal": {
-                  "Value": "'Bookmark'"
+                  "Value": "'PageNavigation'"
                 }
               }
             },
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis '"
+                  "Value": "'Abrir panorama histórico'"
                 }
               }
             },
-            "bookmark": {
+            "showDefaultTooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'d8339f0160f789d2766a'"
+                  "Value": "false"
+                }
+              }
+            },
+            "navigationSection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'127f8fdec9d1ce997d14'"
                 }
               }
             }

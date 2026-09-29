@@ -10,7 +10,7 @@ table 'analytics vw_teams'
 
 		annotation SummarizationSetBy = Automatic
 
-	column team_name
+	column Franquicia
 		dataType: string
 		sourceProviderType: nvarchar(255)
 		summarizeBy: none

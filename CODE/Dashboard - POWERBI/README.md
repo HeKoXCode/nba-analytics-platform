@@ -4,14 +4,14 @@ I publish `Analisis_NBA_BestTeam.pbit` as the user-facing DirectQuery template a
 
 ## Current structure
 
-- `Inicio`: scope and navigation.
-- `Historia y evolución`: three historical questions.
-- `Eficiencia y consistencia`: three efficiency/variability questions.
-- `Talento y perfil`: two primary questions plus supporting KPI cards.
-- `Rachas y actualidad`: two questions separated from the talent page.
-- `Metodología y cierre`: real volume, quality decisions, reproducibility and limits.
+- `Inicio`: portfolio case study, verified scope and four-step navigation.
+- `01 · Panorama histórico`: one question connecting long-run win rate, scoring evolution and recent performance versus age.
+- `02 · Ventaja y estabilidad`: one question connecting home advantage, variability and the shooting/turnover trade-off.
+- `03 · Perfil y ofensiva`: a readable Top-12 offensive view connected with the historical player-profile sample.
+- `04 · Pico y actualidad`: one question comparing a historical peak with the 2013–2022 window.
+- `05 · Método y evidencia`: data, model, quality, traceability and reviewer deliverables.
 
-I use built-in dropdown slicers and descriptive conclusions only. I do not claim revenue, ROI, future playoffs, marketability or guaranteed returns.
+I use business-labelled dropdown slicers, a restrained blue/orange theme and one evidence-backed headline finding per analytical page. The reproducible baseline behind those findings is versioned in `evidence/NBA-Visual-Storytelling/insight_snapshot.json`.
 
 ## Refresh
 
@@ -27,12 +27,14 @@ The PBIT does not contain the database or credentials. A compiled template is no
 
 ```powershell
 python scripts\update_powerbi_project_i4.py
+python scripts\update_powerbi_storytelling.py
 $env:DOTNET_ROLL_FORWARD = "Major"
-tools\pbi-tools\bin\pbi-tools.core.exe compile `
+tools\pbi-tools\pbi-tools.core.exe compile `
   "CODE\Dashboard - POWERBI\Analisis_NBA_BestTeam" `
   -outPath "CODE\Dashboard - POWERBI\Analisis_NBA_BestTeam.pbit" `
   -format PBIT -overwrite
 python scripts\validate_i1_i4.py
+python scripts\validate_visual_storytelling.py
 ```
 
-The committed artifact hash and compiler evidence are recorded in `DOCS/i1_i4_verification.md`.
+The committed artifact hash and compiler evidence are recorded in `DOCS/i1_i4_verification.md`; the design decisions and exact visible takeaways are recorded in `DOCS/visual_storytelling_redesign.md`.

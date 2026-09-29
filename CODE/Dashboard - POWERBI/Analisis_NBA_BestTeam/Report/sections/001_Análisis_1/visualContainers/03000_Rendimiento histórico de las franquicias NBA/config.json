@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 27.142857142857146,
-        "y": 161.42857142857144,
+        "x": 27,
+        "y": 204,
         "z": 8000,
-        "width": 927.1428571428572,
-        "height": 280,
+        "width": 880,
+        "height": 300,
         "tabOrder": 3000
       }
     }
@@ -23,7 +23,7 @@
       ],
       "Category": [
         {
-          "queryRef": "analytics vw_teams.team_name",
+          "queryRef": "analytics vw_q1_hist_perf.team_name",
           "active": true
         }
       ],
@@ -42,11 +42,6 @@
         {
           "Name": "a",
           "Entity": "analytics vw_q1_hist_perf",
-          "Type": 0
-        },
-        {
-          "Name": "a1",
-          "Entity": "analytics vw_teams",
           "Type": 0
         }
       ],
@@ -72,12 +67,12 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Source": "a1"
+                "Source": "a"
               }
             },
             "Property": "team_name"
           },
-          "Name": "analytics vw_teams.team_name",
+          "Name": "analytics vw_q1_hist_perf.team_name",
           "NativeReferenceName": "team_name"
         },
         {
@@ -422,21 +417,21 @@
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#8299C7'"
+                                "Value": "'#93C5FD'"
                               }
                             }
                           },
                           "mid": {
                             "color": {
                               "Literal": {
-                                "Value": "'#194296'"
+                                "Value": "'#1D4ED8'"
                               }
                             }
                           },
                           "max": {
                             "color": {
                               "Literal": {
-                                "Value": "'#AF1111'"
+                                "Value": "'#F28C28'"
                               }
                             }
                           },
@@ -505,7 +500,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Victorias históricas por franquicia · 1946–2022 · porcentaje'"
+                  "Value": "'Rendimiento histórico | 1946–2022 | win rate'"
                 }
               }
             },
@@ -519,7 +514,25 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12.0D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
                 }
               }
             }
@@ -532,7 +545,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -561,6 +574,24 @@
                   "Value": "true"
                 }
               }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.0D"
+                }
+              }
             }
           }
         }
@@ -572,6 +603,37 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE3EE'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.0D"
                 }
               }
             }

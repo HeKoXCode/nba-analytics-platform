@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 94.50706960273287,
-        "y": 0,
+        "x": 1500,
+        "y": 900,
         "z": 2000,
-        "width": 523.5714285714286,
-        "height": 73.57142857142857,
+        "width": 10,
+        "height": 10,
         "tabOrder": 2000
       }
     }
@@ -24,22 +24,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "Rachas y actualidad",
+                    "value": "04 · Pico y actualidad",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "26pt",
                       "fontWeight": "bold",
-                      "fontSize": "20pt",
-                      "color": "#ffffff"
-                    }
-                  },
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "20pt",
-                      "color": "#234cb4"
+                      "color": "#0F172A"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "left"
               }
             ]
           }

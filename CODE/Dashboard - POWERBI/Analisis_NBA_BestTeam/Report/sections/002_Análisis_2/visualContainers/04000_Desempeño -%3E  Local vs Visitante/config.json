@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 5.555555555555555,
-        "y": 495.55555555555554,
+        "x": 24,
+        "y": 505,
         "z": 6000,
-        "width": 655.5555555555555,
-        "height": 255.55555555555554,
+        "width": 616,
+        "height": 230,
         "tabOrder": 4000
       }
     }
@@ -18,7 +18,7 @@
     "projections": {
       "Category": [
         {
-          "queryRef": "analytics vw_teams.team_name",
+          "queryRef": "analytics vw_q6_home_away_impact.team_name",
           "active": true
         }
       ],
@@ -37,11 +37,6 @@
         {
           "Name": "a",
           "Entity": "analytics vw_q6_home_away_impact",
-          "Type": 0
-        },
-        {
-          "Name": "a1",
-          "Entity": "analytics vw_teams",
           "Type": 0
         }
       ],
@@ -84,12 +79,12 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Source": "a1"
+                "Source": "a"
               }
             },
             "Property": "team_name"
           },
-          "Name": "analytics vw_teams.team_name",
+          "Name": "analytics vw_q6_home_away_impact.team_name",
           "NativeReferenceName": "team_name"
         }
       ],
@@ -295,7 +290,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#194296'"
+                      "Value": "'#1D4ED8'"
                     }
                   }
                 }
@@ -332,7 +327,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#AF1111'"
+                      "Value": "'#F28C28'"
                     }
                   }
                 }
@@ -408,14 +403,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Local frente a visitante · 1946–2022 · puntos por partido'"
+                  "Value": "'Efecto localía | 1946–2022 | PPG local vs visitante'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12.0D"
                 }
               }
             },
@@ -423,6 +418,31 @@
               "expr": {
                 "Literal": {
                   "Value": "'center'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
                 }
               }
             }
@@ -450,6 +470,94 @@
               "expr": {
                 "Literal": {
                   "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE3EE'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

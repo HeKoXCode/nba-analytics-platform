@@ -78,13 +78,13 @@ I restructured the report into six pages:
 | Page | Analytical role |
 |---|---|
 | Inicio | scope and navigation |
-| Historia y evolución | historical performance, scoring evolution and franchise age |
-| Eficiencia y consistencia | home/away, shooting/turnovers and variability |
-| Talento y perfil | physical profile and offensive context |
-| Rachas y actualidad | historical streaks and 2013–2022 performance |
-| Metodología y cierre | source volume, decisions, reproducibility and limitations |
+| 01 · Panorama histórico | long-run win rate, scoring evolution and franchise age |
+| 02 · Ventaja y estabilidad | home/away, shooting/turnovers and variability |
+| 03 · Perfil y ofensiva | physical profile and offensive context |
+| 04 · Pico y actualidad | historical streaks and 2013–2022 performance |
+| 05 · Método y evidencia | data, model, quality, traceability and reviewer deliverables |
 
-The update is repeatable through `scripts/update_powerbi_project_i4.py`. The PBIT is compiled from the extracted project with pbi-tools Core 1.2.0. Chart titles identify period/sample and unit; unsupported claims about ROI, marketability and guaranteed future performance remain excluded.
+The data/model update is repeatable through `scripts/update_powerbi_project_i4.py`; the visual layer is repeatable through `scripts/update_powerbi_storytelling.py`. The latter applies the page sequence, six-link native navigation, palette, non-overlapping layout, business-facing filter labels, questions, headline findings, direct category sources, SQL-backed Top-12 offensive reduction and the shooting-versus-turnovers scatter plot. I compile the PBIT from the extracted project with pbi-tools Core 1.2.0 and validate it with `scripts/validate_visual_storytelling.py`. Chart titles identify period/sample and unit, while the final page exposes the deliverables needed for an independent technical review.
 
 ## 6. Test strategy
 
@@ -94,4 +94,4 @@ CI also processes the six real committed CSV files, loads their outputs into an 
 
 ## 7. Desktop evidence boundary
 
-Power BI Desktop refresh is a Windows, stateful step. The repository supplies a compiled PBIT, the complete SQL model, CI reconciliation and a repeated local SQL Server 2022 Express load. I keep the screenshot protocol separate from package compilation: the PBIT hash proves the exact artifact, while a future screenshot set must also show a completed DirectQuery refresh against the loaded local instance. I do not treat compilation alone as visual refresh evidence.
+Power BI Desktop refresh is a Windows, stateful step. The repository supplies a compiled PBIT, the complete SQL model, CI reconciliation, a repeated local SQL Server 2022 Express load and a versioned snapshot for every fixed takeaway. I keep the screenshot protocol separate from package compilation: the PBIT hash proves the exact artifact, while screenshots must also show a completed DirectQuery session against the loaded local instance. I do not treat compilation alone as refreshed-screen evidence.

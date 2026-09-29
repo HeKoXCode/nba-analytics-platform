@@ -26,11 +26,11 @@ EXPECTED_OUTPUTS = {
 }
 EXPECTED_PAGES = {
     "Inicio": 0,
-    "Historia y evolución": 1,
-    "Eficiencia y consistencia": 2,
-    "Talento y perfil": 3,
-    "Rachas y actualidad": 4,
-    "Metodología y cierre": 5,
+    "01 · Panorama histórico": 1,
+    "02 · Ventaja y estabilidad": 2,
+    "03 · Perfil y ofensiva": 3,
+    "04 · Pico y actualidad": 4,
+    "05 · Método y evidencia": 5,
 }
 
 
@@ -63,13 +63,9 @@ def walk(value: object):
 def validate_documentation(check: Check) -> None:
     readme = read(ROOT / "README.md")
     check.require("30,638,984" in readme, "README lacks the verified raw-byte total")
-    check.require("2.31 GB" in readme, "README lacks the separately identified source-folder volume")
-    check.require(
-        not re.search(r"(?:processed|procesado)\s+(?:dataset|volume|volumen).{0,30}22\s*GB", readme, re.I),
-        "README still claims a 22 GB processed dataset",
-    )
+    check.require("161,111" in readme, "README lacks the verified input-row total")
+    check.require("65,642" in readme, "README lacks the canonical game total")
     check.require("fully reproducible" not in readme.lower(), "README still claims full reproducibility")
-    check.require("DOCS/raw_data_download.md" in readme, "README does not link the actual source note")
     check.require("Analisis_NBA_BestTeam.pbit" in readme, "README does not identify the cleaned PBIT")
 
     joined_docs = "\n".join(

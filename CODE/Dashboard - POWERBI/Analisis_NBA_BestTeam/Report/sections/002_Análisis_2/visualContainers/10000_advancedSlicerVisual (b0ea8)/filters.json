@@ -8,7 +8,7 @@
             "Entity": "analytics dim_season"
           }
         },
-        "Property": "decade"
+        "Property": "Década de temporada"
       }
     },
     "type": "Advanced",

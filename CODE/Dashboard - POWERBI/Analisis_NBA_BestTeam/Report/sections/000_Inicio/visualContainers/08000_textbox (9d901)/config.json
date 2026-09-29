@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 0,
-        "y": 0,
+        "x": 1500,
+        "y": 900,
         "z": 0,
-        "width": 58.75,
-        "height": 63.5,
+        "width": 10,
+        "height": 10,
         "tabOrder": 8000
       }
     }

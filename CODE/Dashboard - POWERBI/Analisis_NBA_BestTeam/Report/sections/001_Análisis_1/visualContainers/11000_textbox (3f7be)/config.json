@@ -24,11 +24,11 @@
               {
                 "textRuns": [
                   {
-                    "value": "⭐",
+                    "value": "",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "32pt",
-                      "color": "#d64550"
+                      "color": "#C2413B"
                     }
                   }
                 ],

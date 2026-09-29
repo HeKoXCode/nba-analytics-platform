@@ -1,5 +1,5 @@
 ﻿relationship 5f66d9fb-b9f4-18bf-2cb2-c12cf6393c27
-	fromColumn: 'analytics dim_season'.decade
+	fromColumn: 'analytics dim_season'.'Década de temporada'
 	toColumn: 'analytics vw_q4_ppg_by_decade'.decade
 
 relationship 4b008a12-c759-f4de-7c60-4fe8487c7f6c
@@ -55,11 +55,11 @@ relationship a9623329-b7b8-7756-6e05-737678a8f02a
 
 relationship 4301d543-457d-8990-d307-f1772cbb6b1d
 	fromColumn: 'analytics vw_q5_consistency'.team_name
-	toColumn: 'analytics vw_teams'.team_name
+	toColumn: 'analytics vw_teams'.Franquicia
 
 relationship bfc190dd-b44d-d31e-7f21-cdafe104d09c
 	fromColumn: 'analytics vw_q7_balance_of_def'.team_name
-	toColumn: 'analytics vw_teams'.team_name
+	toColumn: 'analytics vw_teams'.Franquicia
 
 relationship 36d72377-c854-e356-910a-85cda2b8ce52
 	fromColumn: 'analytics vw_q10_recent_top'.team_id
@@ -68,7 +68,7 @@ relationship 36d72377-c854-e356-910a-85cda2b8ce52
 relationship 887e6b85-4669-5cda-a419-30ae4179bcb6
 	isActive: false
 	fromColumn: 'analytics vw_q6_home_away_impact'.team_name
-	toColumn: 'analytics vw_teams'.team_name
+	toColumn: 'analytics vw_teams'.Franquicia
 
 relationship ba699625-b0d6-0c7f-0073-d71aa1e19c7e
 	fromColumn: 'analytics vw_q6_home_away_impact'.season_id

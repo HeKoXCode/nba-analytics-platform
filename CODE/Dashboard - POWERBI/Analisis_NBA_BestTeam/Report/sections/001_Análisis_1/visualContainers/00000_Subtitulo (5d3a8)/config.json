@@ -4,10 +4,10 @@
     {
       "id": 0,
       "position": {
-        "height": 110,
-        "width": 237.14285714285714,
-        "x": 14.285714285714286,
-        "y": 0.20408163265309603,
+        "height": 10,
+        "width": 10,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
         "tabOrder": 0
       }
@@ -24,7 +24,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "Porcentaje de Victorias Histórico"
+                    "value": "Win rate histórico medio",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#64748B"
+                    }
                   }
                 ],
                 "horizontalTextAlignment": "center"

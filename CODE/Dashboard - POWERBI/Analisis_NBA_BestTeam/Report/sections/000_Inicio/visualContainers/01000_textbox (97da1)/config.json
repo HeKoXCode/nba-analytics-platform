@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 0,
-        "y": 0,
+        "x": 1500,
+        "y": 900,
         "z": 0,
-        "width": 58.96551724137931,
-        "height": 63.44827586206897,
+        "width": 10,
+        "height": 10,
         "tabOrder": 1000
       }
     }
@@ -24,12 +24,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "ℹ️",
+                    "value": "INFO",
                     "textStyle": {
-                      "fontSize": "28pt"
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "8pt",
+                      "fontWeight": "bold",
+                      "color": "#FFFFFF"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               }
             ]
           }

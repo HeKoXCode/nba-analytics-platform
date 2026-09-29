@@ -28,3 +28,4 @@ venv/
 # Power BI temporary files
 *.pbix.tmp
 *.pbit.tmp
+/CODE/Dashboard - POWERBI/userrAnalisis_NBA_BestTeam.pbix

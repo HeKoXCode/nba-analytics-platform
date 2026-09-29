@@ -4,10 +4,10 @@
     {
       "id": 0,
       "position": {
-        "height": 51.11876075731497,
-        "width": 178.40123867433837,
-        "x": 6.27921351787238,
-        "y": 4.922547332185896,
+        "height": 10,
+        "width": 10,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
         "tabOrder": 1000
       }
@@ -24,14 +24,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ventaja Promedio de "
-                  },
-                  {
-                    "value": "Local",
+                    "value": "Ventaja local (PPG)",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
                       "fontWeight": "bold",
-                      "fontSize": "11pt",
-                      "color": "#eb895f"
+                      "color": "#64748B"
                     }
                   }
                 ],

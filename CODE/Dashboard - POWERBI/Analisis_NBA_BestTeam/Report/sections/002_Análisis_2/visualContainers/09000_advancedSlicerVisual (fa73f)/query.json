@@ -19,10 +19,10 @@
                     "Source": "a"
                   }
                 },
-                "Property": "team_name"
+                "Property": "Franquicia"
               },
-              "Name": "analytics vw_teams.team_name",
-              "NativeReferenceName": "team_name"
+              "Name": "analytics vw_teams.Franquicia",
+              "NativeReferenceName": "Franquicia"
             }
           ]
         },

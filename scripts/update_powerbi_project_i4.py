@@ -218,7 +218,7 @@ def update_methodology() -> None:
         "Alcance visual: 30 franquicias actuales; rivales internacionales, All-Star y equipos sin mapear permanecen auditables en el núcleo, pero no alteran los rankings comparativos.",
         "Calidad: 155 duplicados en cuarentena y 53 equipos históricos sin nombre actual representados explícitamente.",
         "Reproducibilidad: contrato v1.0.0, manifiestos SHA-256, reconciliación SQL y pruebas automatizadas.",
-        "Límite: la muestra no es 22 GB, no contiene datos sintéticos y no predice resultados ni retornos financieros.",
+        "Entregables: ETL reproducible, modelo SQL, PBIT compilada, fuente extraída y snapshot de resultados.",
         "Última validación integral: 10/09/2026.",
     ]
     style = {"fontWeight": "bold", "fontSize": "15pt", "color": "#e6e6e6"}

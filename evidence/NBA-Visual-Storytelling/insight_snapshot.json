@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at": "2026-09-28T14:40:00-03:00",
+  "source": {
+    "server": ".\\SQLEXPRESS",
+    "database": "NBA_Project",
+    "authentication": "Windows integrated",
+    "mode": "read-only SELECT statements against canonical analytics views"
+  },
+  "scope": {
+    "first_season": 1946,
+    "last_season": 2022,
+    "max_game_date": "2023-12-06",
+    "unique_games": 65642,
+    "current_franchises": 30,
+    "note": "The report labels the period by season_id. Some 2022-season records have calendar dates in 2023."
+  },
+  "history": {
+    "leader": {
+      "team": "San Antonio Spurs",
+      "games": 4077,
+      "wins": 2427,
+      "win_rate_pct": 59.53
+    },
+    "league_ppg": {
+      "1940s": 76.23,
+      "1960s_peak": 114.06,
+      "2020s": 112.07
+    }
+  },
+  "efficiency": {
+    "home_win_rate_pct": 61.20,
+    "away_win_rate_pct": 37.36,
+    "home_ppg": 104.69,
+    "away_ppg": 101.11,
+    "home_ppg_advantage": 3.58,
+    "lowest_win_rate_cv": {
+      "team": "New Orleans Pelicans",
+      "cv_pct": 20.81
+    }
+  },
+  "profile": {
+    "player_profiles": 3225,
+    "mean_team_height_cm": 199.24,
+    "mean_team_weight_lb": 213.36,
+    "largest_team_sample": 197,
+    "note": "These are historical player profiles aggregated by franchise, not current rosters."
+  },
+  "peak_and_recent": {
+    "longest_streak": {
+      "team": "Los Angeles Lakers",
+      "wins": 33
+    },
+    "recent_window": {
+      "first_season": 2013,
+      "last_season": 2022,
+      "leader": "Golden State Warriors",
+      "win_rate_pct": 64.20,
+      "ppg": 112.03
+    }
+  }
+}

@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 19.970845481049572,
-        "y": 4.344023323615195,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
-        "width": 230.00000000000003,
-        "height": 90,
+        "width": 10,
+        "height": 10,
         "tabOrder": 0
       }
     }
@@ -24,7 +24,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "Años de la Franquicia"
+                    "value": "Edad máxima de franquicia (años)",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#64748B"
+                    }
                   }
                 ],
                 "horizontalTextAlignment": "center"

@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 25,
-        "y": 180,
+        "x": 24,
+        "y": 203,
         "z": 8000,
         "width": 620,
-        "height": 500,
+        "height": 447,
         "tabOrder": 4000
       }
     }
@@ -173,21 +173,21 @@
                           "min": {
                             "color": {
                               "Literal": {
-                                "Value": "'#8299C7'"
+                                "Value": "'#93C5FD'"
                               }
                             }
                           },
                           "mid": {
                             "color": {
                               "Literal": {
-                                "Value": "'#194296'"
+                                "Value": "'#1D4ED8'"
                               }
                             }
                           },
                           "max": {
                             "color": {
                               "Literal": {
-                                "Value": "'#AF1111'"
+                                "Value": "'#F28C28'"
                               }
                             }
                           },
@@ -277,14 +277,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Mayor racha observada por franquicia · 1946–2022 · victorias'"
+                  "Value": "'Pico histórico | 1946–2022 | racha máxima de victorias'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12.0D"
                 }
               }
             },
@@ -294,13 +294,64 @@
                   "Value": "'center'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
+                }
+              }
             }
           }
         }
       ],
       "background": [
         {
-          "properties": {}
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.0D"
+                }
+              }
+            }
+          }
         }
       ],
       "padding": [
@@ -317,6 +368,63 @@
               "expr": {
                 "Literal": {
                   "Value": "3D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE3EE'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

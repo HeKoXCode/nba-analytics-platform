@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 10.940233236151604,
-        "y": 0,
+        "x": 1500,
+        "y": 900,
         "z": 3000,
-        "width": 1195,
-        "height": 73.75,
+        "width": 10,
+        "height": 10,
         "tabOrder": 1000
       }
     }
@@ -24,15 +24,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "Rendimiento y evolución de las franquicias NBA",
+                    "value": "NBA Analytics Platform",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "34pt",
                       "fontWeight": "bold",
-                      "fontSize": "28pt",
-                      "color": "#ffffff"
+                      "color": "#0F172A"
                     }
                   }
                 ],
-                "horizontalTextAlignment": "center"
+                "horizontalTextAlignment": "left"
               }
             ]
           }

@@ -1,1 +1,22 @@
-{"name":"Custom","bad":"#5AAFEC","neutral":"#2F5AE5","good":"#D03B19","minimum":"#96C5F2","center":"#2B22D8","maximum":"#FF4410"}
+{
+  "name": "NBA Executive Story",
+  "dataColors": [
+    "#1D4ED8",
+    "#F28C28",
+    "#38BDF8",
+    "#0B132B",
+    "#15803D",
+    "#C2413B",
+    "#7C3AED",
+    "#0F766E"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#0F172A",
+  "tableAccent": "#F28C28",
+  "good": "#15803D",
+  "neutral": "#1D4ED8",
+  "bad": "#C2413B",
+  "minimum": "#DBEAFE",
+  "center": "#38BDF8",
+  "maximum": "#F28C28"
+}

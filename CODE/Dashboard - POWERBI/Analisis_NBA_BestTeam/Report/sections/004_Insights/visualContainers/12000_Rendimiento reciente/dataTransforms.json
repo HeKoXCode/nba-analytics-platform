@@ -187,7 +187,7 @@
   "projectionActiveItems": {
     "Category": [
       {
-        "queryRef": "analytics vw_teams.team_name",
+        "queryRef": "analytics vw_q10_recent_top.team_name",
         "suppressConcat": false
       }
     ]
@@ -222,7 +222,7 @@
       },
       {
         "Restatement": "team_name",
-        "Name": "analytics vw_teams.team_name",
+        "Name": "analytics vw_q10_recent_top.team_name",
         "Type": 2048
       }
     ]
@@ -316,7 +316,7 @@
     },
     {
       "displayName": "team_name",
-      "queryName": "analytics vw_teams.team_name",
+      "queryName": "analytics vw_q10_recent_top.team_name",
       "roles": {
         "Category": true
       },
@@ -328,7 +328,7 @@
         "Column": {
           "Expression": {
             "SourceRef": {
-              "Entity": "analytics vw_teams"
+              "Entity": "analytics vw_q10_recent_top"
             }
           },
           "Property": "team_name"

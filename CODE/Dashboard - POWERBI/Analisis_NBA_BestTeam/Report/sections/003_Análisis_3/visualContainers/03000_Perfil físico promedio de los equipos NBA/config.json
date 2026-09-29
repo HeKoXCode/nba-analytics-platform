@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 16,
-        "y": 500,
+        "x": 24,
+        "y": 490,
         "z": 7000,
-        "width": 900,
-        "height": 249,
+        "width": 790,
+        "height": 245,
         "tabOrder": 3000
       }
     }
@@ -18,7 +18,7 @@
     "projections": {
       "Series": [
         {
-          "queryRef": "analytics vw_teams.team_name"
+          "queryRef": "analytics vw_q9_physical_profile.team_name"
         }
       ],
       "Y": [
@@ -55,11 +55,6 @@
         {
           "Name": "a1",
           "Entity": "analytics vw_q9_physical_profile",
-          "Type": 0
-        },
-        {
-          "Name": "a",
-          "Entity": "analytics vw_teams",
           "Type": 0
         }
       ],
@@ -119,12 +114,12 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Source": "a"
+                "Source": "a1"
               }
             },
             "Property": "team_name"
           },
-          "Name": "analytics vw_teams.team_name",
+          "Name": "analytics vw_q9_physical_profile.team_name",
           "NativeReferenceName": "team_name"
         }
       ]
@@ -212,7 +207,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Perfil físico por equipo · muestra disponible · cm y libras'"
+                  "Value": "'Perfil físico | 3.225 perfiles | altura (cm) y peso (lb)'"
                 }
               }
             },
@@ -226,7 +221,120 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "12.0D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE3EE'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

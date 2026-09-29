@@ -9,11 +9,6 @@
               "Name": "a1",
               "Entity": "analytics vw_q9_physical_profile",
               "Type": 0
-            },
-            {
-              "Name": "a",
-              "Entity": "analytics vw_teams",
-              "Type": 0
             }
           ],
           "Select": [
@@ -72,12 +67,12 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Source": "a"
+                    "Source": "a1"
                   }
                 },
                 "Property": "team_name"
               },
-              "Name": "analytics vw_teams.team_name",
+              "Name": "analytics vw_q9_physical_profile.team_name",
               "NativeReferenceName": "team_name"
             }
           ]

@@ -6,7 +6,7 @@
           "transparency": {
             "expr": {
               "Literal": {
-                "Value": "90D"
+                "Value": "0.0D"
               }
             }
           },
@@ -14,9 +14,8 @@
             "solid": {
               "color": {
                 "expr": {
-                  "ThemeDataColor": {
-                    "ColorId": 1,
-                    "Percent": 0
+                  "Literal": {
+                    "Value": "'#F3F6FB'"
                   }
                 }
               }

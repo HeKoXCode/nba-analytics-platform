@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 2.1875,
-        "y": 0,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
-        "width": 186.25,
-        "height": 52.5,
+        "width": 10,
+        "height": 10,
         "tabOrder": 0
       }
     }
@@ -24,9 +24,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "Eficiencia de tiro",
+                    "value": "FG% medio",
                     "textStyle": {
-                      "fontWeight": "bold"
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#64748B"
                     }
                   }
                 ],

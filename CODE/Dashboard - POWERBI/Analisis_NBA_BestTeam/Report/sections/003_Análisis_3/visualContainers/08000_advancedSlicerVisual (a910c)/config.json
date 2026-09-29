@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 930,
-        "y": 500,
+        "x": 834,
+        "y": 490,
         "z": 14000,
-        "width": 365,
-        "height": 90,
+        "width": 462,
+        "height": 70,
         "tabOrder": 8000
       }
     }
@@ -18,7 +18,7 @@
     "projections": {
       "Values": [
         {
-          "queryRef": "analytics vw_teams.team_name"
+          "queryRef": "analytics vw_teams.Franquicia"
         }
       ]
     },
@@ -39,10 +39,10 @@
                 "Source": "a"
               }
             },
-            "Property": "team_name"
+            "Property": "Franquicia"
           },
-          "Name": "analytics vw_teams.team_name",
-          "NativeReferenceName": "team_name"
+          "Name": "analytics vw_teams.Franquicia",
+          "NativeReferenceName": "Franquicia"
         }
       ]
     },
@@ -93,11 +93,118 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12.0D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI Semibold'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0F172A'"
+                    }
+                  }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Franquicia'"
+                }
+              }
             }
           }
         }
       ],
       "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE3EE'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
         {
           "properties": {
             "show": {

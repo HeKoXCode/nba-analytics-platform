@@ -4,10 +4,10 @@
     {
       "id": 0,
       "position": {
-        "height": 73.75,
-        "width": 1148.1136820925553,
-        "x": 1.775147928994082,
-        "y": 2.1033653846153846,
+        "height": 10,
+        "width": 10,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
         "tabOrder": 0
       }
@@ -24,14 +24,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "Talento y perfil",
+                    "value": "03 · Perfil y ofensiva",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "26pt",
                       "fontWeight": "bold",
-                      "fontSize": "18pt",
-                      "color": "#192229"
+                      "color": "#0F172A"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "left"
               }
             ]
           }

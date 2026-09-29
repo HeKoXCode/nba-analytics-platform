@@ -6,7 +6,7 @@
           "transparency": {
             "expr": {
               "Literal": {
-                "Value": "0D"
+                "Value": "0.0D"
               }
             }
           },
@@ -14,52 +14,8 @@
             "solid": {
               "color": {
                 "expr": {
-                  "ThemeDataColor": {
-                    "ColorId": 1,
-                    "Percent": 0
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    ],
-    "outspace": [
-      {
-        "properties": {
-          "image": {
-            "image": {
-              "name": {
-                "expr": {
                   "Literal": {
-                    "Value": "''"
-                  }
-                }
-              },
-              "url": {
-                "expr": {
-                  "Literal": {
-                    "Value": "''"
-                  }
-                }
-              }
-            }
-          },
-          "transparency": {
-            "expr": {
-              "Literal": {
-                "Value": "0D"
-              }
-            }
-          },
-          "color": {
-            "solid": {
-              "color": {
-                "expr": {
-                  "ThemeDataColor": {
-                    "ColorId": 0,
-                    "Percent": 0
+                    "Value": "'#F3F6FB'"
                   }
                 }
               }

@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 506.25,
-        "y": 72.5,
+        "x": 1500,
+        "y": 900,
         "z": 16000,
-        "width": 443.75,
-        "height": 73.75,
+        "width": 10,
+        "height": 10,
         "tabOrder": 9000
       }
     }
@@ -24,25 +24,12 @@
               {
                 "textRuns": [
                   {
-                    "value": "30",
+                    "value": "30 franquicias comparables",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "13pt",
                       "fontWeight": "bold",
-                      "fontSize": "32pt",
-                      "color": "#d64550"
-                    }
-                  },
-                  {
-                    "value": " ",
-                    "textStyle": {
-                      "fontSize": "32pt"
-                    }
-                  },
-                  {
-                    "value": "Equipos Totales",
-                    "textStyle": {
-                      "fontWeight": "bold",
-                      "fontSize": "32pt",
-                      "color": "#0e1a77"
+                      "color": "#F28C28"
                     }
                   }
                 ],

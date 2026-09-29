@@ -4,10 +4,10 @@
     {
       "id": 0,
       "position": {
-        "height": 56.0675410186868,
-        "width": 171,
-        "x": 0,
-        "y": 0,
+        "height": 10,
+        "width": 10,
+        "x": 1500,
+        "y": 900,
         "z": 1000,
         "tabOrder": 0
       }
@@ -24,13 +24,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "Mayor muestra de ",
+                    "value": "Mayor muestra de perfiles",
                     "textStyle": {
-                      "fontWeight": "bold"
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "10pt",
+                      "fontWeight": "bold",
+                      "color": "#64748B"
                     }
-                  },
-                  {
-                    "value": "jugadores por equipo"
                   }
                 ],
                 "horizontalTextAlignment": "center"

@@ -4,11 +4,11 @@
     {
       "id": 0,
       "position": {
-        "x": 120,
-        "y": 105,
+        "x": 24,
+        "y": 95,
         "z": 12000,
-        "width": 1080,
-        "height": 85,
+        "width": 1272,
+        "height": 64,
         "tabOrder": 10000
       }
     }
@@ -24,15 +24,16 @@
               {
                 "textRuns": [
                   {
-                    "value": "Metodología y evidencia",
+                    "value": "05 · Método y evidencia",
                     "textStyle": {
+                      "fontFamily": "Segoe UI",
+                      "fontSize": "28pt",
                       "fontWeight": "bold",
-                      "fontSize": "32pt",
-                      "color": "#ffffff"
+                      "color": "#0F172A"
                     }
                   }
                 ],
-                "horizontalTextAlignment": "center"
+                "horizontalTextAlignment": "left"
               }
             ]
           }

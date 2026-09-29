@@ -6,11 +6,6 @@
           "Version": 2,
           "From": [
             {
-              "Name": "a",
-              "Entity": "analytics vw_q10_recent_top",
-              "Type": 0
-            },
-            {
               "Name": "a1",
               "Entity": "analytics vw_teams",
               "Type": 0
@@ -18,33 +13,16 @@
           ],
           "Select": [
             {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Source": "a"
-                      }
-                    },
-                    "Property": "team_name"
-                  }
-                },
-                "Function": 3
-              },
-              "Name": "Min(analytics vw_q10_recent_top.team_name)",
-              "NativeReferenceName": "Primera fecha: team_name"
-            },
-            {
               "Column": {
                 "Expression": {
                   "SourceRef": {
                     "Source": "a1"
                   }
                 },
-                "Property": "team_name"
+                "Property": "Franquicia"
               },
-              "Name": "analytics vw_teams.team_name",
-              "NativeReferenceName": "team_name"
+              "Name": "analytics vw_teams.Franquicia",
+              "NativeReferenceName": "Franquicia"
             }
           ]
         },
@@ -53,8 +31,7 @@
             "Groupings": [
               {
                 "Projections": [
-                  0,
-                  1
+                  0
                 ]
               }
             ]
@@ -68,9 +45,6 @@
             }
           },
           "IncludeEmptyGroups": true,
-          "SuppressedJoinPredicates": [
-            0
-          ],
           "Version": 1
         },
         "ExecutionMetricsKind": 1

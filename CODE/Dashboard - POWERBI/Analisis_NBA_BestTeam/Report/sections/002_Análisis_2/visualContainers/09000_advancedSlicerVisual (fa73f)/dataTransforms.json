@@ -43,8 +43,8 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "team_name",
-        "Name": "analytics vw_teams.team_name",
+        "Restatement": "Franquicia",
+        "Name": "analytics vw_teams.Franquicia",
         "Type": 2048
       }
     ]
@@ -62,8 +62,8 @@
   ],
   "selects": [
     {
-      "displayName": "team_name",
-      "queryName": "analytics vw_teams.team_name",
+      "displayName": "Franquicia",
+      "queryName": "analytics vw_teams.Franquicia",
       "roles": {
         "Values": true
       },
@@ -78,7 +78,7 @@
               "Entity": "analytics vw_teams"
             }
           },
-          "Property": "team_name"
+          "Property": "Franquicia"
         }
       }
     }
