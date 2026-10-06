@@ -92,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'05 MÉTODO'"
+                  "Value": "'05 METHOD'"
                 }
               }
             },
@@ -198,7 +198,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Abrir 05 método'"
+                  "Value": "'Open method and evidence'"
                 }
               }
             },

@@ -1,3 +1,5 @@
+> Historical exploratory dictionary for the inherited `game_final` notebook output, **not** the canonical ETL/SQL schema used by the current English report. For current tables and nullability, use [canonical_data_dictionary.md](canonical_data_dictionary.md), generated from contract v1.0.0. For the reviewer route, see [reviewer_guide.md](reviewer_guide.md).
+
 TABLE: game_final
 Total columns: 55 | Rows: 65642
 Columns:

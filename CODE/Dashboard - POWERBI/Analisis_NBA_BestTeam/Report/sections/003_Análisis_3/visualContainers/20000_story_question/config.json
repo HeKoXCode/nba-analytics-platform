@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "PREGUNTA  ¿Qué relación muestran el contexto ofensivo y el perfil físico de la muestra?",
+                    "value": "QUESTION  What do offensive context and the available historical player profiles show together?",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13pt",

@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "PREGUNTA  ¿Quién sostuvo el mejor rendimiento y cómo evolucionó el ritmo de anotación?",
+                    "value": "QUESTION  Which team led the historical win-rate ranking, and how did scoring change by decade?",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13pt",

@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 
+from nba_pipeline.model_validation import powerbi_contract, validate_sql_objects
 from nba_pipeline.sql_loader import (
     _convert,
     _utc_naive,
@@ -48,3 +49,34 @@ def test_invalid_database_name_is_rejected(monkeypatch) -> None:
     monkeypatch.setenv("NBA_SQL_DATABASE", "NBA_Project;DROP")
     with pytest.raises(RuntimeError, match="sólo admite"):
         database_name()
+
+
+def test_powerbi_display_names_keep_explicit_sql_source_columns() -> None:
+    objects = powerbi_contract()
+    season = objects["analytics dim_season"]
+    assert season["columns"][2] == "Season decade"
+    assert season["source_columns"][2] == "decade"
+    recent = objects["analytics vw_q10_recent_top"]
+    assert recent["columns"][2:4] == [
+        "Win rate (last 10 seasons)",
+        "Points per game (last 10 seasons)",
+    ]
+    assert recent["source_columns"][2:4] == ["win_rate_10y", "ppg_10y"]
+
+
+def test_sql_contract_queries_source_aliases_not_display_names() -> None:
+    class Cursor:
+        statements: list[str]
+
+        def __init__(self) -> None:
+            self.statements = []
+
+        def execute(self, statement: str) -> None:
+            self.statements.append(statement)
+
+    cursor = Cursor()
+    assert validate_sql_objects(cursor) == {"objects": 15, "columns": 65}
+    queries = "\n".join(cursor.statements)
+    assert "[win_rate_10y]" in queries
+    assert "[decade]" in queries
+    assert "[Season decade]" not in queries

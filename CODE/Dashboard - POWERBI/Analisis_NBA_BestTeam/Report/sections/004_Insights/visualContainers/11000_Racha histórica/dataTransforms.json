@@ -6,7 +6,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Franquicias'"
+                "Value": "'Teams'"
               }
             }
           },
@@ -26,7 +26,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Cantidad de victorias consecutivas'"
+                "Value": "'Consecutive wins'"
               }
             }
           },
@@ -156,7 +156,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Racha observada (victorias): '"
+                "Value": "'Observed streak (wins): '"
               }
             }
           },
@@ -197,7 +197,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Suma de longest_win_streak",
+        "Restatement": "Sum of longest_win_streak",
         "Name": "Sum(analytics vw_q8_longest_win_streak.longest_win_streak)",
         "Type": 3,
         "Format": "0"
@@ -227,7 +227,7 @@
   ],
   "selects": [
     {
-      "displayName": "Suma de longest_win_streak",
+      "displayName": "Sum of longest_win_streak",
       "format": "0",
       "queryName": "Sum(analytics vw_q8_longest_win_streak.longest_win_streak)",
       "roles": {

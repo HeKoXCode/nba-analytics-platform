@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "De 161.111 filas fuente a 65.642 partidos auditables, con ETL versionado, SQL Server y DirectQuery.",
+                    "value": "From 161,111 source rows to 65,642 auditable games, with a versioned ETL, SQL Server and DirectQuery.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "18pt",
@@ -60,7 +60,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Subtitulo'"
+                  "Value": "'Subtitle'"
                 }
               }
             }

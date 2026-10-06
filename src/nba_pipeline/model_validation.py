@@ -28,16 +28,28 @@ def powerbi_contract() -> dict[str, dict[str, Any]]:
         table = table_match.group(1).strip().strip("'")
         schema = object_match.group(1) if object_match else "analytics"
         object_name = object_match.group(2) if object_match else native_object_match.group(1)
-        columns = [
-            match.group(1).strip().strip("'")
-            for match in re.finditer(r"(?m)^\s*column\s+(.+)$", text)
-        ]
+        # TMDL separates the reviewer-facing column name from the SQL alias.
+        # Query the latter: renamed English display labels are not SQL columns.
+        columns: list[str] = []
+        source_columns: list[str] = []
+        column_without_source = False
+        for line in text.splitlines():
+            match = re.match(r"^\s*column\s+(.+)$", line)
+            if match:
+                if len(columns) != len(source_columns):
+                    column_without_source = True
+                columns.append(match.group(1).strip().strip("'"))
+            elif line.lstrip().startswith("sourceColumn:") and len(source_columns) < len(columns):
+                source_columns.append(line.split(":", 1)[1].strip().strip("'"))
+        if column_without_source or len(columns) != len(source_columns):
+            raise ValueError(f"TMDL column without sourceColumn: {path.relative_to(ROOT)}")
         servers = sorted(set(re.findall(r'Sql\.Database\("([^"]+)"\s*,\s*"NBA_Project"\)', text)))
         objects[table] = {
             "file": path.relative_to(ROOT).as_posix(),
             "schema": schema,
             "object": object_name,
             "columns": columns,
+            "source_columns": source_columns,
             "servers": servers,
         }
     return objects
@@ -87,7 +99,7 @@ def validate_sql_objects(cursor) -> dict[str, int]:
     objects = powerbi_contract()
     checked_columns = 0
     for details in objects.values():
-        columns = ", ".join(f"[{column}]" for column in details["columns"])
+        columns = ", ".join(f"[{column}]" for column in details["source_columns"])
         cursor.execute(f"SELECT TOP (0) {columns} FROM [{details['schema']}].[{details['object']}]")
         checked_columns += len(details["columns"])
     return {"objects": len(objects), "columns": checked_columns}

@@ -68,7 +68,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Porcentaje de Victorias'"
+                "Value": "'Win rate'"
               }
             }
           },
@@ -128,7 +128,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Franquicia'"
+                "Value": "'Team'"
               }
             }
           }
@@ -389,7 +389,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Suma de winrate_hist",
+        "Restatement": "Sum of winrate_hist",
         "Name": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
         "Type": 1,
         "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
@@ -400,13 +400,13 @@
         "Type": 2048
       },
       {
-        "Restatement": "Suma de total_wins",
+        "Restatement": "Sum of total_wins",
         "Name": "Sum(analytics vw_q1_hist_perf.total_wins)",
         "Type": 3,
         "Format": "0"
       },
       {
-        "Restatement": "Suma de rank_overall",
+        "Restatement": "Sum of rank_overall",
         "Name": "Sum(analytics vw_q1_hist_perf.rank_overall)",
         "Type": 3,
         "Format": "0"
@@ -441,7 +441,7 @@
   ],
   "selects": [
     {
-      "displayName": "Suma de winrate_hist",
+      "displayName": "Sum of winrate_hist",
       "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
       "queryName": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
       "roles": {
@@ -520,7 +520,7 @@
       }
     },
     {
-      "displayName": "Suma de total_wins",
+      "displayName": "Sum of total_wins",
       "format": "0",
       "queryName": "Sum(analytics vw_q1_hist_perf.total_wins)",
       "roles": {
@@ -547,7 +547,7 @@
       }
     },
     {
-      "displayName": "Suma de rank_overall",
+      "displayName": "Sum of rank_overall",
       "format": "0",
       "queryName": "Sum(analytics vw_q1_hist_perf.rank_overall)",
       "roles": {

@@ -6,7 +6,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Franquicias'"
+                "Value": "'Teams'"
               }
             }
           },
@@ -54,14 +54,14 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Promedio de puntos por partido (PPG)'"
+                "Value": "'Average PPG'"
               }
             }
           },
           "secTitleText": {
             "expr": {
               "Literal": {
-                "Value": "'Porcentaje de acierto'"
+                "Value": "'Field-goal percentage (FG%)'"
               }
             }
           }
@@ -180,13 +180,13 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de Puntos por partido",
+        "Restatement": "Average PPG",
         "Name": "Sum(analytics vw_q3_player_context_offense.avg_ppg)",
         "Type": 1,
         "Format": "0.0"
       },
       {
-        "Restatement": "Promedio de Porcentaje de acierto",
+        "Restatement": "Average FG%",
         "Name": "Sum(analytics vw_q3_player_context_offense.avg_fg_pct)",
         "Type": 1,
         "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
@@ -230,7 +230,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de Puntos por partido",
+      "displayName": "Average PPG",
       "format": "0.0",
       "queryName": "Sum(analytics vw_q3_player_context_offense.avg_ppg)",
       "roles": {
@@ -251,7 +251,7 @@
                   "Entity": "analytics vw_q3_player_context_offense"
                 }
               },
-              "Property": "Puntos por partido"
+              "Property": "Points per game (PPG)"
             }
           },
           "Function": 1
@@ -259,7 +259,7 @@
       }
     },
     {
-      "displayName": "Promedio de Porcentaje de acierto",
+      "displayName": "Average FG%",
       "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
       "queryName": "Sum(analytics vw_q3_player_context_offense.avg_fg_pct)",
       "roles": {
@@ -278,7 +278,7 @@
                   "Entity": "analytics vw_q3_player_context_offense"
                 }
               },
-              "Property": "Porcentaje de acierto"
+              "Property": "Field-goal percentage (FG%)"
             }
           },
           "Function": 1

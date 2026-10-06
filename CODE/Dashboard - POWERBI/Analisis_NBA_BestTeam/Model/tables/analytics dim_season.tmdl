@@ -18,7 +18,7 @@ table 'analytics dim_season'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Década de temporada'
+	column 'Season decade'
 		dataType: int64
 		formatString: 0
 		sourceProviderType: int
@@ -45,7 +45,7 @@ table 'analytics dim_season'
 				in
 				    analytics_dim_season
 
-	annotation PBI_NavigationStepName = Navegación
+	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

@@ -29,7 +29,7 @@ table 'analytics vw_q2_age_vs_current'
 
 	column winrate_hist
 		dataType: double
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		sourceProviderType: decimal(38, 12)
 		summarizeBy: sum
 		sourceColumn: winrate_hist
@@ -50,6 +50,6 @@ table 'analytics vw_q2_age_vs_current'
 		source =
 				let
 				    Origen = Sql.Database(".\SQLEXPRESS", "NBA_Project"),
-				    Consulta = Value.NativeQuery(Origen, "SELECT team_name, year_founded, franchise_age, winrate_hist, ppg_hist FROM analytics.vw_q2_age_vs_current", null, [EnableFolding=true])
+				    analytics_vw_q2_age_vs_current = Origen{[Schema="analytics",Item="vw_q2_age_vs_current"]}[Data]
 				in
-				    Consulta
+				    analytics_vw_q2_age_vs_current

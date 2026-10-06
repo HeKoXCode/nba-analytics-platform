@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "6 CSV VERSIONADOS    ·    161.111 FILAS FUENTE    ·    65.642 PARTIDOS    ·    11 PRUEBAS",
+                    "value": "6 VERSIONED CSVs    ·    161,111 SOURCE ROWS    ·    65,642 GAMES    ·    13 TESTS",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Python ETL  →  SQL Server  →  15 objetos analíticos  →  Power BI DirectQuery",
+                    "value": "Python ETL  →  SQL Server  →  15 analytical objects  →  Power BI DirectQuery",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "12pt",

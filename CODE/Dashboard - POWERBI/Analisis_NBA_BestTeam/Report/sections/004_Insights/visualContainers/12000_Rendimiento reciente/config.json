@@ -52,13 +52,13 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Puntos por partido ultimos 10 años"
+                "Property": "Points per game (last 10 seasons)"
               }
             },
             "Function": 1
           },
           "Name": "Sum(analytics vw_q10_recent_top.ppg_10y)",
-          "NativeReferenceName": "Promedio de Puntos por partido ultimos 10 años"
+          "NativeReferenceName": "Average recent PPG"
         },
         {
           "Aggregation": {
@@ -69,13 +69,13 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Porcentaje de victorias ultimos 10 años"
+                "Property": "Win rate (last 10 seasons)"
               }
             },
             "Function": 1
           },
           "Name": "Sum(analytics vw_q10_recent_top.winrate_10y)",
-          "NativeReferenceName": "Promedio de Porcentaje de victorias ultimos 10 años"
+          "NativeReferenceName": "Average recent win rate"
         },
         {
           "Column": {
@@ -102,7 +102,7 @@
                       "Source": "a"
                     }
                   },
-                  "Property": "Porcentaje de victorias ultimos 10 años"
+                  "Property": "Win rate (last 10 seasons)"
                 }
               },
               "Function": 1
@@ -168,7 +168,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Franquicias'"
+                  "Value": "'Teams'"
                 }
               }
             },
@@ -195,14 +195,14 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Porcentaje de Victorias'"
+                  "Value": "'Win rate'"
                 }
               }
             },
             "secTitleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Puntos promedio por partido'"
+                  "Value": "'Average points per game'"
                 }
               }
             }
@@ -294,7 +294,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ventana reciente | 2013–2022 | win rate y PPG'"
+                  "Value": "'Recent window | 2013–2022 | top 12 by win rate'"
                 }
               }
             },

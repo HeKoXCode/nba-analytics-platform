@@ -17,21 +17,21 @@ table 'analytics vw_q10_recent_top'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Porcentaje de victorias ultimos 10 años'
+	column 'Win rate (last 10 seasons)'
 		dataType: double
-		formatString: 0\ %;-0\ %;0\ %
-		sourceProviderType: decimal(38, 12)
+		formatString: 0.00%
+		sourceProviderType: decimal(24, 12)
 		summarizeBy: sum
-		sourceColumn: Porcentaje de victorias ultimos 10 años
+		sourceColumn: win_rate_10y
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Puntos por partido ultimos 10 años'
+	column 'Points per game (last 10 seasons)'
 		dataType: double
 		formatString: 0.0
 		sourceProviderType: float
 		summarizeBy: sum
-		sourceColumn: Puntos por partido ultimos 10 años
+		sourceColumn: ppg_10y
 
 		annotation SummarizationSetBy = Automatic
 

@@ -1,87 +1,75 @@
 # 🏀 NBA Analytics Platform
 
-> I built this portfolio project to turn six historical NBA datasets into an auditable ETL, a canonical SQL Server model and a six-page Power BI report. The current release completes the NBA-I1 through NBA-I4 remediation plan.
+**From raw NBA records to decisions a reviewer can check.** I built a reproducible Python → SQL Server → Power BI workflow to compare historical team performance without presenting a descriptive sample as a prediction. The English report takes you through history, home-court context, player profiles and the difference between an all-time peak and a recent-window leader.
 
-## 🎯 What you can analyze
+**Start here:** [five-minute reviewer guide](DOCS/reviewer_guide.md) · [English Power BI template](CODE/Dashboard%20-%20POWERBI/NBA_Analytics_EN.pbit) · [verified result snapshot](evidence/NBA-English-2026-09-29/insight_snapshot.json). The template uses DirectQuery: the guide and code can be reviewed without an installation; opening live visuals requires your own local SQL Server load.
 
-The report lets you compare descriptive patterns in the available sample:
+## The analytical result
 
-- historical win rates and scoring evolution;
-- franchise age and observed performance;
-- home/away scoring differences;
-- shooting efficiency, turnovers and season-to-season variability;
-- player physical profiles, offensive context, win streaks and recent performance.
+| Question | Result in the versioned sample | What it means |
+|---|---|---|
+| Who leads the historical win-rate ranking? | San Antonio Spurs: **2,427 / 4,077 = 59.53%** | A sample-wide historical rate, not a forecast. |
+| Does the same team lead the latest ten-season window? | Golden State Warriors: **656 / 986 = 66.53%** in seasons 2013–2022 | I use wins / games for both rankings; the leaders differ across periods. |
+| What does home-court context show? | **104.69** home vs. **101.11** away points per game | These are means of eligible team-season PPG values, not a causal estimate. |
+| What is the longest observed winning streak? | Los Angeles Lakers: **33** games | A historical peak in the available data. |
 
-I do not use these results to predict future games, revenue, playoff qualification or investment returns.
+I changed the recent-ranking calculation from an average of team-season rates to `SUM(wins) / SUM(games_played)` so it is comparable with the historical ranking. The [snapshot](evidence/NBA-English-2026-09-29/insight_snapshot.json) records periods, denominators and other verified values.
 
-## ✅ Verified result
-
-| Check | Result |
-|---|---:|
-| Versioned inputs | 6 CSV · 30,638,984 LF-normalized bytes |
-| Input rows | 161,111 |
-| Accepted source rows | 160,956 |
-| Quarantined duplicates | 155 |
-| Generated historical team references | 53 |
-| Canonical output rows | 161,009 |
-| Unique games retained | 65,642 |
-| Cross-table orphan checks | 0 |
-| Core ETL test coverage | 89.92% |
-
-## 🏗️ Architecture
+## What I built and verified
 
 ```text
-six versioned CSV inputs
-        ↓  contract v1.0.0 + typed validation
-Python ETL ──→ rejects/ + manifest + SHA-256 + reconciliation
-        ↓
-canonical CSV model
-        ↓  transactional load
-SQL Server: core + audit + analytics
-        ↓  DirectQuery
-Power BI template + versionable pbi-tools source
+6 versioned CSVs → contract-based Python ETL → canonical CSVs + rejects + SHA-256
+                 → transactional SQL Server load → 15 analytical objects
+                 → six-page English Power BI DirectQuery report
 ```
 
-The pipeline does not delete valid fact rows to force foreign keys. It preserves every accepted game and adds explicit historical-team records when the current 30-team dimension has no matching identifier.
+The six LF-normalized inputs total **30,638,984 bytes** and **161,111 rows**. The ETL retains **161,009 canonical rows**, quarantines **155 duplicate source keys**, preserves **65,642 unique games** and adds **53 explicit historical-team references** instead of dropping valid facts to satisfy foreign keys. The isolated SQL check selected all **15 objects / 65 expected columns** with zero cross-table orphans. The current local suite passed **13 tests** with **89.92% core ETL coverage**. These are measured results for the committed sample and local QA, not claims about a complete NBA warehouse. See [English release verification](DOCS/english_release_verification.md) and the [technical implementation](DOCS/technical_documentation.md).
 
-## ▶️ Run it
+## Review the report
 
-You need Python **3.12**. SQL Server and Power BI Desktop are only required for the BI layer.
+The six pages are **Overview → Historical Performance → Home Advantage & Consistency → Player Profiles & Offense → Historical Peak vs. 2013–2022 → Method & Evidence**. Each analytical page pairs a question with charts and a fixed full-sample finding. Selecting a team changes exploratory visuals; it does not rewrite the fixed finding. The offensive chart intentionally shows the Top 12 eligible teams, so choosing a team outside that set can leave that one chart empty.
 
-The extracted Power BI source contains generated paths longer than the legacy Windows limit. If you use Git for Windows, enable long paths during the first checkout and keep the setting in this clone:
+The English PBIT is the current technical-review edition. It has been rendered against an isolated SQL database, but it is **not a self-contained PBIX or a web app**. It has no dedicated phone layout; use the desktop report for interactive review. The preceding Spanish template is retained for provenance, not as the current numerical baseline.
+
+📄 [Native six-page report PDF](DOCS/media/technical/nba_english_report_native_hq.pdf) · [All current report previews](IMAGES/powerbi_english/README.md)
+
+![Historical performance: Spurs lead the available sample](IMAGES/powerbi_english/02_historical_performance.png)
+
+![Historical peak and the separately defined 2013–2022 ranking](IMAGES/powerbi_english/05_historical_peak_2013_2022.png)
+
+The PNGs are high-resolution renders of the native Power BI PDF, not photographs of a screen or recreated charts. Authored content is English; Power BI's automatic labels can follow the local Desktop language. The [editorial documents](DOCS/media/linkedin/) are fully English and explain one analytical decision at a time.
+
+The preceding cleaned Spanish PBIT, [`Analisis_NBA_BestTeam.pbit`](CODE/Dashboard%20-%20POWERBI/Analisis_NBA_BestTeam.pbit), remains available as historical provenance only.
+
+## Reproduce the ETL
+
+On Windows, install Python **3.12**. SQL Server 2022/Express, ODBC Driver 17 for SQL Server and Power BI Desktop are only needed for the SQL/BI path. Keep the checkout in a short directory and enable Git long paths because the versionable Power BI source has long generated paths:
 
 ```powershell
 git -c core.longpaths=true clone https://github.com/HeKoXCode/nba-analytics-platform.git
 Set-Location nba-analytics-platform
 git config core.longpaths true
-```
-
-GitHub Desktop users can run `git config core.longpaths true` from **Repository → Open in Command Prompt/PowerShell** after cloning. If the initial checkout already failed, delete only that incomplete clone and repeat the command above in a shorter parent directory.
-
-```powershell
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.lock
 python -m pip install -e .
-python -m nba_pipeline transform `
-  --input-dir CODE\data_raw `
-  --run-dir .artifacts\my-first-run
+python -m nba_pipeline transform --input-dir CODE\data_raw --run-dir .artifacts\my-first-run
 ```
 
-Each `--run-dir` is immutable. Choose a new directory for every execution. A successful run contains canonical data, rejects, structured logs, the exact contract snapshot and checksummed manifests.
-
-To run the automated suite:
+Choose a **new** `--run-dir` each time: completed runs are immutable. The output includes canonical files, rejects, a manifest, checksums and reconciliation. To run quality checks:
 
 ```powershell
 python -m pip install -r requirements-dev.lock
-python -m pip install -e .
-python -m ruff check src tests scripts/generate_model_artifacts.py scripts/update_powerbi_project_i4.py
+python scripts\generate_model_artifacts.py --check
+python -m ruff check src tests scripts\generate_model_artifacts.py scripts\update_powerbi_project_i4.py scripts\update_powerbi_storytelling.py scripts\localize_powerbi_en.py scripts\prepare_powerbi_qa_project.py scripts\validate_i1_i4.py scripts\validate_visual_storytelling.py
 python -m pytest --cov=nba_pipeline --cov-report=term-missing
+python scripts\validate_i1_i4.py
+python scripts\validate_visual_storytelling.py
 ```
 
-## 🗄️ Load SQL Server
+## Load SQL and open Power BI
 
-Copy the variable names from [`CODE/.env.example`](CODE/.env.example) into your own environment and provide a local secret. I do not commit credentials.
+Use [the environment-variable names](CODE/.env.example) and your own local credentials; no secrets are committed. Example for a local named SQL Server Express instance with Windows authentication:
 
 ```powershell
 $env:NBA_SQL_DRIVER = "ODBC Driver 17 for SQL Server"
@@ -90,72 +78,26 @@ $env:NBA_SQL_DATABASE = "NBA_Project"
 $env:NBA_SQL_TRUSTED_CONNECTION = "yes"
 $env:NBA_SQL_ENCRYPT = "no"
 $env:NBA_SQL_TRUST_SERVER_CERTIFICATE = "yes"
-
-python -m nba_pipeline load-sql `
-  --run-dir .artifacts\my-first-run `
-  --evidence-dir evidence\my-first-sql-load
+python -m nba_pipeline load-sql --run-dir .artifacts\my-first-run --evidence-dir evidence\my-first-sql-load
 ```
 
-The loader applies the idempotent schema, loads all canonical tables in one transaction, creates the analytical views and verifies every object and column required by Power BI. The published PBIT uses the same generic `.\SQLEXPRESS` source. CI overrides these local values and repeats the integration against an ephemeral SQL Server 2022 container.
+The loader creates/updates the schema, loads the canonical run transactionally, rebuilds the views and verifies the Power BI contract. **Use a dedicated database you control**: a load replaces canonical contents within the configured database. Open [NBA_Analytics_EN.pbit](CODE/Dashboard%20-%20POWERBI/NBA_Analytics_EN.pbit) in Power BI Desktop, connect to `NBA_Project` at `.\SQLEXPRESS` using Windows authentication, and compare the visible baseline with the [snapshot](evidence/NBA-English-2026-09-29/insight_snapshot.json). For source-level rebuilding and QA, follow the [Power BI README](CODE/Dashboard%20-%20POWERBI/README.md).
 
-## 📊 Power BI
+## Scope, rights and provenance
 
-Open [`Analisis_NBA_BestTeam.pbit`](CODE/Dashboard%20-%20POWERBI/Analisis_NBA_BestTeam.pbit) after loading the local database. I organized the report into:
+- The committed CSVs are a **historical analytical sample**. Season labels cover **1946–2022**; some games in the 2022 season have 2023 calendar dates.
+- I do not use these results to predict games, qualification, revenue or investment returns. The home/away difference is descriptive, not causal.
+- The 53 historical-team records make observed identifiers referentially explicit; they do not invent founding years or franchise lineage.
+- Source-data provenance, redistribution permissions and NBA-related rights must be checked before reuse. No standalone license grant is asserted here.
+- I maintain this portfolio under **HeKoXCode**. Git history credits Percy Ignacio Marzoratti Hill for the recorded remediation and later analytical work; an inherited notebook credits Lucas Roca. See [CONTRIBUTORS.md](CONTRIBUTORS.md). Historical Spanish documentation remains in the repository with a current English route through the reviewer guide.
 
-1. `Inicio`: portfolio case study, verified scope and four-step analytical route;
-2. `01 · Panorama histórico`: long-run win rate, scoring by decade and recent performance versus franchise age;
-3. `02 · Ventaja y estabilidad`: home advantage, inter-season variability and shooting efficiency versus turnovers;
-4. `03 · Perfil y ofensiva`: Top-12 offensive context and the historical physical-profile sample;
-5. `04 · Pico y actualidad`: historical winning streaks versus the 2013–2022 window;
-6. `05 · Método y evidencia`: data, model, quality, traceability and reviewer deliverables.
+## Repository map
 
-Each analytical page starts with one question and ends with one headline finding. A six-item native navigation bar links every page and highlights the active step without external images or font-dependent emoji. Titles state period/sample and unit, filters use business-facing captions, and the final page provides a direct reproducibility handoff. The report uses a scatter plot for shooting efficiency versus turnovers, removes decorative plot imagery, calculates the offensive Top 12 in SQL and sources each team category from its analytical view. The adjacent `Analisis_NBA_BestTeam/` directory is the reviewable pbi-tools project used to compile the PBIT.
-
-### Dashboard preview
-
-| Inicio | Panorama histórico |
-|:---:|:---:|
-| ![NBA Analytics Platform cover](IMAGES/powerbi_storytelling/01_inicio_storytelling.png) | ![Historical NBA franchise performance](IMAGES/powerbi_storytelling/02_panorama_historico.png) |
-| Perfil y ofensiva | Método y evidencia |
-| ![Offensive context and physical profile](IMAGES/powerbi_storytelling/03_perfil_ofensiva.png) | ![Method, quality and reproducibility evidence](IMAGES/powerbi_storytelling/04_metodo_evidencia.png) |
-
-These four representative views show the published storytelling route without duplicating every report page. The full six-page experience remains available in the compiled PBIT.
-
-## 🔎 Evidence and documentation
-
-- [NBA-I1–I4 verification](DOCS/i1_i4_verification.md)
-- [Power BI visual-storytelling redesign](DOCS/visual_storytelling_redesign.md)
-- [Visual insight snapshot](evidence/NBA-Visual-Storytelling/insight_snapshot.json)
-- [Technical implementation](DOCS/technical_documentation.md)
-- [Canonical data dictionary](DOCS/canonical_data_dictionary.md)
-- [Model and ERD](DOCS/data_model.md)
-- [Versioned contract](contracts/schema_v1.0.0.json)
-- [Real-run evidence](evidence/NBA-I1-I4/real-run-lf/manifest.json)
-- [CI SQL reconciliation](evidence/NBA-I1-I4/ci-sql/sql_reconciliation.json)
-- [Local SQL Express reconciliation](evidence/NBA-I1-I4/local-sql-express/sql_reconciliation.json)
-- [Security review](DOCS/security_review.md)
-
-## ⚠️ Boundaries
-
-- The committed dataset is a historical analytical sample, not an official complete NBA warehouse.
-- The 53 generated team records make historical identifiers explicit; they do not invent franchise metadata.
-- Duplicate rows remain inspectable in `rejects/`; they are not silently discarded.
-- Power BI uses DirectQuery to `.\SQLEXPRESS`, so you must load SQL Server Express before refreshing it.
-- Source access, redistribution terms and NBA-related rights must be checked before reuse.
-
-## 👥 Authorship
-
-I maintain and publish the current project as **HeKoXCode**. Existing Git history and notebook evidence also identify work by **Percy Ignacio Marzoratti Hill** and **Lucas Roca**. I preserve only responsibilities supported by that evidence in [CONTRIBUTORS.md](CONTRIBUTORS.md).
-
-## 📁 Repository map
-
-```text
-src/nba_pipeline/   production ETL, validation, watcher and SQL loader
-tests/              deterministic fixture and automated checks
-contracts/          generated schema contract
-CODE/data_raw/      six versioned source CSV files
-CODE/SQL/           database, canonical model, views and reconciliation
-CODE/Dashboard.../  PBIT and extracted Power BI project
-DOCS/               implementation, model, scope, security and evidence notes
-evidence/           lightweight reproducibility evidence; canonical data stays ignored
-```
+| Path | Purpose |
+|---|---|
+| `CODE/data_raw/`, `contracts/` | Six versioned inputs and schema contract |
+| `src/nba_pipeline/`, `tests/` | ETL, validation, watcher, SQL loader and tests |
+| `CODE/SQL/` | Canonical schema, analytical views and reconciliation |
+| `CODE/Dashboard - POWERBI/` | English PBIT, legacy Spanish PBIT and versionable pbi-tools project |
+| `DOCS/`, `evidence/` | Reviewer guide, technical documentation and measured evidence |
+| `IMAGES/` | Current English native-PDF previews and historical Spanish gallery |

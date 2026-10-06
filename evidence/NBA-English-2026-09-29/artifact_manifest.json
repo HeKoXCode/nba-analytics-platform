@@ -1,0 +1,7 @@
+{
+  "artifact": "CODE/Dashboard - POWERBI/NBA_Analytics_EN.pbit",
+  "bytes": 6376258,
+  "sha256": "F9E5EE6E91CD43E5479A4B483A18211D0DE1997C09A3F7E776FCA317A6049518",
+  "compiled_at_local": "2026-10-01",
+  "note": "Candidate generated from the versioned English pbi-tools source. It retains the Desktop-tested recent Top 12 filter and excludes the synthetic blank option in the page-03 team slicer. A database-name-only QA copy of this exact Report/Layout rendered all six pages against isolated SQL Server. One QA10 import showed an intermittent Power Query cyclic-reference warning; a second fresh import (QA11) and refresh completed without repeating it. See DOCS/english_release_verification.md for tested scope and exclusions. Recompiling can change ZIP metadata; this manifest pins this candidate."
+}

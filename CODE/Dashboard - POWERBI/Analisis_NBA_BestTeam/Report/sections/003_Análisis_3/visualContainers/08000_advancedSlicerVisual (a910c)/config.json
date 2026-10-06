@@ -18,7 +18,7 @@
     "projections": {
       "Values": [
         {
-          "queryRef": "analytics vw_teams.Franquicia"
+          "queryRef": "analytics vw_teams.Team"
         }
       ]
     },
@@ -39,10 +39,10 @@
                 "Source": "a"
               }
             },
-            "Property": "Franquicia"
+            "Property": "Team"
           },
-          "Name": "analytics vw_teams.Franquicia",
-          "NativeReferenceName": "Franquicia"
+          "Name": "analytics vw_teams.Team",
+          "NativeReferenceName": "Team"
         }
       ]
     },
@@ -59,7 +59,7 @@
             "showBlankAs": {
               "expr": {
                 "Literal": {
-                  "Value": "'Equipo'"
+                  "Value": "'Team'"
                 }
               }
             }
@@ -122,7 +122,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Franquicia'"
+                  "Value": "'Team'"
                 }
               }
             }

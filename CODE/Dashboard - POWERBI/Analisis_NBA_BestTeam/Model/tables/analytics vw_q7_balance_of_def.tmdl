@@ -17,16 +17,16 @@ table 'analytics vw_q7_balance_of_def'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Eficiencia de tiro'
+	column 'Field-goal percentage (FG%)'
 		dataType: double
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		sourceProviderType: float
 		summarizeBy: sum
 		sourceColumn: Eficiencia de tiro
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Balones perdidos'
+	column 'Turnovers per game'
 		dataType: double
 		formatString: 0.0
 		sourceProviderType: float

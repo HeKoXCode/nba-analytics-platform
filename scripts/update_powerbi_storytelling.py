@@ -9,6 +9,9 @@ and DirectQuery source unchanged, while making the visual layer auditable:
 * a restrained NBA-inspired palette and fewer decorative elements;
 * a scatter plot for shooting efficiency versus turnovers (two real units);
 * single-view category references so visuals do not depend on hidden joins.
+
+The final English stage is applied at the end of main() from the reviewed
+editorial contract. Regenerating this script must not revert public copy to ES.
 """
 
 from __future__ import annotations
@@ -469,11 +472,11 @@ def rename_slicer_model_columns() -> None:
     table_replacements = {
         MODEL / "tables" / "analytics vw_teams.tmdl": (
             "\tcolumn team_name\n",
-            "\tcolumn Franquicia\n",
+            "\tcolumn Team\n",
         ),
         MODEL / "tables" / "analytics dim_season.tmdl": (
             "\tcolumn decade\n",
-            "\tcolumn 'Década de temporada'\n",
+            "\tcolumn 'Season decade'\n",
         ),
     }
     for path, (old, new) in table_replacements.items():
@@ -482,10 +485,10 @@ def rename_slicer_model_columns() -> None:
 
     relationships = MODEL / "relationships.tmdl"
     text = relationships.read_text(encoding="utf-8")
-    text = text.replace("'analytics vw_teams'.team_name", "'analytics vw_teams'.Franquicia")
+    text = text.replace("'analytics vw_teams'.team_name", "'analytics vw_teams'.Team")
     text = text.replace(
         "'analytics dim_season'.decade",
-        "'analytics dim_season'.'Década de temporada'",
+        "'analytics dim_season'.'Season decade'",
     )
     relationships.write_text(text, encoding="utf-8", newline="\n")
 
@@ -496,7 +499,7 @@ def rename_slicer_model_columns() -> None:
         / "08000_advancedSlicerVisual (34242)": (
             "analytics vw_teams",
             "team_name",
-            "Franquicia",
+            "Team",
         ),
         SECTIONS
         / "002_Análisis_2"
@@ -504,7 +507,7 @@ def rename_slicer_model_columns() -> None:
         / "09000_advancedSlicerVisual (fa73f)": (
             "analytics vw_teams",
             "team_name",
-            "Franquicia",
+            "Team",
         ),
         SECTIONS
         / "003_Análisis_3"
@@ -512,7 +515,7 @@ def rename_slicer_model_columns() -> None:
         / "08000_advancedSlicerVisual (a910c)": (
             "analytics vw_teams",
             "team_name",
-            "Franquicia",
+            "Team",
         ),
         SECTIONS
         / "002_Análisis_2"
@@ -520,7 +523,7 @@ def rename_slicer_model_columns() -> None:
         / "10000_advancedSlicerVisual (b0ea8)": (
             "analytics dim_season",
             "decade",
-            "Década de temporada",
+            "Season decade",
         ),
     }
 
@@ -931,6 +934,8 @@ def convert_efficiency_to_scatter(target: Path, source: Path) -> None:
         "n_players": "balance_score",
         "altura promedio en cm": "Pérdidas por partido",
         "peso promedio en libras": "Eficiencia de tiro (FG%)",
+        "average height (cm)": "Pérdidas por partido",
+        "average weight (lb)": "Eficiencia de tiro (FG%)",
         "Suma de": "Promedio de",
         "Sum(analytics vw_q7_balance_of_def": "Avg(analytics vw_q7_balance_of_def",
     }
@@ -997,7 +1002,6 @@ def update_cover() -> None:
     # bespoke analytics mark becomes part of the hero rather than a hidden
     # decoration behind other objects.
     for folder in (
-        "07000_SoyHenry",
         "04000_Titulo",
         "02000_Subtitulo",
         "03000_Subtitulo",
@@ -1152,7 +1156,7 @@ def update_history() -> None:
     )
     keep_only_slicer_value(
         visuals / "08000_advancedSlicerVisual (34242)",
-        "analytics vw_teams.Franquicia",
+        "analytics vw_teams.Team",
         "analytics vw_teams",
     )
     use_business_slicer_header(visuals / "08000_advancedSlicerVisual (34242)")
@@ -1694,6 +1698,10 @@ def main() -> int:
     for directory in sorted(SECTIONS.glob("*/visualContainers/*")):
         if directory.is_dir():
             style_visual(directory)
+
+    from localize_powerbi_en import main as apply_english_contract
+
+    apply_english_contract()
 
     print(
         "Storytelling visual aplicado: seis páginas, cuatro preguntas analíticas, "

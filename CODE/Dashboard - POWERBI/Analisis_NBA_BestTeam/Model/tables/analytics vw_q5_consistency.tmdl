@@ -10,7 +10,7 @@ table 'analytics vw_q5_consistency'
 
 	column var_winrate_pct
 		dataType: double
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		sourceProviderType: decimal(38, 8)
 		summarizeBy: none
 		sourceColumn: var_winrate_pct

@@ -11,3 +11,11 @@
 
 # pbi-tools emits TMDL with source-significant indentation and trailing blanks.
 *.tmdl -whitespace
+
+# Native media and Power BI packages are opaque binary artifacts.
+*.pdf binary
+*.pbix binary
+*.pbit binary
+*.png binary
+*.jpg binary
+*.jpeg binary

@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "MODELO",
+                    "value": "MODEL",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "15 objetos analíticos",
+                    "value": "15 analytical objects",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "18pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "30 franquicias comparables · 0 huérfanos entre tablas",
+                    "value": "30 mapped teams · zero cross-table orphans",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

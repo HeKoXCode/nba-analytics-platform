@@ -27,7 +27,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q9_physical_profile.avg_weight)",
-              "NativeReferenceName": "Suma de avg_weight"
+              "NativeReferenceName": "Sum of avg_weight"
             },
             {
               "Aggregation": {
@@ -44,7 +44,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q9_physical_profile.avg_height)",
-              "NativeReferenceName": "Suma de avg_height"
+              "NativeReferenceName": "Sum of avg_height"
             },
             {
               "Aggregation": {
@@ -61,7 +61,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q9_physical_profile.n_players)",
-              "NativeReferenceName": "Suma de n_players"
+              "NativeReferenceName": "Sum of n_players"
             },
             {
               "Column": {

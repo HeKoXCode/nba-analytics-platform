@@ -27,7 +27,7 @@
                 "Function": 4
               },
               "Name": "Sum(analytics vw_q2_age_vs_current.franchise_age)",
-              "NativeReferenceName": "Máx. de franchise_age"
+              "NativeReferenceName": "Max franchise age"
             }
           ]
         },

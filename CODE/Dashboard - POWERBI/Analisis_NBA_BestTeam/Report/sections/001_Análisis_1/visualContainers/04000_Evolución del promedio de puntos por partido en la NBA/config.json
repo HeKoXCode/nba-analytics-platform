@@ -65,7 +65,7 @@
             "Function": 0
           },
           "Name": "Sum(analytics vw_q4_ppg_by_decade.league_ppg)",
-          "NativeReferenceName": "Suma de league_ppg1"
+          "NativeReferenceName": "Sum of league_ppg1"
         }
       ],
       "OrderBy": [
@@ -152,7 +152,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Año'"
+                  "Value": "'Season decade'"
                 }
               }
             },
@@ -240,7 +240,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Promedio de Puntos Histórico'"
+                  "Value": "'Historical mean points'"
                 }
               }
             },
@@ -328,7 +328,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Evolución anotadora | década de temporada | PPG'"
+                  "Value": "'Scoring by season decade | points per game (PPG)'"
                 }
               }
             },

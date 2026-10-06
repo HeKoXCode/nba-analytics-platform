@@ -61,7 +61,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Año'"
+                "Value": "'Season decade'"
               }
             }
           },
@@ -149,7 +149,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Promedio de Puntos Histórico'"
+                "Value": "'Historical mean points'"
               }
             }
           },
@@ -282,7 +282,7 @@
         "Format": "0"
       },
       {
-        "Restatement": "Suma de league_ppg",
+        "Restatement": "Sum of league_ppg",
         "Name": "Sum(analytics vw_q4_ppg_by_decade.league_ppg)",
         "Type": 1
       }
@@ -343,7 +343,7 @@
       }
     },
     {
-      "displayName": "Suma de league_ppg",
+      "displayName": "Sum of league_ppg",
       "queryName": "Sum(analytics vw_q4_ppg_by_decade.league_ppg)",
       "roles": {
         "Y": true

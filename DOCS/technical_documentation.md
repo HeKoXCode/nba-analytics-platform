@@ -1,4 +1,6 @@
-# Technical implementation — NBA-I1 to NBA-I4
+# Technical implementation — NBA ETL, SQL and English BI edition
+
+Current reviewer route: [reviewer guide](reviewer_guide.md) and [English release verification](english_release_verification.md). I retain dated I1–I4 evidence as history; the current English snapshot is [`../evidence/NBA-English-2026-09-29/insight_snapshot.json`](../evidence/NBA-English-2026-09-29/insight_snapshot.json).
 
 ## 1. Runtime and dependency policy
 
@@ -71,27 +73,27 @@ The loader obtains every connection value from environment variables, validates 
 
 ## 5. Power BI
 
-The semantic model reads 15 objects from the `analytics` schema at `.\SQLEXPRESS/NBA_Project`. I use this generic local named instance so the published template matches the documented SQL Server Express setup; CI continues to override the loader connection with its isolated container endpoint. I validate that each TMDL object exists in SQL and that every referenced column can be selected.
+The semantic model reads 15 objects and 65 referenced columns from the `analytics` schema at `.\SQLEXPRESS/NBA_Project`. I use this generic local named instance so the English template matches the documented SQL Server Express setup; CI overrides the loader connection with its isolated container endpoint. I validate that each TMDL object exists in SQL and that every referenced column can be selected. The PBIT is DirectQuery, contains no credentials or embedded warehouse, and is not a web app.
 
 I restructured the report into six pages:
 
 | Page | Analytical role |
 |---|---|
-| Inicio | scope and navigation |
-| 01 · Panorama histórico | long-run win rate, scoring evolution and franchise age |
-| 02 · Ventaja y estabilidad | home/away, shooting/turnovers and variability |
-| 03 · Perfil y ofensiva | physical profile and offensive context |
-| 04 · Pico y actualidad | historical streaks and 2013–2022 performance |
-| 05 · Método y evidencia | data, model, quality, traceability and reviewer deliverables |
+| Overview | scope and navigation |
+| 01 Historical Performance | long-run win rate, scoring evolution and franchise age |
+| 02 Home Advantage & Consistency | home/away, shooting/turnovers and variability |
+| 03 Player Profiles & Offense | historical physical profile and Top-12 offensive context |
+| 04 Historical Peak vs. 2013–2022 | historical streaks versus the recent-window rate |
+| 05 Method & Evidence | data, model, quality, traceability and reviewer deliverables |
 
-The data/model update is repeatable through `scripts/update_powerbi_project_i4.py`; the visual layer is repeatable through `scripts/update_powerbi_storytelling.py`. The latter applies the page sequence, six-link native navigation, palette, non-overlapping layout, business-facing filter labels, questions, headline findings, direct category sources, SQL-backed Top-12 offensive reduction and the shooting-versus-turnovers scatter plot. I compile the PBIT from the extracted project with pbi-tools Core 1.2.0 and validate it with `scripts/validate_visual_storytelling.py`. Chart titles identify period/sample and unit, while the final page exposes the deliverables needed for an independent technical review.
+The data/model update is repeatable through `scripts/update_powerbi_project_i4.py`; the visual layer is repeatable through `scripts/update_powerbi_storytelling.py`, which applies `scripts/localize_powerbi_en.py`. The latter provides the six-link native navigation, English authored text and display names, chart semantics and visual-level offensive Top 12. The SQL recent-ranking view now uses `SUM(wins)/SUM(games_played)`, matching the historical definition; the earlier 64.20% averaged-season figure is historical and **not** the current 2013–2022 result. I compile `NBA_Analytics_EN.pbit` from the extracted project with pbi-tools Core 1.2.0 and validate it with `scripts/validate_visual_storytelling.py`. The separate Spanish PBIT remains for provenance. The English report has no dedicated phone layout.
 
 ## 6. Test strategy
 
-The versioned test factory creates a small, deterministic and clearly synthetic six-table fixture. Unit and integration tests cover conversions, duplicate quarantine, header failure, 100%-loss failure, immutability, manifest checks and model alignment. The core ETL currently reports 89.92% branch-aware coverage.
+The versioned test factory creates a small, deterministic and clearly synthetic six-table fixture. Unit and integration tests cover conversions, duplicate quarantine, header failure, 100%-loss failure, immutability, manifest checks and model alignment. The current local English-candidate run passed 13 tests and reports 89.92% branch-aware core ETL coverage; the older I1–I4 run had 11 tests.
 
 CI also processes the six real committed CSV files, loads their outputs into an ephemeral SQL Server 2022 container, runs independent SQL reconciliation and uploads lightweight evidence. Synthetic fixture results are never presented as the real portfolio volume.
 
 ## 7. Desktop evidence boundary
 
-Power BI Desktop refresh is a Windows, stateful step. The repository supplies a compiled PBIT, the complete SQL model, CI reconciliation, a repeated local SQL Server 2022 Express load and a versioned snapshot for every fixed takeaway. I keep the screenshot protocol separate from package compilation: the PBIT hash proves the exact artifact, while screenshots must also show a completed DirectQuery session against the loaded local instance. I do not treat compilation alone as refreshed-screen evidence.
+Power BI Desktop refresh is a Windows, stateful step. I tested the English candidate through an isolated `NBA_EN_QA_20260929` copy: only the database name differs from the pinned source PBIT in 15 partitions. All six pages rendered; the Top 12 and navigation actions were observed, while the English screenshots and any native mobile layout remain outside this desktop QA. The [dated English verification](english_release_verification.md) separates tested interactions from untested tooltips/keyboard behavior. I do not treat compilation alone as refreshed-screen evidence or a Spanish screenshot as evidence for the English edition.

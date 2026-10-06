@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "PPG reciente (2013–2022)",
+                    "value": "Recent PPG (2013–2022)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -60,7 +60,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Subtitulo'"
+                  "Value": "'Subtitle'"
                 }
               }
             }

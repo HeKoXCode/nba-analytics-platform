@@ -54,7 +54,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Franquicias'"
+                "Value": "'Teams'"
               }
             }
           },
@@ -81,14 +81,14 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Porcentaje de Victorias'"
+                "Value": "'Win rate'"
               }
             }
           },
           "secTitleText": {
             "expr": {
               "Literal": {
-                "Value": "'Puntos promedio por partido'"
+                "Value": "'Average points per game'"
               }
             }
           }
@@ -209,13 +209,13 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de Puntos por partido ultimos 10 años",
+        "Restatement": "Average recent PPG",
         "Name": "Sum(analytics vw_q10_recent_top.ppg_10y)",
         "Type": 1,
         "Format": "0.0"
       },
       {
-        "Restatement": "Promedio de Porcentaje de victorias ultimos 10 años",
+        "Restatement": "Average recent win rate",
         "Name": "Sum(analytics vw_q10_recent_top.winrate_10y)",
         "Type": 1,
         "Format": "0\\ %;-0\\ %;0\\ %"
@@ -224,6 +224,64 @@
         "Restatement": "team_name",
         "Name": "analytics vw_q10_recent_top.team_name",
         "Type": 2048
+      }
+    ],
+    "Filters": [
+      {
+        "type": 2,
+        "expression": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "a"
+                }
+              },
+              "Property": "Points per game (last 10 seasons)"
+            }
+          },
+          "Function": 1
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Source": "a"
+                }
+              },
+              "Property": "Win rate (last 10 seasons)"
+            }
+          },
+          "Function": 1
+        }
+      },
+      {
+        "type": 0,
+        "expression": {
+          "Expression": {
+            "SourceRef": {
+              "Source": "a"
+            }
+          },
+          "Property": "team_name"
+        }
+      },
+      {
+        "type": 2,
+        "expression": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "analytics vw_q10_recent_top"
+              }
+            },
+            "Property": "rk_recent"
+          }
+        }
       }
     ]
   },
@@ -259,7 +317,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de Puntos por partido ultimos 10 años",
+      "displayName": "Average recent PPG",
       "format": "0.0",
       "queryName": "Sum(analytics vw_q10_recent_top.ppg_10y)",
       "roles": {
@@ -278,7 +336,7 @@
                   "Entity": "analytics vw_q10_recent_top"
                 }
               },
-              "Property": "Puntos por partido ultimos 10 años"
+              "Property": "Points per game (last 10 seasons)"
             }
           },
           "Function": 1
@@ -286,7 +344,7 @@
       }
     },
     {
-      "displayName": "Promedio de Porcentaje de victorias ultimos 10 años",
+      "displayName": "Average recent win rate",
       "format": "0\\ %;-0\\ %;0\\ %",
       "queryName": "Sum(analytics vw_q10_recent_top.winrate_10y)",
       "roles": {
@@ -307,7 +365,7 @@
                   "Entity": "analytics vw_q10_recent_top"
                 }
               },
-              "Property": "Porcentaje de victorias ultimos 10 años"
+              "Property": "Win rate (last 10 seasons)"
             }
           },
           "Function": 1

@@ -43,8 +43,8 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Década de temporada",
-        "Name": "analytics dim_season.Década de temporada",
+        "Restatement": "Season decade",
+        "Name": "analytics dim_season.Season decade",
         "Type": 3,
         "Format": "0"
       }
@@ -59,7 +59,7 @@
                 "Entity": "analytics dim_season"
               }
             },
-            "Property": "Década de temporada"
+            "Property": "Season decade"
           }
         }
       }
@@ -78,9 +78,9 @@
   ],
   "selects": [
     {
-      "displayName": "Década de temporada",
+      "displayName": "Season decade",
       "format": "0",
-      "queryName": "analytics dim_season.Década de temporada",
+      "queryName": "analytics dim_season.Season decade",
       "roles": {
         "Values": true
       },
@@ -95,7 +95,7 @@
               "Entity": "analytics dim_season"
             }
           },
-          "Property": "Década de temporada"
+          "Property": "Season decade"
         }
       }
     }

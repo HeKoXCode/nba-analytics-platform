@@ -21,13 +21,13 @@
                         "Source": "a"
                       }
                     },
-                    "Property": "Puntos por partido"
+                    "Property": "Points per game (PPG)"
                   }
                 },
                 "Function": 1
               },
               "Name": "Sum(analytics vw_q3_player_context_offense.avg_ppg)",
-              "NativeReferenceName": "Promedio de Puntos por partido"
+              "NativeReferenceName": "Average PPG"
             },
             {
               "Aggregation": {
@@ -38,13 +38,13 @@
                         "Source": "a"
                       }
                     },
-                    "Property": "Porcentaje de acierto"
+                    "Property": "Field-goal percentage (FG%)"
                   }
                 },
                 "Function": 1
               },
               "Name": "Sum(analytics vw_q3_player_context_offense.avg_fg_pct)",
-              "NativeReferenceName": "Promedio de Porcentaje de acierto"
+              "NativeReferenceName": "Average FG%"
             },
             {
               "Column": {
@@ -71,7 +71,7 @@
                           "Source": "a"
                         }
                       },
-                      "Property": "Puntos por partido"
+                      "Property": "Points per game (PPG)"
                     }
                   },
                   "Function": 1

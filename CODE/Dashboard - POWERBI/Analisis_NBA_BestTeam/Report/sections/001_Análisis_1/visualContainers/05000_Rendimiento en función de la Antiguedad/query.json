@@ -51,7 +51,7 @@
                 "Function": 1
               },
               "Name": "Sum(analytics vw_q2_age_vs_current.winrate_hist)",
-              "NativeReferenceName": "Promedio de winrate_hist"
+              "NativeReferenceName": "Average of winrate_hist"
             },
             {
               "Aggregation": {
@@ -68,7 +68,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
-              "NativeReferenceName": "Suma de ppg_hist"
+              "NativeReferenceName": "Sum of ppg_hist"
             }
           ]
         },

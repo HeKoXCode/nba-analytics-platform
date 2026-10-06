@@ -239,7 +239,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de Puntos por partido ultimos 10 años",
+        "Restatement": "Average recent PPG",
         "Name": "Sum(analytics vw_q10_recent_top.ppg_10y)",
         "Type": 1,
         "Format": "0.0"
@@ -259,7 +259,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de Puntos por partido ultimos 10 años",
+      "displayName": "Average recent PPG",
       "format": "0.0",
       "queryName": "Sum(analytics vw_q10_recent_top.ppg_10y)",
       "roles": {
@@ -278,7 +278,7 @@
                   "Entity": "analytics vw_q10_recent_top"
                 }
               },
-              "Property": "Puntos por partido ultimos 10 años"
+              "Property": "Points per game (last 10 seasons)"
             }
           },
           "Function": 1

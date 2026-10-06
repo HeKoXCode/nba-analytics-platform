@@ -174,7 +174,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Máx. de franchise_age",
+        "Restatement": "Max franchise age",
         "Name": "Sum(analytics vw_q2_age_vs_current.franchise_age)",
         "Type": 3,
         "Format": "0"
@@ -194,7 +194,7 @@
   ],
   "selects": [
     {
-      "displayName": "Máx. de franchise_age",
+      "displayName": "Max franchise age",
       "format": "0",
       "queryName": "Sum(analytics vw_q2_age_vs_current.franchise_age)",
       "roles": {

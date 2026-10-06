@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "prepared_on": "2026-09-29",
+  "baseline_commit": "c54e976f52c14439a9e453e5eb4f77449fec1b6e",
+  "status": "B2 English source and candidate PBIT implemented; B3 automated, ETL, isolated SQL and six-page Spanish-Desktop QA8 render passed; mobile and full interaction QA remain pending; system-generated labels may follow the reviewer's Desktop language",
+  "audience": "Data Analyst and BI recruiters and technical reviewers; no NBA background required",
+  "language": "en-US",
+  "editorial_rules": [
+    "Describe the versioned historical sample, not the complete NBA population or the 2026 season.",
+    "Present each fixed key finding as a full-sample baseline. Slicers affect charts but do not recompute fixed explanatory text.",
+    "Spell out points per game (PPG), field-goal percentage (FG%) and coefficient of variation (CV) at first use.",
+    "Distinguish a team-season mean from a game-weighted win rate. Direct historical versus 2013-2022 win-rate comparisons must use the same definition.",
+    "State whether a date refers to season_id or calendar game_date.",
+    "Keep original team names, numerical evidence, units, provenance and contributor attribution."
+  ],
+  "glossary": [
+    {
+      "spanish": "Franquicia",
+      "english": "Team",
+      "meaning": "A member of the 30 currently mapped teams in analytics.vw_teams; historical-unmapped identifiers are separately retained."
+    },
+    {
+      "spanish": "Década de temporada",
+      "english": "Season decade",
+      "meaning": "Decade derived from season_id; it is not a calendar game-date decade."
+    },
+    {
+      "spanish": "Hallazgo clave",
+      "english": "Key finding — full sample",
+      "meaning": "Static annotated result for the recorded baseline, not recalculated by slicers."
+    },
+    {
+      "spanish": "Porcentaje de victorias",
+      "english": "Win rate",
+      "meaning": "State the denominator. The approved direct ranking comparison uses wins divided by games in each selected window."
+    },
+    {
+      "spanish": "Puntos por partido",
+      "english": "Points per game (PPG)",
+      "meaning": "A per-team-game average; a mean of season means must be named explicitly when used."
+    },
+    {
+      "spanish": "Porcentaje de acierto / Eficiencia de tiro",
+      "english": "Field-goal percentage (FG%)",
+      "meaning": "The modeled value is FG%, not an unspecified overall shooting-efficiency score."
+    },
+    {
+      "spanish": "Balones perdidos",
+      "english": "Turnovers per game",
+      "meaning": "The analytical view applies AVG to team-game turnovers."
+    },
+    {
+      "spanish": "Puntos como Local",
+      "english": "Home points per game",
+      "meaning": "A team-season average of home team-game points in analytics.vw_q6_home_away_impact."
+    },
+    {
+      "spanish": "Puntos como visitante",
+      "english": "Away points per game",
+      "meaning": "A team-season average of away team-game points in analytics.vw_q6_home_away_impact."
+    },
+    {
+      "spanish": "Variación / CV",
+      "english": "Season-to-season coefficient of variation (CV)",
+      "meaning": "STDEV of team-season win rates divided by their mean; lower values describe less relative variation in this sample."
+    },
+    {
+      "spanish": "Perfil físico promedio",
+      "english": "Historical player-profile sample",
+      "meaning": "3,225 available player profiles, reported as a mean of team-level height and weight averages; not current rosters."
+    },
+    {
+      "spanish": "Pico y actualidad",
+      "english": "Historical peak vs. 2013–2022",
+      "meaning": "The final ten season IDs in the current sample, not the current NBA season."
+    }
+  ],
+  "pages": [
+    {
+      "page_id": "85fd596523722c787dd8",
+      "spanish_title": "Inicio",
+      "english_title": "NBA Analytics — Overview",
+      "navigation_label": "Overview",
+      "question": "How can a historical NBA sample support a reproducible comparison of team performance?",
+      "finding": "Six versioned CSVs, 161,111 source rows and 65,642 unique games feed a Python ETL, SQL Server model and Power BI report.",
+      "finding_status": "13 tests and 89.92% core ETL coverage reconfirmed on 2026-09-30",
+      "measure_contract": [
+        {"meaning": "Source volume", "field": "ETL manifest input_rows", "unit": "source rows", "period": "versioned six-CSV input", "denominator": "all six input files", "status": "documented baseline"},
+        {"meaning": "Unique games", "field": "core.fact_game.game_id", "unit": "distinct games", "period": "season IDs 1946–2022", "denominator": "canonical game fact", "status": "documented baseline"}
+      ],
+      "evidence": "evidence/NBA-I1-I4/real-run-lf/manifest.json"
+    },
+    {
+      "page_id": "127f8fdec9d1ce997d14",
+      "spanish_title": "01 · Panorama histórico",
+      "english_title": "01 · Historical Performance",
+      "navigation_label": "History",
+      "question": "Which team had the highest win rate in the available historical sample, and how did scoring change by decade?",
+      "finding": "Among 30 mapped teams, the Spurs lead at 59.53%: 2,427 wins in 4,077 games.",
+      "secondary_finding": "Average points per eligible team-game rise from 76.23 in the 1940s to 112.07 in the 2020s.",
+      "finding_status": "Verified against read-only SQL on 2026-09-29",
+      "measure_contract": [
+        {"meaning": "Historical team win rate", "field": "analytics.vw_q1_hist_perf.winrate_hist", "unit": "percent", "period": "available season IDs 1946–2022", "denominator": "SUM(total_wins) / SUM(total_games) per mapped team", "status": "verified"},
+        {"meaning": "Decade scoring", "field": "analytics.vw_q4_ppg_by_decade.league_ppg", "unit": "points per eligible team-game", "period": "decade derived from season_id", "denominator": "eligible team-game rows with mapped team and opponent", "status": "verified"}
+      ],
+      "evidence": "analytics.vw_q1_hist_perf; analytics.vw_q4_ppg_by_decade; evidence/NBA-Visual-Storytelling/insight_snapshot.json",
+      "extra_label": "The separate franchise-age scatter uses the 2020–2022 window."
+    },
+    {
+      "page_id": "5080f8c0f82e46569dea",
+      "spanish_title": "02 · Ventaja y estabilidad",
+      "english_title": "02 · Home Advantage & Consistency",
+      "navigation_label": "Context",
+      "question": "How does home court relate to scoring, and which teams vary less across seasons?",
+      "finding": "Across 1,557 mapped team-seasons, home scoring averages 104.69 PPG versus 101.11 PPG away: a difference of about 3.6 PPG.",
+      "secondary_finding": "The mean team-season home and away win rates are 61.20% and 37.36%; these are separate averages, not complementary shares of all games.",
+      "finding_status": "The approximately 3.6 PPG public copy is implemented; isolated SQL confirmed 104.69 and 101.11 on 2026-09-30; QA8 page rendered in Spanish Desktop; final interaction and English-Desktop QA pending",
+      "measure_contract": [
+        {"meaning": "Home and away scoring", "field": "analytics.vw_q6_home_away_impact.[Puntos como Local] / [Puntos como visitante]", "unit": "mean points per game", "period": "available season IDs 1946–2022", "denominator": "mean of eligible team-season home/away PPG values", "status": "verified in isolated SQL; English text implemented"},
+        {"meaning": "Home and away win rates", "field": "analytics.vw_q6_home_away_impact.winrate_home / winrate_away", "unit": "percent", "period": "available season IDs 1946–2022", "denominator": "unweighted mean of 1,557 eligible team-season rates", "status": "definition verified; QA8 page rendered; automatic legend labels follow Desktop language"},
+        {"meaning": "Season-to-season consistency", "field": "analytics.vw_q5_consistency.var_winrate_pct", "unit": "relative coefficient of variation", "period": "available seasons for each mapped team", "denominator": "STDEV(team-season winrate) / AVG(team-season winrate)", "status": "verified definition"}
+      ],
+      "evidence": "analytics.vw_q6_home_away_impact; analytics.vw_q5_consistency; evidence/NBA-Visual-Storytelling/insight_snapshot.json"
+    },
+    {
+      "page_id": "eec7a94c9605ce1092d5",
+      "spanish_title": "03 · Perfil y ofensiva",
+      "english_title": "03 · Player Profiles & Offense",
+      "navigation_label": "Profiles",
+      "question": "What do offensive context and the available historical player profiles show together?",
+      "finding": "The sample contains 3,225 historical player profiles; the mean of team-level averages is 199.24 cm in height and 213.36 lb in weight.",
+      "finding_status": "Verified against read-only SQL on 2026-09-29",
+      "measure_contract": [
+        {"meaning": "Historical player profiles", "field": "analytics.vw_q9_physical_profile.n_players", "unit": "profiles", "period": "available historical player-profile file; not current rosters", "denominator": "eligible nba_flag=1 profiles across mapped teams", "status": "verified"},
+        {"meaning": "Height and weight", "field": "analytics.vw_q9_physical_profile.avg_height / avg_weight", "unit": "cm / lb", "period": "same historical profile file", "denominator": "unweighted mean of 30 team-level averages", "status": "verified"},
+        {"meaning": "Offensive comparison", "field": "analytics.vw_q3_player_context_offense", "unit": "as labeled in each visual", "period": "available historical team-games", "denominator": "SQL-constrained top 12 in eligible profile-linked sample", "status": "definition to verify per visual in B3"}
+      ],
+      "evidence": "analytics.vw_q3_player_context_offense; analytics.vw_q9_physical_profile; evidence/NBA-Visual-Storytelling/insight_snapshot.json",
+      "extra_label": "The offensive comparison is a SQL-constrained top 12 among teams represented in the eligible player-profile sample."
+    },
+    {
+      "page_id": "aa123345b8a05cd846e4",
+      "spanish_title": "04 · Pico y actualidad",
+      "english_title": "04 · Historical Peak vs. 2013–2022",
+      "navigation_label": "Peak vs. 2013–22",
+      "question": "Do the longest observed winning streak and the highest 2013–2022 win rate belong to the same team?",
+      "finding": "The Lakers have the longest observed streak at 33 games. With game-weighted win rate, the Warriors lead 2013–2022 at 66.53%: 656 wins in 986 games.",
+      "finding_status": "Game-weighted SQL, model, report and snapshot aligned on 2026-09-30; the rebuilt Top 12 visual rendered in QA8 on isolated SQL; full interaction, mobile and publication QA still pending",
+      "current_published_metric": "The published view instead reports a 64.20% mean of team-season win rates for Warriors; it is not directly comparable to the historical wins/games metric.",
+      "measure_contract": [
+        {"meaning": "Longest observed winning streak", "field": "analytics.vw_q8_longest_win_streak.longest_win_streak", "unit": "consecutive wins", "period": "available historical games", "denominator": "consecutive wins per mapped team ordered by game_date and game_id", "status": "verified"},
+        {"meaning": "Comparable recent win rate", "field": "analytics.vw_q10_recent_top.win_rate_10y", "unit": "percent", "period": "2013–2022 season IDs in current sample", "denominator": "SUM(wins) / SUM(games_played) per mapped team", "status": "verified in isolated SQL; candidate PBIT compiled; Top 12 visual rendered in QA8"}
+      ],
+      "evidence": "analytics.vw_q1_hist_perf; analytics.vw_q8_longest_win_streak; analytics.vw_team_season_metrics; analytics.vw_q10_recent_top; evidence/NBA-Visual-Storytelling/insight_snapshot.json"
+    },
+    {
+      "page_id": "9aefac1bb66f2b6b0df9",
+      "spanish_title": "05 · Método y evidencia",
+      "english_title": "05 · Method & Evidence",
+      "navigation_label": "Evidence",
+      "question": "How can another analyst inspect and reproduce this result?",
+      "finding": "Six versioned CSVs, a documented Python ETL, 15 analytical SQL objects, reconciliation queries and a compiled Power BI template provide the review path.",
+      "finding_status": "13 tests and 89.92% core ETL coverage reconfirmed; QA8 method page rendered; full reviewer-path QA pending",
+      "measure_contract": [
+        {"meaning": "Review and reproduction path", "field": "ETL manifest / CODE/SQL/20_analytics_views.sql / CODE/SQL/30_reconciliation.sql / candidate English PBIT", "unit": "artifacts and analytical objects", "period": "English candidate as of 2026-09-30", "denominator": "six CSVs and 15 SQL analytical objects", "status": "isolated rerun and contract verified; QA8 six-page render passed; full reviewer-path QA pending"}
+      ],
+      "evidence": "evidence/NBA-English-2026-09-29/insight_snapshot.json; evidence/NBA-English-2026-09-29/artifact_manifest.json; CODE/Dashboard - POWERBI/NBA_Analytics_EN.pbit"
+    }
+  ],
+  "unresolved_implementation_gates": [
+    "B3: complete mobile, slicer/navigation/accessibility checks and save an English working PBIX from the verified template if useful; selecting a team outside the offensive Top 12 correctly leaves that chart empty, and system-generated labels may follow Desktop language.",
+    "B4-B6: update public documentation, captures, LinkedIn copy and publication; the prior 64.20% evidence must not be presented as the English candidate result."
+  ]
+}

@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "HALLAZGO CLAVE",
+                    "value": "KEY FINDING · FULL SAMPLE",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Spurs lidera el win rate histórico: 59,53% en 4.077 partidos.",
+                    "value": "The Spurs lead the historical win rate: 59.53% across 4,077 games.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "El PPG de liga pasa de 76,23 (1940s) a 112,07 (2020s).",
+                    "value": "Eligible team-game scoring rises from 76.23 PPG in the 1940s to 112.07 in the 2020s.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

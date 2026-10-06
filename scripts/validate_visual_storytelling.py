@@ -12,19 +12,18 @@ ROOT = Path(__file__).resolve().parents[1]
 PROJECT = ROOT / "CODE" / "Dashboard - POWERBI" / "Analisis_NBA_BestTeam"
 SECTIONS = PROJECT / "Report" / "sections"
 MODEL = PROJECT / "Model"
-PBIT = ROOT / "CODE" / "Dashboard - POWERBI" / "Analisis_NBA_BestTeam.pbit"
-SNAPSHOT = ROOT / "evidence" / "NBA-Visual-Storytelling" / "insight_snapshot.json"
+PBIT = ROOT / "CODE" / "Dashboard - POWERBI" / "NBA_Analytics_EN.pbit"
+SNAPSHOT = ROOT / "evidence" / "NBA-English-2026-09-29" / "insight_snapshot.json"
+ARTIFACT_MANIFEST = ROOT / "evidence" / "NBA-English-2026-09-29" / "artifact_manifest.json"
 
 EXPECTED_PAGES = {
-    "Inicio": 0,
-    "01 · Panorama histórico": 1,
-    "02 · Ventaja y estabilidad": 2,
-    "03 · Perfil y ofensiva": 3,
-    "04 · Pico y actualidad": 4,
-    "05 · Método y evidencia": 5,
+    "NBA Analytics — Overview": 0,
+    "01 · Historical Performance": 1,
+    "02 · Home Advantage & Consistency": 2,
+    "03 · Player Profiles & Offense": 3,
+    "04 · Historical Peak vs. 2013–2022": 4,
+    "05 · Method & Evidence": 5,
 }
-EXPECTED_PBIT_BYTES = 6_377_058
-EXPECTED_PBIT_SHA256 = "BFB581E8D43A404A6C87AE1BFB8FD59304911F38503431C9BDE928652996A368"
 PAGE_IDS = {
     "000_Inicio": "85fd596523722c787dd8",
     "001_Análisis_1": "127f8fdec9d1ce997d14",
@@ -34,12 +33,12 @@ PAGE_IDS = {
     "006_Conclusión": "9aefac1bb66f2b6b0df9",
 }
 NAV_ITEMS = (
-    ("000_Inicio", "INICIO"),
-    ("001_Análisis_1", "01 HISTORIA"),
-    ("002_Análisis_2", "02 CONTEXTO"),
-    ("003_Análisis_3", "03 PERFIL"),
-    ("004_Insights", "04 ACTUALIDAD"),
-    ("006_Conclusión", "05 MÉTODO"),
+    ("000_Inicio", "OVERVIEW"),
+    ("001_Análisis_1", "01 HISTORY"),
+    ("002_Análisis_2", "02 CONTEXT"),
+    ("003_Análisis_3", "03 PROFILES"),
+    ("004_Insights", "04 PEAK"),
+    ("006_Conclusión", "05 METHOD"),
 )
 
 
@@ -112,26 +111,28 @@ def validate_json_and_story() -> None:
         read_json(path)
 
     source_text = "\n".join(path.read_text(encoding="utf-8-sig") for path in json_files)
+    for spanish_label in ("'Equipo'", "Button Inicio", "victorias consecutivas", "Racha observada", "-> Equipo"):
+        require(spanish_label not in source_text, f"Spanish report label remains: {spanish_label}")
     for emoji in ("🏠", "🏁", "ℹ️", "⭐", "🔺", "🔄", "🧠"):
         require(emoji not in source_text, f"Decorative emoji remains: {emoji}")
     for phrase in (
-        "PREGUNTA  ¿Quién sostuvo el mejor rendimiento",
-        "PREGUNTA  ¿Cuánto cambia el desempeño por localía",
-        "PREGUNTA  ¿Qué relación muestran el contexto ofensivo",
-        "PREGUNTA  ¿El pico histórico coincide",
-        "Spurs lidera el win rate histórico: 59,53% en 4.077 partidos.",
-        "61,20% de victorias en casa frente a 37,36% como visitante.",
-        "3.225 perfiles: 199,24 cm y 213,36 lb",
-        "Lakers registra la mayor racha histórica (33)",
-        "11 pruebas · 89,92%",
+        "QUESTION  Which team led the historical win-rate ranking",
+        "QUESTION  How does home court relate to scoring",
+        "QUESTION  What do offensive context",
+        "QUESTION  Do the longest observed streak",
+        "The Spurs lead the historical win rate: 59.53% across 4,077 games.",
+        "Home scoring averages 104.69 PPG versus 101.11 PPG away.",
+        "3,225 historical profiles: team-average means of 199.24 cm and 213.36 lb.",
+        "The Lakers have the longest observed streak (33)",
+        "13 tests · 89.92% core ETL coverage",
     ):
         require(phrase in source_text, f"Story evidence is missing: {phrase}")
     require(
-        source_text.count("PREGUNTA  ¿") == 4, "The report must contain four analytical questions"
+        source_text.count("QUESTION  ") == 4, "The report must contain four analytical questions"
     )
-    require(source_text.count("HALLAZGO CLAVE") == 4, "The report must contain four takeaways")
+    require(source_text.count("KEY FINDING · FULL SAMPLE") == 4, "The report must contain four takeaways")
     require(
-        "ENTREGABLES PARA REPRODUCIBILIDAD Y REVISIÓN TÉCNICA" in source_text,
+        "REVIEW & REPRODUCTION" in source_text,
         "Reviewer handoff is missing",
     )
 
@@ -144,7 +145,10 @@ def validate_json_and_story() -> None:
 
 def validate_visual_semantics() -> None:
     cover = SECTIONS / "000_Inicio" / "visualContainers"
-    require(position(cover / "07000_SoyHenry")[0] >= 1400, "Henry branding remains visible")
+    require(
+        not any((cover / name / "config.json").exists() for name in ("00000_Henry", "01000_poweredby", "07000_SoyHenry")),
+        "Retired Henry branding remains in the compiled report source",
+    )
     require(position(cover / "03000_Menú Análisis")[0] >= 1400, "Legacy menu remains visible")
     require(
         position(cover / "09000_image (40f57)") == (1000, 132, 220, 220),
@@ -224,19 +228,19 @@ def validate_visual_semantics() -> None:
 
     slicer_fields = {
         "001_Análisis_1/08000_advancedSlicerVisual (34242)": (
-            "Franquicia",
+            "Team",
             "team_name",
         ),
         "002_Análisis_2/10000_advancedSlicerVisual (b0ea8)": (
-            "Década de temporada",
+            "Season decade",
             "decade",
         ),
         "002_Análisis_2/09000_advancedSlicerVisual (fa73f)": (
-            "Franquicia",
+            "Team",
             "team_name",
         ),
         "003_Análisis_3/08000_advancedSlicerVisual (a910c)": (
-            "Franquicia",
+            "Team",
             "team_name",
         ),
     }
@@ -283,10 +287,10 @@ def validate_visual_semantics() -> None:
         encoding="utf-8"
     )
     relationships = (MODEL / "relationships.tmdl").read_text(encoding="utf-8")
-    require("\tcolumn Franquicia\n" in teams_model, "Business team field is missing")
+    require("\tcolumn Team\n" in teams_model, "Business team field is missing")
     require("\tsourceColumn: team_name\n" in teams_model, "Team source mapping changed")
     require(
-        "\tcolumn 'Década de temporada'\n" in season_model,
+        "\tcolumn 'Season decade'\n" in season_model,
         "Business decade field is missing",
     )
     require("\tsourceColumn: decade\n" in season_model, "Decade source mapping changed")
@@ -407,6 +411,52 @@ def validate_visual_semantics() -> None:
         "Decorative plot image remains",
     )
 
+    recent = SECTIONS / "004_Insights" / "visualContainers" / "12000_Rendimiento reciente"
+    filters = read_json(recent / "filters.json")
+    require(len(filters) == 1, "Recent visual must have one Top 12 filter")
+    rank_filter = filters[0]
+    require(rank_filter["type"] == "Advanced", "Recent filter type changed")
+    require(
+        rank_filter["expression"]["Column"]["Property"] == "rk_recent",
+        "Recent filter is not based on rk_recent",
+    )
+    expected_where = rank_filter["filter"]["Where"]
+    comparison = expected_where[0]["Condition"]["Comparison"]
+    require(comparison["ComparisonKind"] == 4, "Recent rank comparison is not <=")
+    require(comparison["Right"]["Literal"]["Value"] == "12L", "Recent limit is not 12")
+    recent_query = read_json(recent / "query.json")["Commands"][0][
+        "SemanticQueryDataShapeCommand"
+    ]["Query"]
+    require(recent_query["Where"] == expected_where, "Recent visual query lost its Top 12 filter")
+    metadata_filters = read_json(recent / "dataTransforms.json")["queryMetadata"]["Filters"]
+    require(
+        any(item["expression"].get("Column", {}).get("Property") == "rk_recent" for item in metadata_filters),
+        "Recent visual transform metadata lost its rank filter",
+    )
+    require("top 12 by win rate" in visible_title(recent), "Recent title does not describe Top 12")
+
+    profile_slicer = (
+        SECTIONS
+        / "003_Análisis_3"
+        / "visualContainers"
+        / "08000_advancedSlicerVisual (a910c)"
+    )
+    slicer_filters = read_json(profile_slicer / "filters.json")
+    require(len(slicer_filters) == 1, "Profile team slicer needs one nonblank filter")
+    nonblank = slicer_filters[0]
+    require(
+        nonblank["expression"]["Column"]["Property"] == "Team",
+        "Profile nonblank filter targets the wrong field",
+    )
+    condition = nonblank["filter"]["Where"][0]["Condition"]["Not"]["Expression"][
+        "Comparison"
+    ]
+    require(
+        condition["ComparisonKind"] == 0
+        and condition["Right"]["Literal"]["Value"] == "null",
+        "Profile team slicer no longer excludes the blank member",
+    )
+
 
 def validate_snapshot() -> None:
     snapshot = read_json(SNAPSHOT)
@@ -414,24 +464,39 @@ def validate_snapshot() -> None:
     require(snapshot["scope"]["last_season"] == 2022, "Story scope end changed")
     require(snapshot["scope"]["unique_games"] == 65_642, "Story game count changed")
     require(snapshot["history"]["leader"]["win_rate_pct"] == 59.53, "History leader changed")
-    require(snapshot["efficiency"]["home_ppg_advantage"] == 3.58, "Home advantage changed")
+    require(snapshot["efficiency"]["home_ppg_advantage_approx"] == 3.6, "Home advantage changed")
     require(snapshot["profile"]["player_profiles"] == 3_225, "Profile sample changed")
     require(snapshot["peak_and_recent"]["longest_streak"]["wins"] == 33, "Streak changed")
+    require(snapshot["peak_and_recent"]["recent_window"]["win_rate_pct"] == 66.53, "Recent ranking changed")
 
 
 def validate_pbit() -> None:
-    require(PBIT.stat().st_size == EXPECTED_PBIT_BYTES, "PBIT byte size changed")
+    manifest = read_json(ARTIFACT_MANIFEST)
+    require(PBIT.stat().st_size == manifest["bytes"], "PBIT byte size changed")
     digest = hashlib.sha256(PBIT.read_bytes()).hexdigest().upper()
-    require(digest == EXPECTED_PBIT_SHA256, "PBIT hash changed")
+    require(digest == manifest["sha256"], "PBIT hash changed")
     with zipfile.ZipFile(PBIT) as archive:
         require(archive.testzip() is None, "PBIT ZIP member is corrupt")
         layout = json.loads(archive.read("Report/Layout").decode("utf-16"))
+        model = json.loads(archive.read("DataModelSchema").decode("utf-16"))
     pages = {item["displayName"]: item["ordinal"] for item in layout["sections"]}
     require(pages == EXPECTED_PAGES, f"Unexpected compiled page order: {pages}")
+    require(
+        all(visual is not None for section in layout["sections"] for visual in section["visualContainers"]),
+        "Compiled report contains an empty legacy visual container",
+    )
     raw_layout = json.dumps(layout, ensure_ascii=False)
-    require(raw_layout.count("PREGUNTA  ¿") == 4, "Compiled PBIT lacks the four questions")
-    require(raw_layout.count("HALLAZGO CLAVE") == 4, "Compiled PBIT lacks the four takeaways")
+    require(raw_layout.count("QUESTION  ") == 4, "Compiled PBIT lacks the four questions")
+    require(raw_layout.count("KEY FINDING · FULL SAMPLE") == 4, "Compiled PBIT lacks the four takeaways")
     require("scatterChart" in raw_layout, "Compiled PBIT lacks the q7 scatter plot")
+    for untranslated in ("Promedio de", "Suma de", "Rachas y actualidad", "puntos por partido"):
+        require(untranslated not in raw_layout, f"Compiled report retains Spanish copy: {untranslated}")
+    model_text = json.dumps(model, ensure_ascii=False)
+    require('"sourceColumn": "win_rate_10y"' in model_text, "Compiled q10 alias is stale")
+    require('"name": "Win rate (last 10 seasons)"' in model_text, "Compiled q10 label is stale")
+    require("Value.NativeQuery" not in model_text, "Compiled model still requests native-query approval")
+    q2_source = (MODEL / "tables" / "analytics vw_q2_age_vs_current.tmdl").read_text(encoding="utf-8-sig")
+    require('Origen{[Schema="analytics",Item="vw_q2_age_vs_current"]}[Data]' in q2_source, "q2 direct navigation is missing")
 
 
 def main() -> int:
@@ -451,8 +516,8 @@ def main() -> int:
                 "pages": 6,
                 "analytical_questions": 4,
                 "visual_json_files": len(list((PROJECT / "Report").rglob("*.json"))),
-                "pbit_bytes": EXPECTED_PBIT_BYTES,
-                "pbit_sha256": EXPECTED_PBIT_SHA256,
+                "pbit_bytes": PBIT.stat().st_size,
+                "pbit_sha256": hashlib.sha256(PBIT.read_bytes()).hexdigest().upper(),
             },
             ensure_ascii=False,
         )

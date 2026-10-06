@@ -193,13 +193,17 @@ WITH reference_season AS (
     CROSS JOIN reference_season
     WHERE metrics.season_id BETWEEN reference_season.max_season - 9 AND reference_season.max_season
 ), aggregated AS (
-    SELECT team_id, AVG(winrate) AS winrate_10y, AVG(avg_ppg) AS ppg_10y
+    -- Keep the ranking definition comparable with vw_q1_hist_perf:
+    -- each eligible game, not each team-season, carries the same weight.
+    SELECT team_id,
+           CAST(SUM(wins) * 1.0 / NULLIF(SUM(games_played), 0) AS DECIMAL(24, 12)) AS win_rate_10y,
+           AVG(avg_ppg) AS ppg_10y
     FROM recent GROUP BY team_id
 )
 SELECT teams.team_name, aggregated.team_id,
-       aggregated.winrate_10y AS [Porcentaje de victorias ultimos 10 años],
-       aggregated.ppg_10y AS [Puntos por partido ultimos 10 años],
-       RANK() OVER (ORDER BY aggregated.winrate_10y DESC, aggregated.ppg_10y DESC) AS rk_recent
+       aggregated.win_rate_10y,
+       aggregated.ppg_10y,
+       RANK() OVER (ORDER BY aggregated.win_rate_10y DESC, aggregated.ppg_10y DESC) AS rk_recent
 FROM aggregated
 JOIN analytics.vw_teams AS teams ON teams.team_id = aggregated.team_id;
 GO

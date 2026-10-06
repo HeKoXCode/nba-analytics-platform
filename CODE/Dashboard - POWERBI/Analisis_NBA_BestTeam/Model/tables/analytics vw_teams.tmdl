@@ -10,7 +10,7 @@ table 'analytics vw_teams'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Franquicia
+	column Team
 		dataType: string
 		sourceProviderType: nvarchar(255)
 		summarizeBy: none
@@ -35,7 +35,7 @@ table 'analytics vw_teams'
 				in
 				    analytics_vw_teams
 
-	annotation PBI_NavigationStepName = Navegación
+	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
 

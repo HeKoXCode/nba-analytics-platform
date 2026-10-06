@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "HALLAZGO CLAVE",
+                    "value": "KEY FINDING · FULL SAMPLE",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "3.225 perfiles: 199,24 cm y 213,36 lb de promedio entre franquicias.",
+                    "value": "3,225 historical profiles: team-average means of 199.24 cm and 213.36 lb.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "La muestra más amplia por franquicia reúne 197 perfiles históricos.",
+                    "value": "The largest team sample contains 197 historical player profiles.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

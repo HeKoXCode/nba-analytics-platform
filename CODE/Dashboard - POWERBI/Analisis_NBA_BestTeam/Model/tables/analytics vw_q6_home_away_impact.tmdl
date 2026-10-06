@@ -2,16 +2,16 @@ table 'analytics vw_q6_home_away_impact'
 
 	measure PPG_Diferencia_Home_Away = ```
 			
-			AVERAGE('analytics vw_q6_home_away_impact'[Puntos como Local]) 
-			    - AVERAGE('analytics vw_q6_home_away_impact'[Puntos como visitante])
+			AVERAGE('analytics vw_q6_home_away_impact'[Home points per game]) 
+			    - AVERAGE('analytics vw_q6_home_away_impact'[Away points per game])
 			```
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure PPG_NEG_Diferencia_Home_Away = ```
 			
-			AVERAGE('analytics vw_q6_home_away_impact'[Puntos como visitante])
-			    - AVERAGE('analytics vw_q6_home_away_impact'[Puntos como Local]) 
+			AVERAGE('analytics vw_q6_home_away_impact'[Away points per game])
+			    - AVERAGE('analytics vw_q6_home_away_impact'[Home points per game]) 
 			```
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -53,7 +53,7 @@ table 'analytics vw_q6_home_away_impact'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Puntos como Local'
+	column 'Home points per game'
 		dataType: double
 		sourceProviderType: float
 		summarizeBy: sum
@@ -63,7 +63,7 @@ table 'analytics vw_q6_home_away_impact'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Puntos como visitante'
+	column 'Away points per game'
 		dataType: double
 		sourceProviderType: float
 		summarizeBy: sum
@@ -82,7 +82,7 @@ table 'analytics vw_q6_home_away_impact'
 				in
 				    analytics_vw_q6_home_away_impact
 
-	annotation PBI_NavigationStepName = Navegación
+	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Exception
 

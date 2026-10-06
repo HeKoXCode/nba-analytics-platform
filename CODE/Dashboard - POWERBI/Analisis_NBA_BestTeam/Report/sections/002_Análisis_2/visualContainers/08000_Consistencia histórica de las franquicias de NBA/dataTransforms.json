@@ -33,7 +33,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Variación promedio de victorias entre temporadas (%)'"
+                "Value": "'Season-to-season win-rate CV (%)'"
               }
             }
           },
@@ -74,7 +74,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Franquicia '"
+                "Value": "'Team '"
               }
             }
           },
@@ -246,7 +246,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Suma de var_winrate_pct",
+        "Restatement": "Sum of var_winrate_pct",
         "Name": "Sum(analytics vw_q5_consistency.var_winrate_pct)",
         "Type": 1,
         "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
@@ -276,7 +276,7 @@
   ],
   "selects": [
     {
-      "displayName": "Suma de var_winrate_pct",
+      "displayName": "Sum of var_winrate_pct",
       "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
       "queryName": "Sum(analytics vw_q5_consistency.var_winrate_pct)",
       "roles": {

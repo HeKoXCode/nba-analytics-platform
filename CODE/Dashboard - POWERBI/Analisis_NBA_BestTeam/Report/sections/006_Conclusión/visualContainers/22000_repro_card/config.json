@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "CALIDAD",
+                    "value": "QUALITY",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "11 pruebas · 89,92%",
+                    "value": "13 tests · 89.92% core ETL coverage",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "18pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Reconciliación SQL · carga idempotente · controles de contrato",
+                    "value": "SQL reconciliation · idempotent load · schema checks",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

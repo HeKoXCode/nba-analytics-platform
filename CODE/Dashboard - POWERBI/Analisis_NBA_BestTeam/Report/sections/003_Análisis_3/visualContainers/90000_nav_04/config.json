@@ -92,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'04 ACTUALIDAD'"
+                  "Value": "'04 PEAK'"
                 }
               }
             },
@@ -198,7 +198,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Abrir 04 actualidad'"
+                  "Value": "'Open historical peak'"
                 }
               }
             },

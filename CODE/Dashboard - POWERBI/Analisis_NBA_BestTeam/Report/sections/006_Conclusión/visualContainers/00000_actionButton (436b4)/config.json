@@ -68,7 +68,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cerrar ✖️'"
+                  "Value": "'Close ✖️'"
                 }
               }
             },
@@ -167,7 +167,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis 3'"
+                  "Value": "'Analysis 3'"
                 }
               }
             },

@@ -181,7 +181,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de winrate_hist",
+        "Restatement": "Average of winrate_hist",
         "Name": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
         "Type": 1,
         "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
@@ -201,7 +201,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de winrate_hist",
+      "displayName": "Average of winrate_hist",
       "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
       "queryName": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
       "roles": {

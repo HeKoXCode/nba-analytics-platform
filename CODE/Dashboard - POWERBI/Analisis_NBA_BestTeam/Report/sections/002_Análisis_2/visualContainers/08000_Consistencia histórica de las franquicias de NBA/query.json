@@ -27,7 +27,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q5_consistency.var_winrate_pct)",
-              "NativeReferenceName": "Suma de var_winrate_pct"
+              "NativeReferenceName": "Sum of var_winrate_pct"
             },
             {
               "Column": {

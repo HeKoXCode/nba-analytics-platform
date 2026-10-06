@@ -21,13 +21,13 @@
                         "Source": "a"
                       }
                     },
-                    "Property": "Puntos por partido ultimos 10 años"
+                    "Property": "Points per game (last 10 seasons)"
                   }
                 },
                 "Function": 1
               },
               "Name": "Sum(analytics vw_q10_recent_top.ppg_10y)",
-              "NativeReferenceName": "Promedio de Puntos por partido ultimos 10 años"
+              "NativeReferenceName": "Average recent PPG"
             }
           ]
         },

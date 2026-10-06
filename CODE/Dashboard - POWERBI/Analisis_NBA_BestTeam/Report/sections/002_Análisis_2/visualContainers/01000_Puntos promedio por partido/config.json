@@ -41,13 +41,13 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Eficiencia de tiro"
+                "Property": "Field-goal percentage (FG%)"
               }
             },
             "Function": 1
           },
           "Name": "Sum(analytics vw_q7_balance_of_def.fg_pct_avg)",
-          "NativeReferenceName": "Promedio de Eficiencia de tiro"
+          "NativeReferenceName": "Average FG%"
         }
       ],
       "OrderBy": [
@@ -62,7 +62,7 @@
                       "Source": "a"
                     }
                   },
-                  "Property": "Eficiencia de tiro"
+                  "Property": "Field-goal percentage (FG%)"
                 }
               },
               "Function": 1
@@ -332,7 +332,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Puntos promedio por partido'"
+                  "Value": "'Average points per game'"
                 }
               }
             },

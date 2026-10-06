@@ -21,13 +21,13 @@
                         "Source": "a1"
                       }
                     },
-                    "Property": "Balones perdidos"
+                    "Property": "Turnovers per game"
                   }
                 },
                 "Function": 1
               },
               "Name": "Sum(analytics vw_q7_balance_of_def.tov_avg)",
-              "NativeReferenceName": "Promedio de Balones perdidos"
+              "NativeReferenceName": "Average of Turnovers per game"
             }
           ]
         },

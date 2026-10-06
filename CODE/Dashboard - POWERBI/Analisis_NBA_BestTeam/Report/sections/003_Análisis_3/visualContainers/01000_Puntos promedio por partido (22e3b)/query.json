@@ -21,13 +21,13 @@
                         "Source": "a"
                       }
                     },
-                    "Property": "Porcentaje de victorias ultimos 10 años"
+                    "Property": "Win rate (last 10 seasons)"
                   }
                 },
                 "Function": 1
               },
               "Name": "Sum(analytics vw_q10_recent_top.winrate_10y)",
-              "NativeReferenceName": "Promedio de Porcentaje de victorias ultimos 10 años"
+              "NativeReferenceName": "Average recent win rate"
             }
           ]
         },

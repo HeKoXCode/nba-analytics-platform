@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at_utc": "2026-09-30T02:46:44Z",
+  "status": "validated_against_isolated_sql_server",
+  "source": {
+    "database": "NBA_EN_QA_20260929",
+    "server": ".\\SQLEXPRESS",
+    "run_id": "nba-20260930T024433Z-0af8b4ab23",
+    "authentication": "Windows integrated",
+    "note": "This snapshot reflects the B2 analytical correction. The older NBA-Visual-Storytelling snapshot remains historical evidence for the Spanish release."
+  },
+  "scope": {
+    "first_season": 1946,
+    "last_season": 2022,
+    "max_game_date": "2023-12-06",
+    "unique_games": 65642,
+    "current_franchises": 30,
+    "note": "Season ranges use season_id; some 2022-season games have calendar dates in 2023."
+  },
+  "history": {
+    "leader": {"team": "San Antonio Spurs", "games": 4077, "wins": 2427, "win_rate_pct": 59.53},
+    "league_ppg": {"1940s": 76.23, "1960s_peak": 114.06, "2020s": 112.07}
+  },
+  "efficiency": {
+    "home_win_rate_pct": 61.20,
+    "away_win_rate_pct": 37.36,
+    "win_rate_denominator": "unweighted mean of 1,557 eligible team-season rates",
+    "home_ppg": 104.69,
+    "away_ppg": 101.11,
+    "home_ppg_advantage_approx": 3.6,
+    "ppg_denominator": "mean of eligible team-season home or away PPG values",
+    "lowest_win_rate_cv": {"team": "New Orleans Pelicans", "cv_pct": 20.81}
+  },
+  "profile": {
+    "player_profiles": 3225,
+    "mean_team_height_cm": 199.24,
+    "mean_team_weight_lb": 213.36,
+    "largest_team_sample": 197,
+    "note": "Historical player profiles; reported height and weight are unweighted means of team-level averages."
+  },
+  "peak_and_recent": {
+    "longest_streak": {"team": "Los Angeles Lakers", "wins": 33},
+    "recent_window": {
+      "first_season": 2013,
+      "last_season": 2022,
+      "leader": "Golden State Warriors",
+      "wins": 656,
+      "games": 986,
+      "win_rate_pct": 66.53,
+      "win_rate_definition": "SUM(wins) / SUM(games_played), matching historical team ranking",
+      "ppg": 112.03
+    }
+  }
+}

@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "6 CSV versionados  →  contrato v1.0.0  →  ETL Python  →  SQL Server  →  15 objetos analíticos  →  Power BI DirectQuery",
+                    "value": "6 versioned CSVs  →  contract v1.0.0  →  Python ETL  →  SQL Server  →  15 analytical objects  →  Power BI DirectQuery",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "16pt",

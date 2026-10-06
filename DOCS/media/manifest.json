@@ -1,0 +1,25 @@
+{
+  "edition": "2026-10-06",
+  "media": [
+    {
+      "path": "DOCS/media/linkedin/nba_p03_preserve_valid_history.pdf",
+      "bytes": 45340,
+      "sha256": "0dd0814822b020d7838eb8c19b087fa121816b882adc1f0c7e9bffc68308cb42"
+    },
+    {
+      "path": "DOCS/media/linkedin/nba_p07_same_formula_new_window.pdf",
+      "bytes": 46082,
+      "sha256": "fad37bb37dadc5e96ab185051f09b2f184215991fe8fe340bc51310a93847b0b"
+    },
+    {
+      "path": "DOCS/media/linkedin/nba_p10_questions_to_story.pdf",
+      "bytes": 45207,
+      "sha256": "a1a6b1c497b47d8d7f0089636e0a6edc0925686464b8e162b93ab8846e7f8940"
+    },
+    {
+      "path": "DOCS/media/technical/nba_english_report_native_hq.pdf",
+      "bytes": 2159325,
+      "sha256": "1e422591244451a8cce8af1674229a06b18149d3a67f0a8350d1e89209d65d2e"
+    }
+  ]
+}

@@ -53,7 +53,7 @@
             "Function": 0
           },
           "Name": "Sum(analytics vw_q5_consistency.var_winrate_pct)",
-          "NativeReferenceName": "Suma de var_winrate_pct"
+          "NativeReferenceName": "Sum of var_winrate_pct"
         },
         {
           "Column": {
@@ -124,7 +124,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Variación promedio de victorias entre temporadas (%)'"
+                  "Value": "'Season-to-season win-rate CV (%)'"
                 }
               }
             },
@@ -165,7 +165,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Franquicia '"
+                  "Value": "'Team '"
                 }
               }
             },
@@ -325,7 +325,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Estabilidad intertemporada | 1946–2022 | CV del win rate'"
+                  "Value": "'Season-to-season consistency | 1946–2022 | win-rate CV'"
                 }
               }
             },

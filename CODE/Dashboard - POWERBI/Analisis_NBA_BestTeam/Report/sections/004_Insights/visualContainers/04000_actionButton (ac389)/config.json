@@ -68,7 +68,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'3 · Talento y perfil'"
+                  "Value": "'3 · Player profiles'"
                 }
               }
             },
@@ -160,7 +160,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis 3'"
+                  "Value": "'Analysis 3'"
                 }
               }
             },

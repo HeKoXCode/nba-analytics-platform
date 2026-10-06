@@ -246,7 +246,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Máx. de n_players",
+        "Restatement": "Max player profiles",
         "Name": "Sum(analytics vw_q9_physical_profile.n_players)",
         "Type": 3,
         "Format": "0"
@@ -266,7 +266,7 @@
   ],
   "selects": [
     {
-      "displayName": "Máx. de n_players",
+      "displayName": "Max player profiles",
       "format": "0",
       "queryName": "Sum(analytics vw_q9_physical_profile.n_players)",
       "roles": {

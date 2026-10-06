@@ -47,7 +47,7 @@
             "Function": 4
           },
           "Name": "Sum(analytics vw_q9_physical_profile.n_players)",
-          "NativeReferenceName": "Máx. de n_players"
+          "NativeReferenceName": "Max player profiles"
         }
       ],
       "OrderBy": [
@@ -339,7 +339,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Puntos promedio por partido'"
+                  "Value": "'Average points per game'"
                 }
               }
             },

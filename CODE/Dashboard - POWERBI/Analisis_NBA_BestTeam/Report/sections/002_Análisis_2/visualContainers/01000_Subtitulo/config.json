@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Ventaja local (PPG)",
+                    "value": "Home scoring gap (PPG)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -60,7 +60,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Subtitulo'"
+                  "Value": "'Subtitle'"
                 }
               }
             }

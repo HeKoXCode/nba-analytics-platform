@@ -27,7 +27,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
-              "NativeReferenceName": "Suma de winrate_hist1"
+              "NativeReferenceName": "Sum of winrate_hist1"
             },
             {
               "Column": {
@@ -56,7 +56,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q1_hist_perf.total_wins)",
-              "NativeReferenceName": "Suma de total_wins"
+              "NativeReferenceName": "Sum of total_wins"
             },
             {
               "Aggregation": {
@@ -73,7 +73,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q1_hist_perf.rank_overall)",
-              "NativeReferenceName": "Suma de rank_overall"
+              "NativeReferenceName": "Sum of rank_overall"
             }
           ],
           "OrderBy": [

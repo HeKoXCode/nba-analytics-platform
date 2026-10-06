@@ -239,7 +239,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de Porcentaje de victorias ultimos 10 años",
+        "Restatement": "Average recent win rate",
         "Name": "Sum(analytics vw_q10_recent_top.winrate_10y)",
         "Type": 1,
         "Format": "0\\ %;-0\\ %;0\\ %"
@@ -259,7 +259,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de Porcentaje de victorias ultimos 10 años",
+      "displayName": "Average recent win rate",
       "format": "0\\ %;-0\\ %;0\\ %",
       "queryName": "Sum(analytics vw_q10_recent_top.winrate_10y)",
       "roles": {
@@ -278,7 +278,7 @@
                   "Entity": "analytics vw_q10_recent_top"
                 }
               },
-              "Property": "Porcentaje de victorias ultimos 10 años"
+              "Property": "Win rate (last 10 seasons)"
             }
           },
           "Function": 1

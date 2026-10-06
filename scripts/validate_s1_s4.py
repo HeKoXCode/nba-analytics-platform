@@ -25,6 +25,14 @@ EXPECTED_OUTPUTS = {
     "dim_team",
 }
 EXPECTED_PAGES = {
+    "NBA Analytics — Overview": 0,
+    "01 · Historical Performance": 1,
+    "02 · Home Advantage & Consistency": 2,
+    "03 · Player Profiles & Offense": 3,
+    "04 · Historical Peak vs. 2013–2022": 4,
+    "05 · Method & Evidence": 5,
+}
+LEGACY_PBIT_PAGES = {
     "Inicio": 0,
     "01 · Panorama histórico": 1,
     "02 · Ventaja y estabilidad": 2,
@@ -228,7 +236,7 @@ def validate_pbit(check: Check) -> tuple[str, int]:
         section["displayName"]: section["ordinal"]
         for section in layout["sections"]
     }
-    check.require(page_state == EXPECTED_PAGES, f"Unexpected compiled PBIT page order: {page_state}")
+    check.require(page_state == LEGACY_PBIT_PAGES, f"Unexpected archived ES PBIT page order: {page_state}")
     check.require("advancedSlicerVisual" not in raw_layout, "Compiled PBIT still contains custom advanced slicers")
     check.require(raw_layout.count(r'\"visualType\":\"slicer\"') == 4, "Compiled PBIT does not contain 4 built-in slicers")
     for claim in (

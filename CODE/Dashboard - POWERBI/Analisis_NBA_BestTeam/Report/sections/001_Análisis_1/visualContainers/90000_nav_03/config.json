@@ -92,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'03 PERFIL'"
+                  "Value": "'03 PROFILES'"
                 }
               }
             },
@@ -198,7 +198,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Abrir 03 perfil'"
+                  "Value": "'Open player profiles'"
                 }
               }
             },

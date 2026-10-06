@@ -239,7 +239,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de Eficiencia de tiro",
+        "Restatement": "Average FG%",
         "Name": "Sum(analytics vw_q7_balance_of_def.fg_pct_avg)",
         "Type": 1,
         "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
@@ -259,7 +259,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de Eficiencia de tiro",
+      "displayName": "Average FG%",
       "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
       "queryName": "Sum(analytics vw_q7_balance_of_def.fg_pct_avg)",
       "roles": {
@@ -278,7 +278,7 @@
                   "Entity": "analytics vw_q7_balance_of_def"
                 }
               },
-              "Property": "Eficiencia de tiro"
+              "Property": "Field-goal percentage (FG%)"
             }
           },
           "Function": 1

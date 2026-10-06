@@ -47,7 +47,7 @@
             "Function": 1
           },
           "Name": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
-          "NativeReferenceName": "Promedio de ppg_hist"
+          "NativeReferenceName": "Average of ppg_hist"
         }
       ],
       "OrderBy": [
@@ -274,7 +274,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Puntos promedio por partido'"
+                  "Value": "'Average points per game'"
                 }
               }
             },

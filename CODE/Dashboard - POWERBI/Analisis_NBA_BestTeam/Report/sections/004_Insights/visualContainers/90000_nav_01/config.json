@@ -92,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'01 HISTORIA'"
+                  "Value": "'01 HISTORY'"
                 }
               }
             },
@@ -198,7 +198,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Abrir 01 historia'"
+                  "Value": "'Open historical performance'"
                 }
               }
             },

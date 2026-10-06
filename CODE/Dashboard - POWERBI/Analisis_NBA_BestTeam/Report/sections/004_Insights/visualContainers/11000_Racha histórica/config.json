@@ -53,7 +53,7 @@
             "Function": 0
           },
           "Name": "Sum(analytics vw_q8_longest_win_streak.longest_win_streak)",
-          "NativeReferenceName": "Suma de longest_win_streak"
+          "NativeReferenceName": "Sum of longest_win_streak"
         },
         {
           "Column": {
@@ -98,7 +98,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Franquicias'"
+                  "Value": "'Teams'"
                 }
               }
             },
@@ -118,7 +118,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cantidad de victorias consecutivas'"
+                  "Value": "'Consecutive wins'"
                 }
               }
             },
@@ -248,7 +248,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Racha observada (victorias): '"
+                  "Value": "'Observed streak (wins): '"
                 }
               }
             },
@@ -277,7 +277,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Pico histórico | 1946–2022 | racha máxima de victorias'"
+                  "Value": "'Historical peak | 1946–2022 | longest winning streak'"
                 }
               }
             },

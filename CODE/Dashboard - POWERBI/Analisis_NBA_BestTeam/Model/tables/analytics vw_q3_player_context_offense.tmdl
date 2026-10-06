@@ -26,7 +26,7 @@ table 'analytics vw_q3_player_context_offense'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Puntos por partido'
+	column 'Points per game (PPG)'
 		dataType: double
 		formatString: 0.0
 		sourceProviderType: float
@@ -35,9 +35,9 @@ table 'analytics vw_q3_player_context_offense'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Porcentaje de acierto'
+	column 'Field-goal percentage (FG%)'
 		dataType: double
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		sourceProviderType: float
 		summarizeBy: sum
 		sourceColumn: Porcentaje de acierto

@@ -92,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'02 CONTEXTO'"
+                  "Value": "'02 CONTEXT'"
                 }
               }
             },
@@ -198,7 +198,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Abrir 02 contexto'"
+                  "Value": "'Open home context'"
                 }
               }
             },

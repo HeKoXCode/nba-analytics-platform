@@ -181,7 +181,7 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de ppg_hist",
+        "Restatement": "Average of ppg_hist",
         "Name": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
         "Type": 1,
         "Format": "0.0"
@@ -201,7 +201,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de ppg_hist",
+      "displayName": "Average of ppg_hist",
       "format": "0.0",
       "queryName": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
       "roles": {

@@ -6,7 +6,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Años desde fundación'"
+                "Value": "'Years since founding'"
               }
             }
           },
@@ -40,7 +40,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Porcentaje de Victorias (Histórico)'"
+                "Value": "'Historical win rate'"
               }
             }
           },
@@ -109,7 +109,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Equipo'"
+                "Value": "'Team'"
               }
             }
           }
@@ -186,13 +186,13 @@
         "Type": 2048
       },
       {
-        "Restatement": "Promedio de winrate_hist",
+        "Restatement": "Average of winrate_hist",
         "Name": "Sum(analytics vw_q2_age_vs_current.winrate_hist)",
         "Type": 1,
         "Format": "0.0\\ %;-0.0\\ %;0.0\\ %"
       },
       {
-        "Restatement": "Suma de ppg_hist",
+        "Restatement": "Sum of ppg_hist",
         "Name": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
         "Type": 1,
         "Format": "0.0"
@@ -270,7 +270,7 @@
       }
     },
     {
-      "displayName": "Promedio de winrate_hist",
+      "displayName": "Average of winrate_hist",
       "format": "0.0\\ %;-0.0\\ %;0.0\\ %",
       "queryName": "Sum(analytics vw_q2_age_vs_current.winrate_hist)",
       "roles": {
@@ -297,7 +297,7 @@
       }
     },
     {
-      "displayName": "Suma de ppg_hist",
+      "displayName": "Sum of ppg_hist",
       "format": "0.0",
       "queryName": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
       "roles": {

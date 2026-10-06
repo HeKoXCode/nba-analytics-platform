@@ -33,7 +33,7 @@
                     }
                   },
                   {
-                    "value": "Dos preguntas complementarias  ",
+                    "value": "Two complementary questions  ",
                     "textStyle": {
                       "fontStyle": "italic",
                       "fontSize": "14pt",
@@ -41,7 +41,7 @@
                     }
                   },
                   {
-                    "value": "hallazgos ~",
+                    "value": "findings ~",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontStyle": "italic",
@@ -77,7 +77,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Subtitulo'"
+                  "Value": "'Subtitle'"
                 }
               }
             }

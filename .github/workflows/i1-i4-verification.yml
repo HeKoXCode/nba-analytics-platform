@@ -27,7 +27,7 @@ jobs:
       - name: Validate generated artifacts and source
         run: |
           python scripts/generate_model_artifacts.py --check
-          python -m ruff check src tests scripts/generate_model_artifacts.py scripts/update_powerbi_project_i4.py scripts/update_powerbi_storytelling.py scripts/validate_i1_i4.py scripts/validate_visual_storytelling.py
+          python -m ruff check src tests scripts/generate_model_artifacts.py scripts/update_powerbi_project_i4.py scripts/update_powerbi_storytelling.py scripts/localize_powerbi_en.py scripts/prepare_powerbi_qa_project.py scripts/validate_i1_i4.py scripts/validate_visual_storytelling.py
           python scripts/validate_s1_s4.py
           python scripts/validate_i1_i4.py
           python scripts/validate_visual_storytelling.py

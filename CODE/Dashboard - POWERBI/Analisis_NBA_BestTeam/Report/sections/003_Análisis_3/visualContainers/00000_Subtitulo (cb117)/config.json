@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Win rate reciente medio",
+                    "value": "Recent win rate",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -60,7 +60,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Subtitulo'"
+                  "Value": "'Subtitle'"
                 }
               }
             }

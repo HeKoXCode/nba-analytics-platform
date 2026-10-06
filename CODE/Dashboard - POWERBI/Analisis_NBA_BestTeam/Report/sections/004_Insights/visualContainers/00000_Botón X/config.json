@@ -93,7 +93,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis ▼'"
+                  "Value": "'Analysis ▼'"
                 }
               }
             },
@@ -179,7 +179,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis '"
+                  "Value": "'Analysis '"
                 }
               }
             },
@@ -199,7 +199,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Botón X'"
+                  "Value": "'Button X'"
                 }
               }
             }

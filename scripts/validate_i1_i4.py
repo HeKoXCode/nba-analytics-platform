@@ -24,6 +24,14 @@ EXPECTED_TOTALS = {
     "rejected_rows": 155,
 }
 EXPECTED_PAGES = {
+    "NBA Analytics — Overview": 0,
+    "01 · Historical Performance": 1,
+    "02 · Home Advantage & Consistency": 2,
+    "03 · Player Profiles & Offense": 3,
+    "04 · Historical Peak vs. 2013–2022": 4,
+    "05 · Method & Evidence": 5,
+}
+LEGACY_PBIT_PAGES = {
     "Inicio": 0,
     "01 · Panorama histórico": 1,
     "02 · Ventaja y estabilidad": 2,
@@ -127,12 +135,12 @@ def validate_report() -> None:
     for required in (
         "1946–2022",
         "2013–2022",
-        "6 CSV · 161.111 filas",
-        "65.642 partidos únicos",
-        "11 pruebas · 89,92%",
-        "ENTREGABLES PARA REPRODUCIBILIDAD Y REVISIÓN TÉCNICA",
-        "Pérdidas por partido",
-        "Eficiencia de tiro",
+        "6 CSVs · 161,111 rows",
+        "65,642 unique games",
+        "13 tests · 89.92% core ETL coverage",
+        "REVIEW & REPRODUCTION",
+        "Turnovers per game",
+        "Field-goal percentage (FG%)",
     ):
         require(required in report_text, f"Report methodology/title evidence missing: {required}")
     require(
@@ -157,7 +165,7 @@ def validate_report() -> None:
         )
         layout = json.loads(archive.read("Report/Layout").decode("utf-16"))
     compiled_pages = {page["displayName"]: page["ordinal"] for page in layout["sections"]}
-    require(compiled_pages == EXPECTED_PAGES, "Compiled PBIT pages do not match source")
+    require(compiled_pages == LEGACY_PBIT_PAGES, "Archived ES PBIT pages changed")
 
 
 def validate_automation() -> None:

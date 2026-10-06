@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "HALLAZGO CLAVE",
+                    "value": "KEY FINDING · FULL SAMPLE",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "61,20% de victorias en casa frente a 37,36% como visitante.",
+                    "value": "Home scoring averages 104.69 PPG versus 101.11 PPG away.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "14pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "La localía agrega 3,58 PPG; Pelicans presenta el menor CV de win rate (20,81%).",
+                    "value": "The difference is about 3.6 PPG across team-seasons; the Pelicans have the lowest win-rate CV (20.81%).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

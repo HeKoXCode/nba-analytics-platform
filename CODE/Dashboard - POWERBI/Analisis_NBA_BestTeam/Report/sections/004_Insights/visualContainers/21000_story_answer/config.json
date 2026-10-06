@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "HALLAZGO CLAVE",
+                    "value": "KEY FINDING · FULL SAMPLE",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Lakers registra la mayor racha histórica (33); Warriors lidera 2013–2022 con 64,20% y 112,03 PPG.",
+                    "value": "The Lakers have the longest observed streak (33); the Warriors lead 2013–2022 at 66.53% (656/986 games).",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13pt",

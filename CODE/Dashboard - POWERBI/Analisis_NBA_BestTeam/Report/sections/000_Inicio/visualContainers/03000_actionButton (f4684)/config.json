@@ -68,7 +68,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'2 · Eficiencia y consistencia'"
+                  "Value": "'2 · Home context and consistency'"
                 }
               }
             },
@@ -160,7 +160,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis 2'"
+                  "Value": "'Analysis 2'"
                 }
               }
             },

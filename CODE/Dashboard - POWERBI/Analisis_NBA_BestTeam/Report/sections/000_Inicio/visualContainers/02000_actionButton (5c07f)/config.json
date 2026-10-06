@@ -68,7 +68,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'1 · Historia y evolución'"
+                  "Value": "'1 · Historical performance'"
                 }
               }
             },
@@ -167,7 +167,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Análisis 1'"
+                  "Value": "'Analysis 1'"
                 }
               }
             },

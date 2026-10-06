@@ -37,7 +37,7 @@ table 'analytics vw_q1_hist_perf'
 
 	column winrate_hist
 		dataType: double
-		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		formatString: 0.0%
 		sourceProviderType: decimal(24, 12)
 		summarizeBy: sum
 		sourceColumn: winrate_hist

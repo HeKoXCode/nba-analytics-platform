@@ -1,1 +1,51 @@
-[]
+[
+  {
+    "name": "41de3bf47e045ce8899b",
+    "expression": {
+      "Column": {
+        "Expression": {
+          "SourceRef": {
+            "Entity": "analytics vw_q10_recent_top"
+          }
+        },
+        "Property": "rk_recent"
+      }
+    },
+    "filter": {
+      "Version": 2,
+      "From": [
+        {
+          "Name": "a",
+          "Entity": "analytics vw_q10_recent_top",
+          "Type": 0
+        }
+      ],
+      "Where": [
+        {
+          "Condition": {
+            "Comparison": {
+              "ComparisonKind": 4,
+              "Left": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Source": "a"
+                    }
+                  },
+                  "Property": "rk_recent"
+                }
+              },
+              "Right": {
+                "Literal": {
+                  "Value": "12L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "type": "Advanced",
+    "howCreated": 1
+  }
+]

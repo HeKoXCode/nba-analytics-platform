@@ -345,13 +345,11 @@ def _streak_queries(payload: object) -> list[dict]:
     return queries
 
 
-def use_native_query_for_q2() -> None:
-    """Avoid Power Query metadata recursion for the age/current analytical view."""
+def use_direct_navigation_for_q2() -> None:
+    """Use the validated DirectQuery view without a native-query approval prompt."""
 
     path = PROJECT / "Model" / "tables" / "analytics vw_q2_age_vs_current.tmdl"
     text = path.read_text(encoding="utf-8-sig")
-    if "Value.NativeQuery(Origen" in text:
-        return
     marker = "\tpartition 'analytics vw_q2_age_vs_current' = m"
     partition_start = text.find(marker)
     if partition_start < 0:
@@ -359,19 +357,25 @@ def use_native_query_for_q2() -> None:
     source_start = text.find("\t\t\t\tlet\n", partition_start)
     if source_start < 0:
         raise RuntimeError("No se encontró el bloque M de q2.")
-    output_marker = "\n\t\t\t\t    analytics_vw_q2_age_vs_current\n"
-    source_end = text.find(output_marker, source_start)
+    current_output = (
+        "\n\t\t\t\t    Consulta\n"
+        if "Value.NativeQuery(Origen" in text[partition_start:]
+        else "\n\t\t\t\t    analytics_vw_q2_age_vs_current\n"
+    )
+    source_end = text.find(current_output, source_start)
     if source_end < 0:
         raise RuntimeError("No se encontró la salida M de q2.")
-    source_end += len(output_marker)
-    native = (
+    source_end += len(current_output)
+    navigation = (
         "\t\t\t\tlet\n"
         "\t\t\t\t    Origen = Sql.Database(\".\\SQLEXPRESS\", \"NBA_Project\"),\n"
-        "\t\t\t\t    Consulta = Value.NativeQuery(Origen, \"SELECT team_name, year_founded, franchise_age, winrate_hist, ppg_hist FROM analytics.vw_q2_age_vs_current\", null, [EnableFolding=true])\n"
+        "\t\t\t\t    analytics_vw_q2_age_vs_current = Origen{[Schema=\"analytics\",Item=\"vw_q2_age_vs_current\"]}[Data]\n"
         "\t\t\t\tin\n"
-        "\t\t\t\t    Consulta\n"
+        "\t\t\t\t    analytics_vw_q2_age_vs_current\n"
     )
-    path.write_text(text[:source_start] + native + text[source_end:], encoding="utf-8", newline="\n")
+    updated = text[:source_start] + navigation + text[source_end:]
+    if updated != text:
+        path.write_text(updated, encoding="utf-8", newline="\n")
 
 
 def main() -> int:
@@ -512,8 +516,13 @@ def main() -> int:
     update_player_sample_label()
     update_efficiency_card_labels()
     normalize_streak_visual_source()
-    use_native_query_for_q2()
-    print("I4 aplicado: seis páginas, dos visuales redistribuidos y origen SQL local.")
+    use_direct_navigation_for_q2()
+    # I4 is a preparatory stage, but rerunning it must not leave the extracted
+    # project with Spanish presentation labels or stale q10 model aliases.
+    from localize_powerbi_en import main as apply_english_contract
+
+    apply_english_contract()
+    print("I4 applied: six pages, redistributed visuals and local SQL source; English labels restored.")
     return 0
 
 

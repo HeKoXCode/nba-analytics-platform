@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Edad máxima de franquicia (años)",
+                    "value": "Oldest franchise age (years)",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",
@@ -60,7 +60,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Subtitulo'"
+                  "Value": "'Subtitle'"
                 }
               }
             }

@@ -6,7 +6,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Franquicia'"
+                "Value": "'Team'"
               }
             }
           },
@@ -26,7 +26,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'Promedio de puntos por partido'"
+                "Value": "'Average points per game (PPG)'"
               }
             }
           },
@@ -304,12 +304,12 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Promedio de Puntos como Local",
+        "Restatement": "Average home PPG",
         "Name": "Avg(analytics vw_q6_home_away_impact.ppg_home)",
         "Type": 1
       },
       {
-        "Restatement": "Promedio de Puntos como visitante",
+        "Restatement": "Average away PPG",
         "Name": "Avg(analytics vw_q6_home_away_impact.ppg_away)",
         "Type": 1
       },
@@ -343,7 +343,7 @@
   ],
   "selects": [
     {
-      "displayName": "Promedio de Puntos como Local",
+      "displayName": "Average home PPG",
       "queryName": "Avg(analytics vw_q6_home_away_impact.ppg_home)",
       "roles": {
         "Y": true
@@ -363,7 +363,7 @@
                   "Entity": "analytics vw_q6_home_away_impact"
                 }
               },
-              "Property": "Puntos como Local"
+              "Property": "Home points per game"
             }
           },
           "Function": 1
@@ -371,7 +371,7 @@
       }
     },
     {
-      "displayName": "Promedio de Puntos como visitante",
+      "displayName": "Average away PPG",
       "queryName": "Avg(analytics vw_q6_home_away_impact.ppg_away)",
       "roles": {
         "Y": true
@@ -389,7 +389,7 @@
                   "Entity": "analytics vw_q6_home_away_impact"
                 }
               },
-              "Property": "Puntos como visitante"
+              "Property": "Away points per game"
             }
           },
           "Function": 1

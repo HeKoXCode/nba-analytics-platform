@@ -19,10 +19,10 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Década de temporada"
+                "Property": "Season decade"
               },
-              "Name": "analytics dim_season.Década de temporada",
-              "NativeReferenceName": "Década de temporada"
+              "Name": "analytics dim_season.Season decade",
+              "NativeReferenceName": "Season decade"
             }
           ]
         },

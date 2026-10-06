@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "PREGUNTA  ¿El pico histórico coincide con el mejor rendimiento de la última década disponible?",
+                    "value": "QUESTION  Do the longest observed streak and the highest 2013–2022 win rate belong to the same team?",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13pt",

@@ -27,7 +27,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q8_longest_win_streak.longest_win_streak)",
-              "NativeReferenceName": "Suma de longest_win_streak"
+              "NativeReferenceName": "Sum of longest_win_streak"
             },
             {
               "Column": {

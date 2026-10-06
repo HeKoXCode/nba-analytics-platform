@@ -1,5 +1,7 @@
 # NBA-I1 to NBA-I4 verification
 
+> Historical verification for the preceding Spanish edition (10/09–28/09/2026). Its 11-test count, PBIT hash and screenshot status are **not** the English edition's QA. For the current English candidate, use [English release verification](english_release_verification.md) and the [English result snapshot](../evidence/NBA-English-2026-09-29/insight_snapshot.json). I preserve the old logs and dates rather than relabeling them.
+
 Verification date: **10/09/2026 (America/Argentina/Buenos_Aires)**
 
 ## Real ETL run

@@ -1,93 +1,27 @@
-# Power BI storytelling and reproducibility
+# Power BI storytelling — English edition
 
-## Objective
+I use the six-page [`NBA_Analytics_EN.pbit`](../CODE/Dashboard%20-%20POWERBI/NBA_Analytics_EN.pbit) to let a reviewer move from a business question to a checked result, then inspect the method. The fixed findings describe the **full committed sample**; slicers are exploratory and do not recalculate those annotations. The earlier Spanish gallery and PBIT remain historical, not current English visual evidence. See the [reviewer route](reviewer_guide.md) and [dated English QA](english_release_verification.md).
 
-The Power BI report turns the canonical ETL and SQL model into a concise analytical story that a recruiter or technical reviewer can understand, reproduce and challenge. The current artifact is `CODE/Dashboard - POWERBI/Analisis_NBA_BestTeam.pbit`; its editable pbi-tools source is stored in the adjacent `Analisis_NBA_BestTeam/` directory.
-
-## Story architecture
-
-| Step | Reader question | Primary evidence | Headline result |
+| Page | Reader question | Visual evidence | Fixed full-sample finding |
 |---|---|---|---|
-| `Inicio` | What problem does the project solve and how is the analysis organized? | Portfolio case-study summary, four-step route and verified scope | 6 versioned CSVs, 161,111 source rows, 65,642 unique games and 11 automated tests |
-| `01 · Panorama histórico` | Who sustained the best performance, and how did league scoring evolve? | Historical win rate, PPG by decade and age versus recent performance | Spurs leads at 59.53%; league PPG moves from 76.23 in the 1940s to 112.07 in the 2020s |
-| `02 · Ventaja y estabilidad` | How much does home court change performance, and which teams vary less between seasons? | Win-rate CV, home/away PPG and FG% versus turnovers | Home win rate is 61.20% versus 37.36% away; home court adds 3.58 PPG |
-| `03 · Perfil y ofensiva` | What do the available player profiles and offensive context show together? | Top-12 offensive context and physical-profile scatter | 3,225 profiles, 199.24 cm and 213.36 lb as franchise-level averages |
-| `04 · Pico y actualidad` | Does the historical peak match the best team in the latest ten-season window? | Longest streak and 2013–2022 performance | Lakers owns the 33-game streak; Warriors leads the recent window at 64.20% |
-| `05 · Método y evidencia` | Can a reviewer reproduce the result? | Data, model, quality, lineage and review deliverables | 15 analytical objects, zero cross-table orphans, 89.92% core coverage and versioned Power BI source |
+| Overview | What is the analytical product and where do I start? | Four-step route, six-source scope and workflow strip | 161,111 input rows; 65,642 retained games; 13 local tests. |
+| 01 Historical Performance | Who leads the long-run win-rate ranking, and how did scoring change? | Team rate, scoring by decade, age versus recent performance | Spurs **59.53% across 4,077 games**; 76.23 PPG in 1940s versus 112.07 in 2020s. |
+| 02 Home Advantage & Consistency | What do home/away, variability and shooting/turnovers reveal? | Home/away PPG, win-rate CV, FG% versus turnovers | Home **104.69** versus away **101.11 PPG**; 61.20% versus 37.36% are unweighted team-season win-rate means. |
+| 03 Player Profiles & Offense | What do the available historical player profiles show beside offense? | SQL-backed eligible offensive Top 12 and historical profile scatter | 3,225 profiles; mean of team averages **199.24 cm / 213.36 lb**. |
+| 04 Historical Peak vs. 2013–2022 | Is the all-time streak leader also the recent rate leader? | Longest streak and recent team ranking | Lakers **33-game** streak; Warriors **66.53% (656/986)** for seasons 2013–2022. |
+| 05 Method & Evidence | How can I challenge the result? | Data → contract → ETL → SQL → DirectQuery lineage and review deliverables | 15 analytical objects, zero cross-table orphans, 13 tests, 89.92% core ETL coverage. |
 
-The four analytical pages contain one explicit question and one **Hallazgo clave**. The fixed headline result represents the complete baseline dataset; slicers remain available for interactive exploration of the charts.
+The **64.20%** number in the prior Spanish visual documentation was an average of team-season rates, not the same wins/games denominator as the historical ranking. I corrected the SQL view and English fixed result to **66.53%**. This is a change in analytical definition, not a cosmetic translation. The [English snapshot](../evidence/NBA-English-2026-09-29/insight_snapshot.json) is the baseline for exact values and periods; the [old snapshot](../evidence/NBA-Visual-Storytelling/insight_snapshot.json) remains dated historical evidence.
 
-## Visual system
+## Visual choices and interaction
 
-- Light neutral canvas (`#F3F6FB`) with white analytical panels.
-- Blue (`#1D4ED8`) as the primary series, orange (`#F28C28`) for conclusions and sky (`#38BDF8`) for secondary signals.
-- Segoe UI hierarchy with page, question and chart/card levels.
-- No more than three analytical charts per page.
-- Six direct page actions on every canvas, with the active step highlighted in orange.
-- Business-facing filter captions: `Franquicia` and `Década de temporada`.
-- Redundant KPI groups are kept off-canvas so titles and values never collide with the analytical question.
-- The offensive-context visual is sorted and restricted to the Top 12 by PPG for a readable first view.
+- I keep one explicit question and one orange headline per analytical page, with no more than three analytical charts per page.
+- I use a neutral canvas, blue data series and orange conclusions. A native six-link navigation bar stays inside the report, without external icon dependencies.
+- I use a scatter for FG% versus turnovers because these measures have different units, and order decades chronologically.
+- The offensive Top 12 is enforced by the visual filter over a deterministic SQL ranking. The SQL view still serves 30 teams elsewhere. Selecting a team outside the Top 12 can correctly leave that chart empty while the profile visual still has a point.
+- A Power BI Desktop installation may localize shell labels, aggregation names and decimal separators. The authored questions, titles and conclusions are English.
+- The desktop canvas is the interactive target. There is **no native phone layout** in the current artifact; a cropped social image is not one.
 
-## Cover design
+## Rebuild and evidence boundary
 
-The cover is a portfolio case study rather than a decorative splash page. It contains:
-
-1. the project title and analytical proposition;
-2. the user-selected analytics mark as a visible hero element;
-3. four compact story cards for history, context, profile and recent performance;
-4. a verified scope strip linking Python ETL, SQL Server and Power BI DirectQuery.
-
-The Henry mark and the legacy bookmark drop-down are not part of the public composition. A native, text-first navigation bar links `Inicio`, the four analytical steps and `Método`; it requires no downloaded icon set and remains editable inside Power BI.
-
-## Semantic decisions
-
-1. Shooting efficiency versus turnovers uses a scatter plot because the measures have different units.
-2. Team categories in q1, q2, q3, q5, q6, q7, q8, q9 and q10 come from their analytical view, avoiding a hidden visual join.
-3. The offensive Top 12 is enforced by a deterministic SQL `ROW_NUMBER()` over eligible profile teams and then ordered by PPG in the visual.
-4. The scoring trend is explicitly ordered by decade ascending.
-5. The decorative image inside the scoring plot is removed.
-6. The 1946–2022 label refers to `season_id`; the machine-readable snapshot records the maximum calendar date separately.
-
-## Reviewer handoff
-
-The final page presents four review dimensions — data, model, quality and traceability — followed by the concrete deliverables:
-
-- reproducible Python ETL;
-- SQL Server model and reconciliation queries;
-- compiled PBIT and editable pbi-tools source;
-- dependency locks, SHA-256 manifests and result snapshot.
-
-## Rebuild and validation
-
-From the repository root:
-
-```powershell
-python scripts\update_powerbi_project_i4.py
-python scripts\update_powerbi_storytelling.py
-$env:DOTNET_ROLL_FORWARD = "Major"
-tools\pbi-tools\pbi-tools.core.exe compile `
-  "CODE\Dashboard - POWERBI\Analisis_NBA_BestTeam" `
-  -outPath "CODE\Dashboard - POWERBI\Analisis_NBA_BestTeam.pbit" `
-  -format PBIT -overwrite
-python scripts\validate_i1_i4.py
-python scripts\validate_visual_storytelling.py
-```
-
-The visual validator parses the extracted report, checks page order, palette, questions, takeaways, public filter labels, key-object overlap, q7 scatter semantics, direct analytical sources, Top-12 reduction, decade sort, snapshot values and package integrity.
-
-Current compiled artifact:
-
-- Size: **6,377,058 bytes**.
-- SHA-256: `BFB581E8D43A404A6C87AE1BFB8FD59304911F38503431C9BDE928652996A368`.
-- Pages: **6**.
-- Explicit analytical questions: **4**.
-- ZIP/package integrity: **passed**.
-
-## Desktop review
-
-1. Run the versioned ETL and load the generated model into SQL Server.
-2. Confirm the reconciliation queries return zero integrity differences.
-3. Open `Analisis_NBA_BestTeam.pbit` and use Windows authentication.
-4. Let DirectQuery render all six pages.
-5. Compare the baseline results with `evidence/NBA-Visual-Storytelling/insight_snapshot.json`.
-6. Capture one clean 1320 × 760 image per page after all visuals finish loading.
+Run the commands in the [Power BI README](../CODE/Dashboard%20-%20POWERBI/README.md#rebuild-the-versionable-report). The pinned candidate is **6,376,258 bytes**, SHA-256 `F9E5EE6E91CD43E5479A4B483A18211D0DE1997C09A3F7E776FCA317A6049518`. A second source-generation pass was byte-stable across 1,032 source files; a new compiled ZIP may differ in package metadata. The QA copy connected only to an isolated database and rendered six pages, including the corrected page-03 team slicer. Those checks do **not** establish a published screenshot set, a mobile experience, or an English-language installation of Power BI Desktop. I keep those claims separate in [verification](english_release_verification.md) and the [image protocol](../IMAGES/README.md).

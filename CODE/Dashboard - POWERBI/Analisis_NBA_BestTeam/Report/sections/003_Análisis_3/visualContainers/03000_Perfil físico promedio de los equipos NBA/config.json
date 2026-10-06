@@ -74,7 +74,7 @@
             "Function": 0
           },
           "Name": "Sum(analytics vw_q9_physical_profile.avg_weight)",
-          "NativeReferenceName": "Suma de avg_weight"
+          "NativeReferenceName": "Sum of avg_weight"
         },
         {
           "Aggregation": {
@@ -91,7 +91,7 @@
             "Function": 0
           },
           "Name": "Sum(analytics vw_q9_physical_profile.avg_height)",
-          "NativeReferenceName": "Suma de avg_height"
+          "NativeReferenceName": "Sum of avg_height"
         },
         {
           "Aggregation": {
@@ -108,7 +108,7 @@
             "Function": 0
           },
           "Name": "Sum(analytics vw_q9_physical_profile.n_players)",
-          "NativeReferenceName": "Suma de n_players"
+          "NativeReferenceName": "Sum of n_players"
         },
         {
           "Column": {
@@ -132,7 +132,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
@@ -145,7 +145,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'altura promedio en cm'"
+                  "Value": "'average height (cm)'"
                 }
               }
             },
@@ -165,7 +165,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'peso promedio en libras'"
+                  "Value": "'average weight (lb)'"
                 }
               }
             },
@@ -207,7 +207,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Perfil físico | 3.225 perfiles | altura (cm) y peso (lb)'"
+                  "Value": "'Player profiles | 3,225 historical records | height (cm), weight (lb)'"
                 }
               }
             },

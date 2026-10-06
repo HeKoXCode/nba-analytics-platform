@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "TRAZABILIDAD",
+                    "value": "LINEAGE",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "SHA-256 + evidencia",
+                    "value": "SHA-256 + evidence",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "18pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Manifiestos, snapshot de resultados y fuente Power BI versionada",
+                    "value": "Manifests, result snapshot and versioned Power BI source",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

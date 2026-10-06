@@ -39,7 +39,7 @@
                 "Function": 0
               },
               "Name": "Sum(analytics vw_q4_ppg_by_decade.league_ppg)",
-              "NativeReferenceName": "Suma de league_ppg1"
+              "NativeReferenceName": "Sum of league_ppg1"
             }
           ]
         },

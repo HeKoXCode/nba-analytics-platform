@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "ENTREGABLES PARA REPRODUCIBILIDAD Y REVISIÓN TÉCNICA",
+                    "value": "REVIEW & REPRODUCTION",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "ETL Python reproducible  ·  modelo SQL Server  ·  consultas de reconciliación  ·  PBIT compilada  ·  fuente pbi-tools",
+                    "value": "Reproducible Python ETL  ·  SQL Server model  ·  reconciliation queries  ·  compiled PBIT  ·  pbi-tools source",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "17pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "El revisor puede ejecutar el pipeline, cargar el modelo, contrastar el snapshot y recorrer la misma historia en DirectQuery.",
+                    "value": "A reviewer can run the ETL, load the model, reconcile the snapshot and inspect the same DirectQuery report.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13pt",

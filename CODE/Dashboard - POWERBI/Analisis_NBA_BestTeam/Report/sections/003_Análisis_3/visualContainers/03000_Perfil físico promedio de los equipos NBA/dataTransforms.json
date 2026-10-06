@@ -6,7 +6,7 @@
           "show": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -19,7 +19,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'altura promedio en cm'"
+                "Value": "'average height (cm)'"
               }
             }
           },
@@ -39,7 +39,7 @@
           "titleText": {
             "expr": {
               "Literal": {
-                "Value": "'peso promedio en libras'"
+                "Value": "'average weight (lb)'"
               }
             }
           },
@@ -104,17 +104,17 @@
   "queryMetadata": {
     "Select": [
       {
-        "Restatement": "Suma de avg_weight",
+        "Restatement": "Sum of avg_weight",
         "Name": "Sum(analytics vw_q9_physical_profile.avg_weight)",
         "Type": 1
       },
       {
-        "Restatement": "Suma de avg_height",
+        "Restatement": "Sum of avg_height",
         "Name": "Sum(analytics vw_q9_physical_profile.avg_height)",
         "Type": 1
       },
       {
-        "Restatement": "Suma de n_players",
+        "Restatement": "Sum of n_players",
         "Name": "Sum(analytics vw_q9_physical_profile.n_players)",
         "Type": 3,
         "Format": "0"
@@ -169,7 +169,7 @@
   ],
   "selects": [
     {
-      "displayName": "Suma de avg_weight",
+      "displayName": "Sum of avg_weight",
       "queryName": "Sum(analytics vw_q9_physical_profile.avg_weight)",
       "roles": {
         "Y": true,
@@ -196,7 +196,7 @@
       }
     },
     {
-      "displayName": "Suma de avg_height",
+      "displayName": "Sum of avg_height",
       "queryName": "Sum(analytics vw_q9_physical_profile.avg_height)",
       "roles": {
         "X": true,
@@ -223,7 +223,7 @@
       }
     },
     {
-      "displayName": "Suma de n_players",
+      "displayName": "Sum of n_players",
       "format": "0",
       "queryName": "Sum(analytics vw_q9_physical_profile.n_players)",
       "roles": {

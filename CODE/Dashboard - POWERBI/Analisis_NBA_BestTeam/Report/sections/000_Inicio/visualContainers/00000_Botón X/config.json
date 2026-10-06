@@ -96,7 +96,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'ANÁLISIS'"
+                  "Value": "'EXPLORE'"
                 }
               }
             },
@@ -182,7 +182,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Abrir panorama histórico'"
+                  "Value": "'Open historical performance'"
                 }
               }
             },
@@ -209,7 +209,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Botón X'"
+                  "Value": "'Button X'"
                 }
               }
             }

@@ -52,13 +52,13 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Puntos por partido"
+                "Property": "Points per game (PPG)"
               }
             },
             "Function": 1
           },
           "Name": "Sum(analytics vw_q3_player_context_offense.avg_ppg)",
-          "NativeReferenceName": "Promedio de Puntos por partido"
+          "NativeReferenceName": "Average PPG"
         },
         {
           "Aggregation": {
@@ -69,13 +69,13 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Porcentaje de acierto"
+                "Property": "Field-goal percentage (FG%)"
               }
             },
             "Function": 1
           },
           "Name": "Sum(analytics vw_q3_player_context_offense.avg_fg_pct)",
-          "NativeReferenceName": "Promedio de Porcentaje de acierto"
+          "NativeReferenceName": "Average FG%"
         },
         {
           "Column": {
@@ -102,7 +102,7 @@
                       "Source": "a"
                     }
                   },
-                  "Property": "Puntos por partido"
+                  "Property": "Points per game (PPG)"
                 }
               },
               "Function": 1
@@ -119,7 +119,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Franquicias'"
+                  "Value": "'Teams'"
                 }
               }
             },
@@ -167,14 +167,14 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Promedio de puntos por partido (PPG)'"
+                  "Value": "'Average PPG'"
                 }
               }
             },
             "secTitleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Porcentaje de acierto'"
+                  "Value": "'Field-goal percentage (FG%)'"
                 }
               }
             }
@@ -264,7 +264,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top 12 contexto ofensivo | muestra histórica | PPG y FG%'"
+                  "Value": "'Offensive context: top 12 | historical sample | PPG and FG%'"
                 }
               }
             },

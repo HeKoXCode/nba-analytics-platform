@@ -87,7 +87,7 @@
             "Function": 1
           },
           "Name": "Sum(analytics vw_q2_age_vs_current.winrate_hist)",
-          "NativeReferenceName": "Promedio de winrate_hist"
+          "NativeReferenceName": "Average of winrate_hist"
         },
         {
           "Aggregation": {
@@ -104,7 +104,7 @@
             "Function": 0
           },
           "Name": "Sum(analytics vw_q2_age_vs_current.ppg_hist)",
-          "NativeReferenceName": "Suma de ppg_hist"
+          "NativeReferenceName": "Sum of ppg_hist"
         }
       ]
     },
@@ -116,7 +116,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Años desde fundación'"
+                  "Value": "'Years since founding'"
                 }
               }
             },
@@ -150,7 +150,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Porcentaje de Victorias (Histórico)'"
+                  "Value": "'Historical win rate'"
                 }
               }
             },
@@ -219,7 +219,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Equipo'"
+                  "Value": "'Team'"
                 }
               }
             }
@@ -267,7 +267,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Antigüedad vs rendimiento reciente | 2020–2022 | win rate'"
+                  "Value": "'Franchise age vs. win rate | seasons 2020–2022'"
                 }
               }
             },

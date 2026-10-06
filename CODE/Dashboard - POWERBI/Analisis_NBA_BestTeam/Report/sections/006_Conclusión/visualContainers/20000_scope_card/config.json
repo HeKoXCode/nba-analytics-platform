@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "DATOS",
+                    "value": "DATA",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",
@@ -38,7 +38,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "6 CSV · 161.111 filas",
+                    "value": "6 CSVs · 161,111 rows",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "18pt",
@@ -52,7 +52,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "65.642 partidos únicos · temporadas 1946–2022",
+                    "value": "65,642 unique games · seasons 1946–2022",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "11pt",

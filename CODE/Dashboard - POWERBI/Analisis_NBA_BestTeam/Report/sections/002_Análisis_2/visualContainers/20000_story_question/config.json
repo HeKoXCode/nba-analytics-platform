@@ -24,7 +24,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "PREGUNTA  ¿Cuánto cambia el desempeño por localía y qué equipos varían menos entre temporadas?",
+                    "value": "QUESTION  How does home court relate to scoring, and which teams vary less across seasons?",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "13pt",

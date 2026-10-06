@@ -92,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'INICIO'"
+                  "Value": "'OVERVIEW'"
                 }
               }
             },
@@ -198,7 +198,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Abrir inicio'"
+                  "Value": "'Open overview'"
                 }
               }
             },

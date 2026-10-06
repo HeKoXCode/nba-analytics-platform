@@ -50,13 +50,13 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Puntos como Local"
+                "Property": "Home points per game"
               }
             },
             "Function": 1
           },
           "Name": "Avg(analytics vw_q6_home_away_impact.ppg_home)",
-          "NativeReferenceName": "Promedio de Puntos como Local"
+          "NativeReferenceName": "Average home PPG"
         },
         {
           "Aggregation": {
@@ -67,13 +67,13 @@
                     "Source": "a"
                   }
                 },
-                "Property": "Puntos como visitante"
+                "Property": "Away points per game"
               }
             },
             "Function": 1
           },
           "Name": "Avg(analytics vw_q6_home_away_impact.ppg_away)",
-          "NativeReferenceName": "Promedio de Puntos como visitante"
+          "NativeReferenceName": "Average away PPG"
         },
         {
           "Column": {
@@ -100,7 +100,7 @@
                       "Source": "a"
                     }
                   },
-                  "Property": "Puntos como Local"
+                  "Property": "Home points per game"
                 }
               },
               "Function": 1
@@ -118,7 +118,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Franquicia'"
+                  "Value": "'Team'"
                 }
               }
             },
@@ -138,7 +138,7 @@
             "titleText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Promedio de puntos por partido'"
+                  "Value": "'Average points per game (PPG)'"
                 }
               }
             },
@@ -403,7 +403,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Efecto localía | 1946–2022 | PPG local vs visitante'"
+                  "Value": "'Home vs. away scoring | 1946–2022 | team-season PPG'"
                 }
               }
             },

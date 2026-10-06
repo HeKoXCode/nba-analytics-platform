@@ -47,7 +47,7 @@
             "Function": 1
           },
           "Name": "Sum(analytics vw_q1_hist_perf.winrate_hist)",
-          "NativeReferenceName": "Promedio de winrate_hist"
+          "NativeReferenceName": "Average of winrate_hist"
         }
       ],
       "OrderBy": [
@@ -274,7 +274,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Puntos promedio por partido'"
+                  "Value": "'Average points per game'"
                 }
               }
             },
